@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Analyst session 6 of 6. The data product P&amp;L desk: five years of Keelson Mutual's repair cost index in one engine, five rungs that each change one thing, 5,000 seeded draws, a break button, and the hand-off of the cash flows to a business case. Constructed case, computed in your browser.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="The data product P&amp;L desk - learn data monetisation with phoebe">
+<meta property="og:description" content="Analyst session 6 of 6. Five rungs, one engine, the range and the hand-off to finance, computed live.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-data-monetisation-with-phoebe/courses/a6-the-data-product-pl-desk.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-data-monetisation-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The data product P&amp;L desk - learn data monetisation with phoebe">
+<meta name="twitter:description" content="Analyst session 6 of 6. Five rungs, one engine, computed live.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-data-monetisation-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Analyst session 6 · The data product P&amp;L desk - learn data monetisation with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-data-monetisation-with-phoebe</a> / Analyst session 6 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Data Monetisation with Phoebe · Analyst session 6 of 6</div>
+    <h1>The data product <span class="accent">P&amp;L desk</span></h1>
+    <p class="sub">Five sessions built the parts: what the data is worth, how much of it may be sold, what it costs to serve, what buyers will pay and who sells it. Tonight they meet in one engine. The desk runs the repair cost index for five years, prints revenue, cash and break-even, draws 5,000 futures from the ranges, and climbs a ladder of five rungs that each change one thing. Then it hands the cash flows to the people who decide whether the investment clears the hurdle. Keelson is constructed; the arithmetic runs in your browser.</p>
+    <div class="chip-row">
+      <span class="chip level">🔴 Analyst</span>
+      <span class="chip audience">Analysts and finance partners who build the numbers behind a data product</span>
+      <span class="chip audience">Hands-on in the browser</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-18 · How the desk adds up, the rungs, the hand-off</span>
+      <span class="a3" style="flex:5">18-40 · Build-along: climb the ladder, then break it</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we start</h2>
+    </div>
+    <p class="lede">The Keelson Repair Cost Index is a quarterly index of motor repair cost and claim frequency by region and vehicle class, built from Keelson Mutual's own claims and sold to fleet operators, repair networks, parts makers and smaller insurers. Every earlier widget fed one input into tonight's desk: the share of cells that survive consent and the k threshold (Analyst session 2) scales the price, the platform's fixed cost (session 3) is the run line, the 32.0k value price (session 4) is the base price, and the partner commission (session 5) comes off revenue. Every Keelson input is invented, in thousands of currency units per year.</p>
+
+    <div class="legend">
+      <span class="pill">🎫 Clear all three quiz questions to stamp your passport</span>
+      <span class="pill">Live = presented in the 45 minutes</span>
+      <span class="pill">Self-study = the full depth, after class</span>
+      <span class="pill">★ Build-along = everyone builds it</span>
+    </div>
+
+    <div class="callout win">
+      <p><strong>★ What you walk out with tonight.</strong> A five-year P&amp;L for a data product with every line traceable to an earlier decision, the five-rung ladder printed and read, a range instead of a promise, and one sentence for the board that says which rung decides the answer. The cash flows go to a business case; the sentence goes to Leader session 4.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers the data product P&amp;L</span>
+      <h2>How the desk adds up one year</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">A data product P&amp;L has the shape of a subscription business: a build cost up front, a fixed cost to keep the pipeline, the steward and the legal review running, a customer base that grows by new wins and shrinks by losses, and a small cost to serve each customer. What makes it a data product is the line most models leave out: the price depends on how much of the data you are allowed to publish.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn formula tree for year 1 of the repair cost index. 6 customers times a price of 32 thousand gives 192.0 thousand gross. The partner commission takes 9 percent, leaving revenue of 174.7 thousand. Three costs come off: fixed run 150.0 thousand, cost to serve 48.0 thousand and cost to win customers 21.0 thousand. Year 1 cash is minus 44.3 thousand, filled in teal.">
+        <defs>
+          <filter id="a6aSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="61" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a6aHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a6aAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a6aH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .a6aL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .a6aS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .a6aV { font: 800 16px Inter, sans-serif; fill: #2E2A08; }
+          .a6aR { font: 700 11px Inter, sans-serif; fill: #991B1B; }
+          .a6aW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+          .a6aX { font: 800 18px Inter, sans-serif; fill: #FFFFFF; }
+          .a6aN { font: 400 12px Inter, sans-serif; fill: #5A5848; }
+        </style>
+
+        <text class="a6aH" x="30" y="28">YEAR 1 OF THE REPAIR COST INDEX</text>
+        <text class="a6aS" x="290" y="28">constructed Keelson inputs · thousands · the desk does the same sum</text>
+
+        <g filter="url(#a6aSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="30" y="56" width="150" height="56" rx="10" transform="rotate(-1 105 84)" fill="#FFFFFF"/>
+          <rect x="30" y="136" width="150" height="56" rx="10" transform="rotate(0.8 105 164)" fill="#FFFFFF"/>
+          <path d="M184 84 L232 108 M184 164 L232 132"/>
+          <rect x="236" y="92" width="150" height="56" rx="10" transform="rotate(0.6 311 120)" fill="url(#a6aHc)"/>
+          <path d="M390 120 L436 120" marker-end="url(#a6aAr)"/>
+          <rect x="440" y="92" width="150" height="56" rx="10" transform="rotate(-0.6 515 120)" fill="#F8F6E6" stroke="#494412"/>
+          <rect x="440" y="196" width="150" height="104" rx="10" transform="rotate(0.5 515 248)" fill="#FEF2F2" stroke="#FCA5A5"/>
+          <path d="M594 120 L660 160 M594 248 L660 188"/>
+          <rect x="664" y="134" width="186" height="80" rx="10" transform="rotate(-0.6 757 174)" fill="#0E5C66" stroke="#0E5C66"/>
+          <!-- doodle: a small index chart line -->
+          <path d="M700 268 L726 252 L748 260 L776 236 L806 244 L834 222" stroke="#494412"/>
+        </g>
+
+        <text class="a6aS" x="44" y="78">customers, year 1</text>
+        <text class="a6aV" x="44" y="100">6</text>
+        <text class="a6aS" x="44" y="158">price per customer</text>
+        <text class="a6aV" x="44" y="180">x 32.0k</text>
+
+        <rect x="246" y="100" width="130" height="40" rx="6" fill="#FFFFFF"/>
+        <text class="a6aS" x="254" y="116">gross</text>
+        <text class="a6aV" x="254" y="134">192.0k</text>
+
+        <text class="a6aS" x="452" y="112">after 9% commission</text>
+        <text class="a6aV" x="452" y="134">174.7k</text>
+
+        <text class="a6aR" x="452" y="218">costs this year</text>
+        <text class="a6aL" x="452" y="240">run 150.0k</text>
+        <text class="a6aL" x="452" y="260">serve 6 x 8 = 48.0k</text>
+        <text class="a6aL" x="452" y="280">win 6 x 5 x 70% = 21.0k</text>
+
+        <text class="a6aW" x="680" y="160">year 1 cash</text>
+        <text class="a6aX" x="680" y="192">-44.3k</text>
+
+        <text class="a6aN" x="30" y="322">Commission: 30% of customers come through a partner who keeps 30%, so 9% of gross. Partners also do the winning.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - year 1 is negative because the fixed run cost arrives before the customers do</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>The five lines, and where each came from<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Customers.</strong> Six in year 1, then four new each year, with 15 percent of the base lost each year. That path reaches 15.9 customers by year 5, still under the 18 buyers who would pay 32.0k in Analyst session 4: the desk never assumes more customers than the price search found.</p>
+        <p><strong>Price.</strong> 32.0k a year, the best single API price from session 4, multiplied by the share of cells you are allowed to publish over the base 92.6 percent. Tighten consent and the price falls with the product.</p>
+        <p><strong>Fixed run cost.</strong> 150.0k a year: the shared platform from session 3 (pipeline, data steward, DPIA, legal review). It does not care how many customers you have.</p>
+        <p><strong>Cost to serve and cost to win.</strong> 8.0k per customer per year, and 5.0k for each new customer Keelson signs itself. Customers who come through a partner cost Keelson nothing to win, which is part of what the commission pays for.</p>
+        <p><strong>Build.</strong> 330.0k in year 0: the platform (120.0k), the report tier (40.0k), the API tier (160.0k) and 10.0k of legal set-up.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why the margin looks wonderful and the cash does not<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Revenue minus cost to serve is 72.5 percent of revenue in every year: a copy of a dataset costs almost nothing to deliver. That figure is the one that gets quoted in strategy decks. It hides the fixed run cost, which at six customers is larger than the revenue. A data product's economics live in the fixed line and the customer count, not in the gross margin. Analyst session 3 drew the same thing as the cost curve: 59.2k per customer at five customers, 14.3k at forty.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The margin slide.</strong> Sefa Adjei, Keelson's head of partnerships, opened the first index pitch with "a data product with a 72 percent gross margin". Ines Carvalho, the CFO, asked one question: "How many customers before the fixed cost is covered?" The desk answers it: the cumulative cash does not turn positive until late in year 5. Constructed Keelson Mutual example.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers the five rungs</span>
+      <h2>Five rungs, one change each</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">A single P&amp;L invites a single argument: is it right? A ladder invites a better one: which change matters? Each rung starts from the base case and changes one thing, so the difference between any rung and the base is the price of that one thing. The last rung is a break button: it holds every input certain, and the range collapses to a point, which is what every single-number P&amp;L quietly assumes.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Five hand-drawn bars around a zero line, showing five-year cumulative cash for each rung. Base case plus 40.3 thousand. The sponsor's case plus 1,362.4 thousand. Consent and anonymity tightened minus 386.7 thousand, drawn in red. One exclusive licensee plus 420.0 thousand. Every input held certain plus 40.3 thousand, the same as base, but with no range. The base case bar is filled in teal.">
+        <defs>
+          <filter id="a6bSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="67" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a6bHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a6bAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a6bH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .a6bL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .a6bS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .a6bV { font: 800 13px Inter, sans-serif; fill: #2E2A08; }
+          .a6bR { font: 800 13px Inter, sans-serif; fill: #991B1B; }
+          .a6bA { font: 700 11px Inter, sans-serif; fill: #2E2A08; }
+          .a6bN { font: 400 12px Inter, sans-serif; fill: #5A5848; }
+        </style>
+
+        <text class="a6bH" x="30" y="28">FIVE-YEAR CUMULATIVE CASH, BY RUNG</text>
+        <text class="a6bS" x="320" y="28">each rung changes one thing from the base case</text>
+
+        <g filter="url(#a6bSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M470 48 L470 272" stroke="#5A5848"/>
+          <rect x="470" y="58" width="9" height="28" rx="3" fill="#0E5C66" stroke="#0E5C66"/>
+          <rect x="470" y="102" width="300" height="28" rx="4" transform="rotate(-0.3 620 116)" fill="url(#a6bHc)"/>
+          <rect x="385" y="146" width="85" height="28" rx="4" transform="rotate(0.4 427 160)" fill="#FEF2F2" stroke="#FCA5A5"/>
+          <rect x="470" y="190" width="92" height="28" rx="4" transform="rotate(-0.4 516 204)" fill="#F8F6E6" stroke="#494412"/>
+          <rect x="470" y="234" width="9" height="28" rx="3" fill="#FFFFFF"/>
+          <!-- doodle: a little ladder beside the labels -->
+          <path d="M18 60 L18 262 M30 60 L30 262 M18 92 L30 92 M18 136 L30 136 M18 180 L30 180 M18 224 L30 224" stroke="#494412"/>
+        </g>
+
+        <text class="a6bL" x="44" y="77">1 · Base case</text>
+        <text class="a6bL" x="44" y="121">2 · The sponsor's case</text>
+        <text class="a6bS" x="200" y="121">price 40, 7 new a year, 8% lost</text>
+        <text class="a6bL" x="44" y="165">3 · Consent and anonymity tightened</text>
+        <text class="a6bL" x="44" y="209">4 · One exclusive licensee</text>
+        <text class="a6bL" x="44" y="253">5 · Every input held certain</text>
+        <text class="a6bS" x="250" y="253">no range at all</text>
+
+        <text class="a6bV" x="790" y="77">+40.3k</text>
+        <text class="a6bV" x="790" y="121">+1362.4k</text>
+        <text class="a6bR" x="790" y="165">-386.7k</text>
+        <text class="a6bV" x="790" y="209">+420.0k</text>
+        <text class="a6bV" x="790" y="253">+40.3k</text>
+        <text class="a6bA" x="476" y="290">0</text>
+
+        <text class="a6bN" x="30" y="316">Rungs 1 and 5 print the same number. Only the range in the widget tells them apart: 56.4% against 0.0%.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the consent rung moves the answer further below zero than the base sits above it</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>What each rung is for<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>1 · Base case.</strong> The inputs from sessions 2 to 5. Ends year 5 at +40.3k cumulative cash, break-even at 4.8 years.</p>
+        <p><strong>2 · The sponsor's case.</strong> The version a keen sponsor brings: price 40.0k, seven new customers a year, 8 percent lost. +1362.4k. Its job is to show how much of the case rests on optimism you have not tested.</p>
+        <p><strong>3 · Consent and anonymity tightened.</strong> One governance change: the privacy notice gap rises to 20 percent of records and the smallest publishable cell rises to 25. Cells published fall from 92.6 to 68.7 percent, the price falls with them, and the five years end at -386.7k. This is the rung a regulator, a privacy review or a single complaint can move you to.</p>
+        <p><strong>4 · One exclusive licensee.</strong> Sell everything through one partner for the larger of a 300.0k guarantee and 20 percent of their revenue. +420.0k, break-even at 2.2 years, and no draw that fails to break even.</p>
+        <p><strong>5 · Every input held certain.</strong> The break button: same inputs as the base, no uncertainty. It prints +40.3k with a P10 and a P90 of +40.3k as well, which is a lie the base case's 56.4 percent chance of no break-even exposes.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why one change per rung<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>When a rung changes three things at once, nobody can say which one moved the answer, and the meeting argues about all three. The sponsor's case is the deliberate exception, labelled as such: it packages the optimistic inputs a sponsor tends to bring together, so the board can see their combined weight. If a reviewer asks which of the three matters most, move them one at a time on the desk; Business Cases does the same thing systematically with a tornado, <a href="https://phoebefu6.github.io/learn-business-cases-roi-with-phoebe/courses/a4-swing-every-assumption.html">Analyst session 4 ↗</a>.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The rung nobody had built.</strong> Keelson's first index model had a base case and a sponsor's case. Maya Okafor, the CDO, asked for the consent rung after the privacy team said the 2019 motor policy notice might not cover analytics reuse. It was the only rung that turned the five-year cash negative, and it moved the conversation from price to the privacy notice. Constructed Keelson Mutual example.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers the range and the hand-off</span>
+      <h2>Breaks even, and still fails the hurdle</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">The base case turns cash-positive in year 5. It also has a net present value of -77.9k at Keelson's 9 percent hurdle. Both are true, and they answer different questions: break-even asks when the money comes back; NPV asks whether it comes back fast enough to beat what Keelson could earn elsewhere. The desk prints both and leaves the second argument to the people whose job it is.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two hand-drawn lines from year 0 to year 5. Cumulative cash starts at minus 330.0 thousand, dips to minus 374.3, then rises to plus 40.3 thousand, crossing zero at 4.8 years. Cumulative present value at 9 percent follows below it and ends at minus 77.9 thousand, never crossing zero. The cash line is teal; the present value line is olive.">
+        <defs>
+          <filter id="a6cSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="71" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a6cHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a6cAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a6cH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .a6cS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .a6cA { font: 700 11px Inter, sans-serif; fill: #2E2A08; }
+          .a6cB { font: 800 12px Inter, sans-serif; fill: #083A40; }
+          .a6cV { font: 800 12px Inter, sans-serif; fill: #2E2A08; }
+          .a6cN { font: 400 12px Inter, sans-serif; fill: #5A5848; }
+        </style>
+
+        <text class="a6cH" x="30" y="28">CUMULATIVE CASH AGAINST CUMULATIVE PRESENT VALUE</text>
+
+        <g filter="url(#a6cSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M100 52 L100 264 L700 264" stroke="#5A5848"/>
+          <path d="M100 100 L700 100" stroke="#CFCCB8"/>
+          <path d="M100 232 L220 250 L340 238 L460 205 L580 152 L700 84" stroke="#0E5C66" stroke-width="3"/>
+          <path d="M100 232 L220 248 L340 239 L460 213 L580 176 L700 131" stroke="#494412" stroke-width="3"/>
+          <circle cx="672" cy="100" r="6" fill="#0E5C66" stroke="#0E5C66"/>
+        </g>
+
+        <text class="a6cA" x="70" y="104">0</text>
+        <text class="a6cS" x="40" y="236">-330k</text>
+        <text class="a6cA" x="96" y="282">0</text>
+        <text class="a6cA" x="216" y="282">1</text>
+        <text class="a6cA" x="336" y="282">2</text>
+        <text class="a6cA" x="456" y="282">3</text>
+        <text class="a6cA" x="576" y="282">4</text>
+        <text class="a6cA" x="696" y="282">5</text>
+        <text class="a6cS" x="330" y="300">years after launch</text>
+
+        <text class="a6cB" x="500" y="66">cash break-even 4.8 years</text>
+        <text class="a6cB" x="714" y="88">cash +40.3k</text>
+        <text class="a6cV" x="714" y="136">PV at 9% -77.9k</text>
+        <text class="a6cS" x="714" y="154">below zero throughout</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the gap between the two lines at year 5 is the price of waiting five years for the money</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Reading the range on the desk<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Each of the ten inputs is drawn from a triangular range around the value you set (the ranges are in the source map), 5,000 times, with the same seed every time so a colleague gets the same numbers. The desk prints the P10, P50 and P90 of the five-year cumulative cash and the share of draws that never break even.</p>
+        <p>For the base case: P10 -364.0k, P50 -47.3k, P90 +347.6k, and 56.4 percent of draws do not break even within five years. The middle draw is below the base case's +40.3k because several ranges reach further on the bad side than the good: the build can overrun to 430.0k but cannot fall below 300.0k, and losses can reach 25 percent a year.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The hand-off, and what not to re-teach<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The desk prints a line under the range: "Cash flows to take to a business case", six numbers from year 0 to year 5. For the base case they are -330.0k, -44.3k, +28.2k, +83.8k, +131.1k, +171.4k. Discounted at 9 percent they sum to -77.9k. What a funder does with that, whether a different rate applies, how to read IRR against payback, how to put a value on waiting for a pilot, is taught in <a href="https://phoebefu6.github.io/learn-business-cases-roi-with-phoebe/courses/a3-npv-irr-and-payback.html">Business Cases, Analyst session 3 ↗</a> and <a href="https://phoebefu6.github.io/learn-business-cases-roi-with-phoebe/courses/a5-the-range-and-the-option-to-wait.html">session 5 ↗</a>. The desk's job is to make the cash flows honest; the business case's job is to judge them.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>Two true sentences.</strong> Sefa told the steering group the index "pays back in under five years". Ines added that at Keelson's 9 percent hurdle it destroys 77.9k of value in the base case. Both sentences came off the same desk. The decision paper carried both, with the consent rung beside them. Constructed Keelson Mutual example.</p>
+    </div>
+  </section>
+
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>Climb the ladder, then break it</h2>
+      <span class="tag demo">★ 22 min · everyone builds</span>
+    </div>
+    <p class="lede">The desk below runs the repair cost index for five years every time you pick a rung or move a slider. Work the six steps, write down what it prints, and check one year by hand. The inputs are invented, so the lesson is which rung decides, not the totals.</p>
+
+    <div class="dmx-widget" data-mode="desk"></div>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn map of the desk. Five rung buttons and ten input sliders feed the engine, along with two switches for the tightened consent funnel and the exclusive licensee. The engine prints four things: a year-by-year table, the point results, the range from 5,000 draws, and the ladder table with every rung computed. The ladder table is filled in teal.">
+        <defs>
+          <filter id="a6dSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="79" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a6dHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a6dAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a6dH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .a6dL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .a6dS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .a6dB { font: 800 11px Inter, sans-serif; fill: #083A40; }
+          .a6dW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+        </style>
+
+        <text class="a6dH" x="30" y="28">WHAT THE DESK COMPUTES</text>
+
+        <g filter="url(#a6dSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="30" y="44" width="200" height="50" rx="10" transform="rotate(-0.8 130 69)" fill="#F8F6E6" stroke="#494412"/>
+          <rect x="30" y="106" width="200" height="50" rx="10" transform="rotate(0.8 130 131)" fill="#FFFFFF"/>
+          <rect x="30" y="168" width="200" height="50" rx="10" transform="rotate(-0.6 130 193)" fill="#FFFFFF"/>
+          <path d="M234 69 L300 112 M234 131 L300 131 M234 193 L300 150" marker-end="url(#a6dAr)"/>
+          <rect x="304" y="96" width="210" height="70" rx="10" transform="rotate(-0.4 409 131)" fill="url(#a6dHc)"/>
+          <path d="M518 131 L590 131" marker-end="url(#a6dAr)"/>
+          <rect x="596" y="44" width="254" height="174" rx="10" transform="rotate(0.4 723 131)" fill="#0E5C66" stroke="#0E5C66"/>
+        </g>
+
+        <rect x="316" y="108" width="186" height="46" rx="6" fill="#FFFFFF"/>
+
+        <text class="a6dL" x="44" y="66">five rung buttons</text>
+        <text class="a6dS" x="44" y="84">each changes one thing</text>
+        <text class="a6dL" x="44" y="128">ten input sliders</text>
+        <text class="a6dS" x="44" y="146">customers, price, costs, channel</text>
+        <text class="a6dL" x="44" y="190">two switches</text>
+        <text class="a6dS" x="44" y="208">tight consent, exclusive deal</text>
+        <text class="a6dL" x="326" y="128">the engine, years 0-5</text>
+        <text class="a6dS" x="326" y="146">plus 5,000 seeded draws</text>
+        <text class="a6dW" x="612" y="74">year-by-year table</text>
+        <text class="a6dW" x="612" y="104">cash, break-even, NPV at 9%</text>
+        <text class="a6dW" x="612" y="134">P10, P50, P90, no break-even</text>
+        <text class="a6dW" x="612" y="164">cash flows for a business case</text>
+        <text class="a6dW" x="612" y="194">the ladder, every rung computed</text>
+
+        <text class="a6dB" x="30" y="240">The ladder table at the bottom recomputes all five rungs on every load, so it is your answer key.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - rungs, sliders and switches all feed one engine; the ladder table is printed fresh every time</figcaption>
+    </figure>
+
+    <div class="steps">
+      <div class="step">
+        <p><strong>Step 1 · Read the base case.</strong> Rung 1. Write down the year-by-year cash and the four headline results.</p>
+        <div class="prompt-box good"><span class="label">★ Step 1 · what the desk prints</span>Cash: year 0 -330.0k · year 1 -44.3k · year 2 +28.2k · year 3 +83.8k · year 4 +131.1k · year 5 +171.4k
+Cumulative cash after year 5 +40.3k · cash break-even 4.8 years · cells published 92.6% · NPV at 9% -77.9k</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 2 · Check year 1 by hand.</strong> Use the Part 1 formula and confirm the desk's first row.</p>
+        <div class="prompt-box good"><span class="label">★ Step 2 · year 1 by hand</span>6 customers x 32.0k = 192.0k gross
+192.0k x (1 - 30% x 30%) = 174.7k revenue
+174.7k - 150.0k run - 48.0k serve - 21.0k win = -44.3k   (the desk's year 1)</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 3 · Read the range.</strong> Still on rung 1, write the four range numbers and one sentence on why the middle draw sits below the base case.</p>
+        <div class="prompt-box good"><span class="label">★ Step 3 · the range</span>P10 -364.0k · P50 -47.3k · P90 +347.6k · no break-even in 5 years 56.4%
+why P50 &lt; base: ____________________________________________</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 4 · Climb rungs 2, 3 and 4.</strong> Pick each in turn. Write the five-year cash and the no-break-even share, and name the rung that moves the answer most below zero.</p>
+        <div class="prompt-box good"><span class="label">★ Step 4 · the ladder</span>2 The sponsor's case                 +1362.4k   17.3%
+3 Consent and anonymity tightened    -386.7k    98.2%
+4 One exclusive licensee              +420.0k    0.0%
+the rung that decides: _______________</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 5 · Break it.</strong> Pick rung 5. Read the range and write what a P&amp;L with no range is really claiming.</p>
+        <div class="prompt-box good"><span class="label">★ Step 5 · the break button</span>Every input held certain: +40.3k · P10 +40.3k · P50 +40.3k · P90 +40.3k · 0.0%
+a single-number P&amp;L claims: ____________________________</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 6 · Price exclusivity in a strong market.</strong> Pick rung 2, then tick "Sell through one exclusive licensee". Compare the five-year cash with and without the licence. Then write your sentence for the board.</p>
+        <div class="prompt-box good"><span class="label">★ Step 6 · floors and caps</span>sponsor's case, sold direct:          +1362.4k
+sponsor's case, one exclusive licence: +953.4k
+board sentence: "The index ______ on the base case, and the decision turns on ______."</div>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>Keep the six cash flows.</strong> They are the input to a business case. Your own desk's numbers will differ; the ladder is the part to copy.</p>
+    </div>
+  </section>
+
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>After the desk</h2>
+      <span class="tag exercise">30 min</span>
+    </div>
+    <ol>
+      <li><strong>Build your own ladder.</strong> For a data product you know, write a base case and four rungs that each change one thing, one of them a governance change. Your numbers will differ.</li>
+      <li><strong>Name your break button.</strong> Find a P&amp;L in your organisation that shows one number and no range. Write the one input most likely to move it.</li>
+      <li><strong>Take the cash flows to finance.</strong> Ask what hurdle rate your company uses for a new product line, and whether a data product gets the same one.</li>
+      <li><strong>Write the board sentence.</strong> One sentence: what the base case says, and which rung decides the answer.</li>
+    </ol>
+  </section>
+
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and Analyst session 6 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">1 · The base case breaks even on cash at 4.8 years and has an NPV of -77.9k at 9 percent. What is the honest reading?</p>
+      <button class="qopt" type="button">A · One of the two numbers must be a mistake</button>
+      <button class="qopt" type="button">B · Break-even wins, because cash is what matters</button>
+      <button class="qopt" type="button">C · Both are true: the money comes back, but too slowly to beat Keelson's 9 percent hurdle</button>
+      <button class="qopt" type="button">D · NPV wins, so the index should be cancelled without discussion</button>
+      <p class="qwhy">Break-even asks when; NPV asks whether it beats the alternative use of the money. The business case weighs them; the desk prints both.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">2 · Rungs 1 and 5 both print +40.3k. What separates them?</p>
+      <button class="qopt" type="button">A · Rung 5 holds every input certain, so its range collapses: 0.0 percent chance of no break-even against 56.4 percent</button>
+      <button class="qopt" type="button">B · Nothing: they are the same rung</button>
+      <button class="qopt" type="button">C · Rung 5 uses a different price</button>
+      <button class="qopt" type="button">D · Rung 5 excludes the build cost</button>
+      <p class="qwhy">The point estimate is identical. The break button shows what a single number hides: more than half the plausible futures never break even.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="3">
+      <p class="qtext">3 · Why does tightening consent and anonymity lower the price on the desk, not just the volume?</p>
+      <button class="qopt" type="button">A · Because the regulator sets data prices</button>
+      <button class="qopt" type="button">B · Because fewer customers are allowed to buy</button>
+      <button class="qopt" type="button">C · Because the build cost rises</button>
+      <button class="qopt" type="button">D · Because fewer cells can be published, so the index covers less, and buyers pay for coverage: 68.7 percent of cells makes 32.0k behave like 23.7k</button>
+      <p class="qwhy">A data product's value is its coverage. Suppressed regions and vehicle classes are the detail buyers wanted.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">A data product P&amp;L: build, fixed run, customers, churn, price, cost to serve and win, partner commission</span><span class="note">The P&amp;L template in CDAIO module 5 (data monetisation execution), extended with the coverage-to-price link from Analyst session 2</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">The ladder, the seeded range and the break button</span><span class="note">Computed in your browser; the method is taught in full in Business Cases &amp; ROI, Analyst sessions 4 and 5</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Cash break-even against NPV at a hurdle rate</span><span class="note">Named and printed here; judged in Business Cases &amp; ROI, Analyst session 3</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Keelson's index: +40.3k, 4.8 years, -77.9k NPV, five rungs</span><span class="note">Constructed and labelled; computed by the engine in your browser and checked against an independent Python run</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Every fact on this page, and its verification tier, is recorded in the course's source map.</p>
+  </section>
+
+  <section class="cheat" id="cheatsheet">
+    <h3>Analyst session 6 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>The fixed line decides</b><span>Gross margin flatters a data product; the fixed run cost and the customer count decide it.</span></div>
+      <div class="cheat-item"><b>Price follows coverage</b><span>Fewer publishable cells, a thinner index, a lower price.</span></div>
+      <div class="cheat-item"><b>One change per rung</b><span>The gap between a rung and the base is the price of that one change.</span></div>
+      <div class="cheat-item"><b>Always a governance rung</b><span>Consent, notice and anonymity can move the answer more than price.</span></div>
+      <div class="cheat-item"><b>Break it on purpose</b><span>Hold every input certain and see what a single number hides.</span></div>
+      <div class="cheat-item"><b>Hand off, do not re-teach</b><span>The desk makes the cash flows honest; the business case judges them.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>That is the Analyst track complete. Take the ladder to <a href="b4-the-board-call.html">Leader session 4, the board call</a>, where the same five rungs become a go or no-go paper, or carry the cash flows to <a href="https://phoebefu6.github.io/learn-business-cases-roi-with-phoebe/">Business Cases &amp; ROI ↗</a>.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Analyst session 6 of 6 · learn-data-monetisation-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="a5-partner-deal-maths.html">← Prev: Partner deal maths</a> &nbsp;·&nbsp; <a href="../index.html">Course home</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/dm-live.js?v=1"></script>
+<script src="../assets/dm-bench.js?v=1"></script>
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Analyst session 2 of 6. The sellable share: Keelson Mutual's 180,000 motor claims records through four rights checks in order, then a cell-size threshold on a 1,152-cell grid, why cells fall faster than records as k rises, and why a threshold alone never makes data anonymous. Constructed case, computed in your browser.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="The sellable share - learn data monetisation with phoebe">
+<meta property="og:description" content="Analyst session 2 of 6. Four rights checks and a cell threshold, computed live: how much of a dataset may actually be sold.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-data-monetisation-with-phoebe/courses/a2-the-sellable-share.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-data-monetisation-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The sellable share - learn data monetisation with phoebe">
+<meta name="twitter:description" content="Analyst session 2 of 6. The rights funnel and the k threshold, computed live.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-data-monetisation-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Analyst session 2 · The sellable share - learn data monetisation with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-data-monetisation-with-phoebe</a> / Analyst session 2 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Data Monetisation with Phoebe · Analyst session 2 of 6</div>
+    <h1>The sellable <span class="accent">share</span></h1>
+    <p class="sub">Owning a dataset and being free to sell it are two different things. Every record in Keelson Mutual's motor claims history has to pass four checks before it may go into a product: the privacy notice it was collected under, the customer's own objection, the licence terms it arrived with, and whether it carries health data. What survives is then cut into cells, and any cell too small to publish safely is dropped. Tonight: the funnel built stage by stage, the cell threshold computed on the grid, and the honest limit of what a threshold does. Keelson is constructed; the arithmetic runs in your browser.</p>
+    <div class="chip-row">
+      <span class="chip level">🟢 Analyst</span>
+      <span class="chip audience">Analysts and finance partners who build the numbers behind a data product</span>
+      <span class="chip audience">Hands-on in the browser</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-18 · Four checks, the k threshold, cells against records</span>
+      <span class="a3" style="flex:5">18-40 · Build-along: the funnel and the grid</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we start</h2>
+    </div>
+    <p class="lede">Analyst session 1 found that the motor claims history had the highest market value of Keelson's five assets: 14 lawful buyers at the asset level. That number assumed every record could go into the product. Sefa Adjei, head of partnerships, wants to build the Keelson Repair Cost Index from it. Before anyone prices that index, Maya Okafor, the CDO, wants one number answered: of 180,000 motor claims records over three years, how many may actually end up in something Keelson sells? That number is the sellable share, and it is the first multiplier in every revenue line that follows. Every Keelson input is invented.</p>
+
+    <div class="legend">
+      <span class="pill">🎫 Clear all three quiz questions to stamp your passport</span>
+      <span class="pill">Live = presented in the 45 minutes</span>
+      <span class="pill">Self-study = the full depth, after class</span>
+      <span class="pill">★ Build-along = everyone builds it</span>
+    </div>
+
+    <div class="callout win">
+      <p><strong>★ What you walk out with tonight.</strong> A rights funnel for one of your own datasets with the four checks in order and the arithmetic shown, a cell threshold you can defend with the cells-against-records trade-off, and one sentence you can say when someone calls the output "anonymised" because small cells were dropped. Analyst session 3 takes the sellable share and asks what it costs to package and serve.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers the rights funnel</span>
+      <h2>Every record has to pass four checks</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">Picture the 180,000 records walking through four gates in a row. At each gate some leave, and the next gate only sees the ones that are left. Keelson's constructed shares: the privacy notice did not cover reuse for 8%, customers objected for 3%, a third-party licence forbids onward use for 12%, and injury claims, which carry health data, are held back at 7%. The licence gate removes the most records, 19,276.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn band of records passing through four gates. 180,000 motor claims records enter. Gate 1, the privacy notice, removes 14,400 (8 percent), leaving 165,600. Gate 2, customer objection, removes 4,968 (3 percent), leaving 160,632. Gate 3, third-party licence, removes 19,276 (12 percent), the biggest loss, drawn in teal, leaving 141,356. Gate 4, health data, removes 9,895 (7 percent), leaving 131,461 for the grid.">
+        <defs>
+          <filter id="a2aSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="41" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a2aHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a2aAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a2aH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .a2aL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .a2aS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .a2aB { font: 800 11px Inter, sans-serif; fill: #083A40; }
+          .a2aV { font: 800 16px Inter, sans-serif; fill: #2E2A08; }
+          .a2aW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+          .a2aX { font: 800 16px Inter, sans-serif; fill: #FFFFFF; }
+          .a2aN { font: 400 12px Inter, sans-serif; fill: #5A5848; }
+        </style>
+
+        <text class="a2aH" x="30" y="26">FOUR GATES, IN ORDER</text>
+        <text class="a2aS" x="200" y="26">constructed · each share applies to the records still left</text>
+
+        <g filter="url(#a2aSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M40 80 L210 80 L210 85 L380 85 L380 86 L550 86 L550 93 L720 93 L720 96 L850 96 L850 184 L720 184 L720 187 L550 187 L550 194 L380 194 L380 195 L210 195 L210 200 L40 200 Z" fill="url(#a2aHc)" stroke="#494412"/>
+          <path d="M210 62 L210 214" stroke-width="4"/>
+          <path d="M380 62 L380 214" stroke-width="4"/>
+          <path d="M550 62 L550 214" stroke="#0E5C66" stroke-width="5"/>
+          <path d="M720 62 L720 214" stroke-width="4"/>
+          <path d="M234 202 L234 234" marker-end="url(#a2aAr)"/>
+          <path d="M404 200 L404 234" marker-end="url(#a2aAr)"/>
+          <path d="M574 196 L574 234" stroke="#0E5C66" stroke-width="3" marker-end="url(#a2aAr)"/>
+          <path d="M744 192 L744 234" marker-end="url(#a2aAr)"/>
+          <rect x="509" y="242" width="130" height="66" rx="10" transform="rotate(0.6 574 275)" fill="#0E5C66" stroke="#0E5C66"/>
+          <!-- doodle: a padlock on the licence gate -->
+          <rect x="590" y="64" width="14" height="11" rx="2" stroke="#0E5C66"/>
+          <path d="M593 64 Q597 54 601 64" stroke="#0E5C66"/>
+        </g>
+
+        <rect x="80" y="125" width="90" height="30" rx="6" fill="#FFFFFF"/>
+        <rect x="250" y="125" width="90" height="30" rx="6" fill="#FFFFFF"/>
+        <rect x="420" y="125" width="90" height="30" rx="6" fill="#FFFFFF"/>
+        <rect x="590" y="125" width="90" height="30" rx="6" fill="#FFFFFF"/>
+        <rect x="740" y="125" width="90" height="30" rx="6" fill="#FFFFFF"/>
+
+        <text class="a2aS" x="40" y="70">motor claims, 3 years</text>
+        <text class="a2aL" x="210" y="50" text-anchor="middle">1 · notice</text>
+        <text class="a2aL" x="380" y="50" text-anchor="middle">2 · objection</text>
+        <text class="a2aB" x="550" y="50" text-anchor="middle">3 · licence</text>
+        <text class="a2aL" x="720" y="50" text-anchor="middle">4 · health data</text>
+        <text class="a2aS" x="785" y="86" text-anchor="middle">into the k grid</text>
+
+        <text class="a2aV" x="125" y="146" text-anchor="middle">180,000</text>
+        <text class="a2aV" x="295" y="146" text-anchor="middle">165,600</text>
+        <text class="a2aV" x="465" y="146" text-anchor="middle">160,632</text>
+        <text class="a2aV" x="635" y="146" text-anchor="middle">141,356</text>
+        <text class="a2aV" x="785" y="146" text-anchor="middle">131,461</text>
+
+        <text class="a2aV" x="234" y="258" text-anchor="middle">-14,400</text>
+        <text class="a2aS" x="234" y="276" text-anchor="middle">notice 8%</text>
+        <text class="a2aV" x="404" y="258" text-anchor="middle">-4,968</text>
+        <text class="a2aS" x="404" y="276" text-anchor="middle">objected 3%</text>
+        <text class="a2aX" x="574" y="264" text-anchor="middle">-19,276</text>
+        <text class="a2aW" x="574" y="282" text-anchor="middle">licence 12%</text>
+        <text class="a2aW" x="574" y="299" text-anchor="middle">the biggest loss</text>
+        <text class="a2aV" x="744" y="258" text-anchor="middle">-9,895</text>
+        <text class="a2aS" x="744" y="276" text-anchor="middle">health data 7%</text>
+
+        <text class="a2aN" x="30" y="328">Adding the four shares (30%) would leave 126,000. Compounding them leaves 131,461.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the smallest-looking share is not the smallest loss; the licence gate takes the most</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Why each gate exists<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Gate 1 · the notice did not cover reuse.</strong> Data collected to settle a claim was collected for that purpose. Under the GDPR, Article 6(4) asks whether a new purpose is compatible with the original one, weighing the link between the purposes, the context of collection, the nature of the data (including whether it is special category), the possible consequences for the people involved and the safeguards in place. In Singapore the PDPA starts from consent (section 13), and section 15A allows deemed consent by notification only after an assessment of adverse effects and a reasonable period to opt out. Records collected under a notice that never mentioned an outside product fail here.</p>
+        <p><strong>Gate 2 · the customer objected.</strong> GDPR Article 21 gives people a right to object to processing that rests on public task or legitimate interests (bases (e) and (f) of Article 6(1)). A customer who objected to analytics use is out, whatever the business case says.</p>
+        <p><strong>Gate 3 · a third-party licence forbids onward use.</strong> This one is contract, not statute. Some records carry fields Keelson received from others under terms that limit how they may be used. Inbound terms bind outbound use: Keelson cannot sell what it was only licensed to use.</p>
+        <p><strong>Gate 4 · injury claims carry health data.</strong> GDPR Article 9(1) prohibits processing data concerning health unless one of the Article 9(2) exceptions applies. Keelson holds injury claims back as a class rather than argue an exception for a commercial product.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Order matters, and shares compound<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Each share is measured on the records that reached that gate, not on the original 180,000. So the licence gate removes 12% of 160,632, which is 19,276, not 12% of 180,000, which would be 21,600. Change the order of the gates and the count credited to each gate changes, which is why a funnel always states its order.</p>
+        <p>The same logic is why you never add the shares. 8% + 3% + 12% + 7% = 30%, and 180,000 x 70% = 126,000. The true remainder is 131,461, because each later share bites on a smaller pile. Adding the shares understates the eligible records by 5,461, and it hides the fact that a point saved at a late gate is worth fewer records than a point saved at an early one.</p>
+        <p>The order Keelson uses follows the questions a reviewer would ask: is there any lawful basis for the new purpose, has this person said no, do we hold the right to pass it on, and is it a category the law treats separately.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The PDPA exception that does not stretch to a sale<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Singapore's PDPA has a business improvement exception that lets an organisation use personal data without consent for purposes such as improving its own products and services. On the text, it covers use within the organisation and sharing within a group of related companies. A sale to an unrelated buyer is not covered on the text; that is an inference from the wording, and it is the reading to take until the PDPC says otherwise. The legitimate interests exception exists too, but it needs an assessment of adverse effects before it can be relied on (PDPC Advisory Guidelines on Key Concepts, revised 29 April 2026).</p>
+        <p>The operational detail of consent, notification and Do Not Call lives in <a href="https://phoebefu6.github.io/learn-pdpa-dnc-with-phoebe/">PDPA and Do Not Call ↗</a>; who owns the decision lives in <a href="https://phoebefu6.github.io/learn-data-governance-with-phoebe/">Data Governance ↗</a>. Here the only question is what makes a record sellable.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The 2019 notice.</strong> When Maya's team pulled the privacy notices behind the motor book, the policies sold before Keelson's 2019 notice update said the data would be used "to administer your policy and claims". Nothing about statistics, nothing about anyone outside Keelson. Ines Carvalho, the CFO, asked whether a quick re-notification would fix it. Maya's answer: deemed consent by notification needs an adverse-effect assessment and a fair opt-out window first, and it only covers records going forward from a defensible process. Those records sit at gate 1 until that work is done. Constructed Keelson Mutual example.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers the k threshold</span>
+      <h2>Small cells point at people</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">The index never ships records. The 131,461 eligible records are counted into cells: 12 regions x 8 vehicle classes x 12 quarters = 1,152 cells. A cell with fewer than k records is suppressed, meaning it is left blank in the product. At k 10, 85 cells are suppressed and 1,067 of 1,152 are published (92.6%). The suppressed cells hold 584 records, and 130,304 records sit in published cells: a sellable share of 72.4% of the original 180,000.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 348" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn grid of 12 regions by 8 vehicle classes for one quarter. Most cells are light and published. A few cells are dark and suppressed, clustered in the small regions on the right and the rare vehicle classes at the bottom. One dark cell in the bottom right corner is outlined in teal: a rare vehicle in a small region in one quarter can point back to one claim. Beside the grid, the k rule: at k 10, 85 of 1,152 cells are suppressed, 1,067 are published, 92.6 percent, and 584 records sit in suppressed cells.">
+        <defs>
+          <filter id="a2bSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="47" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a2bHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a2bAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a2bH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .a2bL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .a2bS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .a2bA { font: 700 11px Inter, sans-serif; fill: #2E2A08; }
+          .a2bW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+          .a2bN { font: 400 12px Inter, sans-serif; fill: #5A5848; }
+        </style>
+
+        <text class="a2bH" x="30" y="26">ONE QUARTER OF THE GRID, k = 10</text>
+        <text class="a2bS" x="270" y="26">constructed · light = published, dark = suppressed</text>
+
+        <g filter="url(#a2bSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="140" y="64" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="172" y="64" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="204" y="64" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="236" y="64" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="268" y="64" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="300" y="64" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="332" y="64" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="364" y="64" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="396" y="64" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="428" y="64" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="460" y="64" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="492" y="64" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="140" y="90" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="172" y="90" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="204" y="90" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="236" y="90" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="268" y="90" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="300" y="90" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="332" y="90" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="364" y="90" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="396" y="90" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="428" y="90" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="460" y="90" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="492" y="90" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="140" y="116" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="172" y="116" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="204" y="116" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="236" y="116" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="268" y="116" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="300" y="116" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="332" y="116" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="364" y="116" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="396" y="116" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="428" y="116" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="460" y="116" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="492" y="116" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="140" y="142" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="172" y="142" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="204" y="142" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="236" y="142" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="268" y="142" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="300" y="142" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="332" y="142" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="364" y="142" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="396" y="142" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="428" y="142" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="460" y="142" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="492" y="142" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="140" y="168" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="172" y="168" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="204" y="168" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="236" y="168" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="268" y="168" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="300" y="168" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="332" y="168" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="364" y="168" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="396" y="168" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="428" y="168" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="460" y="168" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="492" y="168" width="28" height="22" rx="3" fill="#494412" stroke="#2E2A08"/>
+          <rect x="140" y="194" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="172" y="194" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="204" y="194" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="236" y="194" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="268" y="194" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="300" y="194" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="332" y="194" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="364" y="194" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="396" y="194" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="428" y="194" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="460" y="194" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="492" y="194" width="28" height="22" rx="3" fill="#494412" stroke="#2E2A08"/>
+          <rect x="140" y="220" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="172" y="220" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="204" y="220" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="236" y="220" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="268" y="220" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="300" y="220" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="332" y="220" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="364" y="220" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="396" y="220" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="428" y="220" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="460" y="220" width="28" height="22" rx="3" fill="#494412" stroke="#2E2A08"/>
+          <rect x="492" y="220" width="28" height="22" rx="3" fill="#494412" stroke="#2E2A08"/>
+          <rect x="140" y="246" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="172" y="246" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="204" y="246" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="236" y="246" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="268" y="246" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="300" y="246" width="28" height="22" rx="3" fill="#494412" stroke="#2E2A08"/>
+          <rect x="332" y="246" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="364" y="246" width="28" height="22" rx="3" fill="#494412" stroke="#2E2A08"/>
+          <rect x="396" y="246" width="28" height="22" rx="3" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="428" y="246" width="28" height="22" rx="3" fill="#494412" stroke="#2E2A08"/>
+          <rect x="460" y="246" width="28" height="22" rx="3" fill="#494412" stroke="#2E2A08"/>
+          <rect x="492" y="246" width="28" height="22" rx="3" fill="#494412" stroke="#0E5C66" stroke-width="4"/>
+          <path d="M522 257 L576 257" stroke="#0E5C66" stroke-width="2.4" marker-end="url(#a2bAr)"/>
+          <rect x="580" y="56" width="270" height="140" rx="12" transform="rotate(-0.5 715 126)" fill="#F8F6E6" stroke="#494412"/>
+          <rect x="580" y="216" width="270" height="84" rx="12" transform="rotate(0.5 715 258)" fill="#0E5C66" stroke="#0E5C66"/>
+          <rect x="140" y="296" width="16" height="12" rx="2" fill="#F8F6E6" stroke="#CFCCB8" stroke-width="1.4"/>
+          <rect x="250" y="296" width="16" height="12" rx="2" fill="#494412" stroke="#2E2A08"/>
+          <!-- doodle: a magnifying glass over the corner cell -->
+          <circle cx="548" cy="228" r="8" stroke="#0E5C66"/>
+          <path d="M554 234 L561 242" stroke="#0E5C66"/>
+        </g>
+
+        <text class="a2bA" x="140" y="54">12 regions</text>
+        <text class="a2bA" x="30" y="154">8 vehicle</text>
+        <text class="a2bA" x="30" y="170">classes</text>
+        <text class="a2bS" x="30" y="80">common</text>
+        <text class="a2bS" x="30" y="262">rare</text>
+        <text class="a2bS" x="140" y="286">big regions</text>
+        <text class="a2bS" x="520" y="286" text-anchor="end">small regions</text>
+        <text class="a2bS" x="162" y="307">published</text>
+        <text class="a2bS" x="272" y="307">suppressed (under k)</text>
+
+        <text class="a2bH" x="598" y="82">THE k RULE</text>
+        <text class="a2bL" x="598" y="106">A cell with fewer than k records</text>
+        <text class="a2bL" x="598" y="124">is suppressed, not published.</text>
+        <text class="a2bS" x="598" y="148">at k 10: 85 of 1,152 cells suppressed</text>
+        <text class="a2bS" x="598" y="166">1,067 published (92.6%)</text>
+        <text class="a2bS" x="598" y="184">584 records sit in suppressed cells</text>
+
+        <text class="a2bW" x="598" y="242">a rare vehicle, a small region,</text>
+        <text class="a2bW" x="598" y="262">one quarter: a cell this small</text>
+        <text class="a2bW" x="598" y="282">can point back to one claim</text>
+
+        <text class="a2bN" x="30" y="332">Illustrative grid; the widget computes all 1,152 cells (12 regions x 8 classes x 12 quarters).</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the dark cells cluster where the data is thin, which is also where it is most revealing</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Why a small cell is a re-identification risk<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>An index cell looks harmless: an average repair cost and a claim count for one region, one vehicle class, one quarter. But if that cell holds two claims, and one of them is a rare vehicle in a small region, a neighbour, a repairer or a fleet manager who knows about one accident can read the other's repair cost straight off the published number. The fewer records in a cell, the closer the cell is to describing a person.</p>
+        <p>A minimum cell size, written k, is the simplest guard: publish a cell only if at least k records fall into it. Keelson's base is k 10. The rule is easy to explain to a buyer, easy to test and easy to audit, which is why it is a common first control on any aggregated product.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>What the widget actually counts<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The engine spreads the eligible records across the 1,152 cells using fixed weights, set by a seeded draw so every run builds the same grid: big regions and common vehicle classes get many records, small regions and rare classes get few. Each cell's count is rounded down to whole records. Any cell under k is suppressed and its records are counted as lost.</p>
+        <p>Three numbers come out. <strong>Cells published</strong> is the share of the 1,152 cells that clear k. <strong>Records lost to suppressed cells</strong> is the count sitting in the blanks. <strong>Sellable share</strong> is records in published cells over the original 180,000: 130,304 / 180,000 = 72.4%. Notice the denominator: the sellable share is measured against everything Keelson holds, so it carries the four rights gates and the threshold together.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>Why pooled claims databases exist.</strong> Verisk describes its ClaimSearch service as a contributory "give to get" claims database holding over 1.8 billion US claims, about 95 percent of the US property and casualty market by its own account (Verisk, July 2025). A pool that size fills cells that a single insurer's book leaves thin. Keelson's index is one insurer's claims, so its small regions and rare vehicles will always sit near the threshold; that is a limit of the product, worth saying to buyers before they find it.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers cells against records, and what a threshold is not</span>
+      <h2>Cells fall fast, records fall slowly</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">Raise k and two shares move at very different speeds. From k 10 to k 50, cells published fall from 92.6% to 50.1%, a loss of 42.5 points, while records in published cells fall from 72.4% to 64.9%, only 7.5 points. The cells that vanish are the small regions and rare vehicles: few records, but exactly the detail a buyer pays for.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 356" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two hand-drawn lines over k from 5 to 50. Cells published, in teal, falls steeply: 99.0 percent at k 5, 92.6 at k 10, 86.4 at 15, 79.3 at 20, 74.1 at 25, 67.5 at 30, 57.9 at 40, 50.1 at 50. Records in published cells falls gently: 72.7, 72.4, 71.9, 71.2, 70.4, 69.3, 67.2, 64.9. From k 10 to 50 cells lose 42.5 points and records lose 7.5 points.">
+        <defs>
+          <filter id="a2cSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="53" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a2cHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a2cAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a2cH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .a2cL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .a2cS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .a2cA { font: 700 11px Inter, sans-serif; fill: #2E2A08; }
+          .a2cB { font: 800 11px Inter, sans-serif; fill: #083A40; }
+          .a2cN { font: 400 12px Inter, sans-serif; fill: #5A5848; }
+        </style>
+
+        <text class="a2cH" x="30" y="26">TWO SHARES AS k RISES</text>
+        <text class="a2cS" x="200" y="26">constructed · from the widget's k table</text>
+
+        <g filter="url(#a2cSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M110 280 L840 280" stroke="#CFCCB8"/>
+          <path d="M110 170 L840 170" stroke="#E8E6D8" stroke-width="1.4"/>
+          <path d="M120 160.1 L197.8 161.2 L275.6 163.0 L353.3 165.6 L431.1 168.5 L508.9 172.6 L664.4 180.3 L820 188.7" stroke="#494412" stroke-width="2.6"/>
+          <path d="M120 63.7 L197.8 87.1 L275.6 109.9 L353.3 135.9 L431.1 154.9 L508.9 179.2 L664.4 214.4 L820 243.0" stroke="#0E5C66" stroke-width="3.5"/>
+          <circle cx="197.8" cy="87.1" r="5" fill="#0E5C66" stroke="#0E5C66"/>
+          <circle cx="197.8" cy="161.2" r="5" fill="#494412" stroke="#494412"/>
+          <rect x="470" y="50" width="360" height="74" rx="10" transform="rotate(-0.4 650 87)" fill="#F8F6E6" stroke="#494412"/>
+          <!-- doodle: the slider knob sitting at k 10 -->
+          <circle cx="197.8" cy="280" r="6" fill="#FFFFFF"/>
+        </g>
+
+        <text class="a2cB" x="104" y="68" text-anchor="end">99.0%</text>
+        <text class="a2cS" x="104" y="164" text-anchor="end">72.7%</text>
+        <text class="a2cB" x="826" y="247">50.1%</text>
+        <text class="a2cS" x="826" y="192">64.9%</text>
+        <text class="a2cB" x="214" y="76">cells published</text>
+        <text class="a2cL" x="200" y="188">records in published cells</text>
+
+        <text class="a2cH" x="486" y="74">RAISE k FROM 10 TO 50</text>
+        <text class="a2cB" x="486" y="94">cells published: 92.6% to 50.1%, -42.5 points</text>
+        <text class="a2cL" x="486" y="113">records: 72.4% to 64.9%, -7.5 points</text>
+
+        <text class="a2cS" x="120" y="298" text-anchor="middle">5</text>
+        <text class="a2cS" x="197.8" y="300" text-anchor="middle">10</text>
+        <text class="a2cS" x="275.6" y="298" text-anchor="middle">15</text>
+        <text class="a2cS" x="353.3" y="298" text-anchor="middle">20</text>
+        <text class="a2cS" x="431.1" y="298" text-anchor="middle">25</text>
+        <text class="a2cS" x="508.9" y="298" text-anchor="middle">30</text>
+        <text class="a2cS" x="664.4" y="298" text-anchor="middle">40</text>
+        <text class="a2cS" x="820" y="298" text-anchor="middle">50</text>
+        <text class="a2cA" x="110" y="318">smallest cell published, k (records)</text>
+
+        <text class="a2cN" x="30" y="342">Cells vanish fast and records barely move, because the cells that go are the small ones.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - a stricter k costs a few records and a lot of detail</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Why the two shares part<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Records are piled unevenly. A big region with common vehicles fills a cell with hundreds of records; a small region with a rare class fills one with a handful. Raising k first removes cells that hold almost nothing, so the cell count drops quickly while the record count barely notices. Only at high k does the threshold start to bite into cells that held real volume.</p>
+        <p>The commercial point: a buyer does not pay for records, it pays for answers. A repair network in a small region wants that region's cells; a parts maker wants the rare vehicle classes. Those are the cells that go first. Analyst session 6 prices the index in proportion to cells published, which is how a stricter threshold reaches revenue: at the tightened rung, cells published 68.7% / 92.6% = 74.1% of the base price, so 32.0k behaves like 23.7k.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>What a threshold is not<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Pseudonymised is still personal.</strong> Replacing names and policy numbers with codes is pseudonymisation, and GDPR Article 4(5) keeps pseudonymised data inside the definition of personal data, because the codes can be linked back with the key.</p>
+        <p><strong>Anonymous is outside the law, and hard to reach.</strong> GDPR Recital 26 places anonymous information outside the Regulation, and the PDPC's Advisory Guidelines on Selected Topics, Chapter 3 on anonymisation (revised 23 May 2024), say anonymised data is not personal data. Both turn on whether a person can still be identified, by any means reasonably likely to be used.</p>
+        <p><strong>A cell threshold is one control, never anonymisation on its own.</strong> It does not stop someone comparing two quarters to isolate a change, joining the index to another source, or reading a rare cell that cleared k by one record. Whether a published product is anonymous depends on the whole set of controls and the context it is released into. The maths of k-anonymity and differential privacy belongs to Privacy Engineering (planned); here k is a product control with a known cost.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The detail the fleet buyer wanted.</strong> In the pricing workshop Sefa asked for k 5: a fleet operator had said the small regions were the reason to buy. Maya ran the widget in the room. k 5 publishes 99.0% of cells against 92.6% at k 10, and gains only 0.3 points of records (72.7% against 72.4%). The cells it adds are the thinnest, rarest ones, the very cells the threshold exists to hold back. The team kept k 10 and wrote the limit into the product sheet instead. Constructed Keelson Mutual example.</p>
+    </div>
+  </section>
+
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>Build the funnel, then set the threshold</h2>
+      <span class="tag demo">★ 22 min · everyone builds</span>
+    </div>
+    <p class="lede">The widget holds Keelson's constructed funnel and the 1,152-cell grid and recomputes everything in your browser when you move a slider. Four sliders set the share leaving at each gate; the fifth sets k. The inputs are invented, so the lesson is the shape: which gate costs the most, and how fast detail disappears as k rises.</p>
+
+    <div class="dmx-widget" data-mode="funnel"></div>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn map of the widget. Five sliders, the four gate shares and the smallest cell published, feed the funnel engine, which applies the four shares in order and then counts records into 1,152 cells. The engine prints bars of records left at each gate, three metrics (sellable share, cells published, records lost) and a k table from 5 to 50 with your k highlighted. The output box is filled in teal.">
+        <defs>
+          <filter id="a2dSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="59" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a2dHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a2dAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a2dH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .a2dL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .a2dS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .a2dB { font: 800 11px Inter, sans-serif; fill: #083A40; }
+          .a2dW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+        </style>
+
+        <text class="a2dH" x="30" y="28">WHAT THE WIDGET COMPUTES</text>
+
+        <g filter="url(#a2dSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="30" y="44" width="220" height="156" rx="10" transform="rotate(-0.6 140 122)" fill="#F8F6E6" stroke="#494412"/>
+          <path d="M254 122 L308 122" marker-end="url(#a2dAr)"/>
+          <rect x="314" y="82" width="210" height="80" rx="10" transform="rotate(0.4 419 122)" fill="url(#a2dHc)"/>
+          <path d="M528 122 L590 122" marker-end="url(#a2dAr)"/>
+          <rect x="596" y="44" width="254" height="156" rx="10" transform="rotate(-0.4 723 122)" fill="#0E5C66" stroke="#0E5C66"/>
+          <!-- doodle: a slider track with a knob -->
+          <path d="M44 184 L150 184" stroke="#494412"/>
+          <circle cx="78" cy="184" r="5" fill="#FFFFFF" stroke="#494412"/>
+        </g>
+
+        <rect x="326" y="96" width="186" height="52" rx="6" fill="#FFFFFF"/>
+
+        <text class="a2dL" x="44" y="66">five sliders</text>
+        <text class="a2dS" x="44" y="86">notice did not cover reuse</text>
+        <text class="a2dS" x="44" y="104">customers who objected</text>
+        <text class="a2dS" x="44" y="122">licence forbids onward use</text>
+        <text class="a2dS" x="44" y="140">injury claims held back</text>
+        <text class="a2dS" x="44" y="158">smallest cell published (k)</text>
+        <text class="a2dL" x="338" y="116">funnel engine</text>
+        <text class="a2dS" x="338" y="136">four shares, then 1,152 cells</text>
+        <text class="a2dW" x="612" y="72">bars: records left at each gate</text>
+        <text class="a2dW" x="612" y="98">three metrics: sellable share,</text>
+        <text class="a2dW" x="612" y="116">cells published, records lost</text>
+        <text class="a2dW" x="612" y="142">k table: k 5 to 50</text>
+        <text class="a2dW" x="612" y="166">your k highlighted</text>
+
+        <text class="a2dB" x="30" y="232">Move any slider and every bar, metric and table row is recomputed in your browser.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - four sliders shape the funnel, the fifth decides how much detail survives</figcaption>
+    </figure>
+
+    <div class="steps">
+      <div class="step">
+        <p><strong>Step 1 · Read the base funnel.</strong> Leave every slider where the page loads it. Read the bars top to bottom, then the three headline metrics.</p>
+        <div class="prompt-box good"><span class="label">★ Step 1 · what the widget prints</span>180,000 -&gt; 165,600 -&gt; 160,632 -&gt; 141,356 -&gt; 131,461 -&gt; 130,304 in published cells
+72.4%  of records end up in a published cell
+1,067 of 1,152  cells published (92.6%)
+584  records lost to suppressed cells</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 2 · Check the licence stage by hand.</strong> It is the biggest single loss. Take the records that reached gate 3 and apply 12%.</p>
+        <div class="prompt-box good"><span class="label">★ Step 2 · the licence gate by hand</span>160,632 x 12% = 19,275.84, rounded to 19,276
+160,632 - 19,276 = 141,356   (the widget's value)
+if you had applied 12% to 180,000: 21,600   (wrong base)</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 3 · Move k to 25.</strong> Drag "Smallest cell you will publish (k)" to 25 records. Find the highlighted row in the k table and write both shares.</p>
+        <div class="prompt-box good"><span class="label">★ Step 3 · the k 25 row</span>k 25 · cells published 74.1% · records in published cells 70.4%
+against k 10:  92.6% / 72.4%
+what the lost cells are: ________________________________</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 4 · Tighten the notice gate too.</strong> Keep k at 25 and drag "Notice did not cover reuse" to 20%, as if a legal review found far more of the old book outside the notice. Read the bars and metrics again. This is the tightened rung that Analyst session 6 puts on the P&amp;L desk.</p>
+        <div class="prompt-box good"><span class="label">★ Step 4 · the tightened funnel</span>180,000 -&gt; 144,000 -&gt; 139,680 -&gt; 122,918 -&gt; 114,314 -&gt; 108,747
+1,152 cells, 791 published (68.7%)
+sellable share 60.4%   (base 72.4%)</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 5 · Your own funnel.</strong> Pick one dataset you would like to sell. List the checks it must pass in the order a reviewer would ask them, estimate the share leaving at each, compound them, then choose a k and say what it costs in detail. Your numbers will differ.</p>
+        <div class="prompt-box good"><span class="label">★ Step 5 · your funnel worksheet</span>dataset: ______________________   records: ________
+gate                       share out   records left
+1 ______________________   ____%       ________
+2 ______________________   ____%       ________
+3 ______________________   ____%       ________
+4 ______________________   ____%       ________
+cells: ____ x ____ x ____ = ______    k = ____    cells published: ____%
+sellable share = records in published cells / records = ____%</div>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>Keep the sellable share.</strong> It travels: Analyst session 3 costs the product built on it, and Analyst session 6 carries cells published straight into the revenue line. Write down both the base (72.4%) and the tightened (60.4%) figures.</p>
+    </div>
+  </section>
+
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before Analyst session 3</h2>
+      <span class="tag exercise">30 min</span>
+    </div>
+    <ol>
+      <li><strong>Read one notice.</strong> Find the privacy notice your chosen dataset was collected under and copy the sentence that states its purpose. Would an outside product be compatible with it?</li>
+      <li><strong>Find the licence gate.</strong> List every field in the dataset that arrived from someone else, and the term that governs onward use for each.</li>
+      <li><strong>Draw your smallest cell.</strong> Pick the finest grid a buyer would want, and name the cell most likely to fall under a threshold of 10. What could someone learn from it if it were published?</li>
+      <li><strong>Write the sentence.</strong> In two lines, explain to a colleague why dropping small cells does not make the product anonymous, and what else would have to be true.</li>
+    </ol>
+  </section>
+
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and Analyst session 2 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">1 · Keelson's four gates remove 8%, 3%, 12% and 7%. Why do 131,461 records remain rather than 126,000?</p>
+      <button class="qopt" type="button">A · The widget rounds every stage up</button>
+      <button class="qopt" type="button">B · The health data gate does not count toward the funnel</button>
+      <button class="qopt" type="button">C · Each share applies to the records still left after the earlier gates, so the shares compound instead of adding</button>
+      <button class="qopt" type="button">D · The k threshold adds records back</button>
+      <p class="qwhy">The licence gate takes 12% of 160,632, not of 180,000. Adding the four shares to 30% overstates the loss; compounding them is the right arithmetic, and the order decides how much each gate is credited with.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">2 · Raising k from 10 to 50 cuts cells published by 42.5 points but records in published cells by only 7.5. Why?</p>
+      <button class="qopt" type="button">A · The cells that fall under a higher k are the small ones, holding few records each</button>
+      <button class="qopt" type="button">B · A higher k adds new records to the big cells</button>
+      <button class="qopt" type="button">C · Records are spread evenly, so the two shares should move together</button>
+      <button class="qopt" type="button">D · The rights gates are recomputed when k changes</button>
+      <p class="qwhy">Small regions and rare vehicles hold a handful of records each. Dropping them costs little volume and a lot of detail, which is the detail buyers want.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="3">
+      <p class="qtext">3 · A colleague says the index is anonymous because every published cell holds at least 10 records. What is the accurate reply?</p>
+      <button class="qopt" type="button">A · Correct; a cell threshold of 10 is the legal test for anonymisation</button>
+      <button class="qopt" type="button">B · Correct, as long as the records were pseudonymised first</button>
+      <button class="qopt" type="button">C · Only if k is at least 50</button>
+      <button class="qopt" type="button">D · A cell threshold is one control; whether the output is anonymous depends on all the controls and the context, and pseudonymised data is still personal data</button>
+      <p class="qwhy">GDPR Article 4(5) keeps pseudonymised data personal, and Recital 26 and PDPC Chapter 3 turn on whether anyone can still be identified. No single k settles that.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Purpose compatibility, objection, health data and pseudonymisation</span><span class="note">GDPR (Regulation (EU) 2016/679) Articles 6(4), 21, 9(1) and 4(5), and Recital 26, read at source</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Consent, deemed consent by notification and the business improvement exception</span><span class="note">Singapore PDPA sections 13 and 15A; PDPC Advisory Guidelines on Key Concepts (revised 29 April 2026); the reading that a sale to an unrelated buyer is not covered is an inference from the text</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Anonymised data is not personal data</span><span class="note">PDPC Advisory Guidelines on Selected Topics, Chapter 3 Anonymisation (revised 23 May 2024)</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Pooled claims databases</span><span class="note">Verisk ClaimSearch, figures as stated by Verisk (July 2025)</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Keelson's funnel, grid and k curve</span><span class="note">Constructed and labelled; computed by the engine in your browser and checked against an independent Python run</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Every fact on this page, and its verification tier, is recorded in the course's source map.</p>
+  </section>
+
+  <section class="cheat" id="cheatsheet">
+    <h3>Analyst session 2 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Four gates, in order</b><span>Notice, objection, licence, health data. State the order every time.</span></div>
+      <div class="cheat-item"><b>Shares compound</b><span>Each share applies to what is left. Never add them.</span></div>
+      <div class="cheat-item"><b>Inbound binds outbound</b><span>You cannot sell what you were only licensed to use.</span></div>
+      <div class="cheat-item"><b>The k rule</b><span>Suppress any cell under k records. Keelson base: k 10, 92.6% of cells.</span></div>
+      <div class="cheat-item"><b>Cells fall faster than records</b><span>k 10 to 50: -42.5 points of cells, -7.5 of records. The lost cells are the detail.</span></div>
+      <div class="cheat-item"><b>A threshold is one control</b><span>Never call the output anonymous because small cells were dropped.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>72.4% of the records may go into a product. Analyst session 3 asks what that product costs: a shared platform, four ways to package the index, the cost to serve one more customer, and why the cost per customer keeps falling as the customer count grows.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Analyst session 2 of 6 · learn-data-monetisation-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="a1-three-prices-for-one-dataset.html">← Prev: Three prices for one dataset</a> &nbsp;·&nbsp; <a href="a3-package-and-cost-to-serve.html">Next: Package and cost to serve →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/dm-live.js?v=1"></script>
+<script src="../assets/dm-bench.js?v=1"></script>
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

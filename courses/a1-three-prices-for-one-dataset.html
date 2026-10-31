@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Analyst session 1 of 6. Three prices for one dataset: a data asset inventory, then the cost, market and economic lens computed on five Keelson Mutual assets, why they rank the assets differently, and why none of it is on the balance sheet. Constructed case, computed in your browser.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="Three prices for one dataset - learn data monetisation with phoebe">
+<meta property="og:description" content="Analyst session 1 of 6. Cost, market and economic value of a dataset, computed live, and why they disagree.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-data-monetisation-with-phoebe/courses/a1-three-prices-for-one-dataset.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-data-monetisation-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Three prices for one dataset - learn data monetisation with phoebe">
+<meta name="twitter:description" content="Analyst session 1 of 6. Three value lenses on one dataset, computed live.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-data-monetisation-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Analyst session 1 · Three prices for one dataset - learn data monetisation with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-data-monetisation-with-phoebe</a> / Analyst session 1 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Data Monetisation with Phoebe · Analyst session 1 of 6</div>
+    <h1>Three prices for <span class="accent">one dataset</span></h1>
+    <p class="sub">Ask three people what a dataset is worth and you get three answers: what it cost to build, what someone outside would pay for it, and what it earns when the business uses it. All three are legitimate, they rarely agree, and the gap between them is where a data monetisation conversation goes wrong. Tonight: an inventory of what Keelson Mutual holds, the three lenses computed on five of its assets, why they rank the assets differently, and the one fact about accounting every data leader gets asked. Keelson is constructed; the arithmetic runs in your browser.</p>
+    <div class="chip-row">
+      <span class="chip level">🟢 Analyst</span>
+      <span class="chip audience">Analysts and finance partners who build the numbers behind a data product</span>
+      <span class="chip audience">Hands-on in the browser</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-18 · The inventory, three lenses, why they disagree</span>
+      <span class="a3" style="flex:5">18-40 · Build-along: price five Keelson assets</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we start</h2>
+    </div>
+    <p class="lede">The Analyst track is for the people who build the numbers the Leader track defends. Six sessions: tonight, what a dataset is worth; then how much of it may be sold; what it costs to package and serve; how to price it; who should sell it; and the P&amp;L desk, where every number meets. The running case is Keelson Mutual, a constructed mid-size motor and home insurer. Its head of partnerships, Sefa Adjei, wants to sell a quarterly repair cost index built from Keelson's motor claims. Before anyone prices that index, finance wants to know what the underlying data is worth. Every Keelson input is invented, in thousands of currency units.</p>
+
+    <div class="legend">
+      <span class="pill">🎫 Clear all three quiz questions to stamp your passport</span>
+      <span class="pill">Live = presented in the 45 minutes</span>
+      <span class="pill">Self-study = the full depth, after class</span>
+      <span class="pill">★ Build-along = everyone builds it</span>
+    </div>
+
+    <div class="callout win">
+      <p><strong>★ What you walk out with tonight.</strong> A data asset inventory for your own organisation with a rights column, three values for each asset with the arithmetic shown, a sentence on which lens answers which question, and the honest answer when someone asks why the data is not on the balance sheet. Analyst session 2 takes the asset with the highest market value and asks how much of it may actually be sold.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers the data asset inventory</span>
+      <h2>Know what you hold, and who else has a say</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">A data asset inventory is a list of datasets with the facts needed to value them: what it costs to collect and keep, how long it has been held, what the business uses it for, and who else has rights over it. The last column is the one most inventories leave out, and it decides whether the asset has a market at all.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Five hand-drawn asset cards from Keelson's inventory. Motor claims history, 14 lawful buyers. Home claims and weather perils, 6 lawful buyers. Telematics pilot, 3 lawful buyers. Repairer invoice lines, 0 buyers because a supplier contract bars onward use, drawn with a red flag. Claims call transcripts, 0 buyers because there is no consent for external use, also red. The motor claims card is filled in teal as the asset the index is built on.">
+        <defs>
+          <filter id="a1aSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="11" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a1aHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a1aAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a1aH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .a1aL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .a1aS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .a1aV { font: 800 16px Inter, sans-serif; fill: #2E2A08; }
+          .a1aR { font: 700 11px Inter, sans-serif; fill: #991B1B; }
+          .a1aW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+          .a1aX { font: 800 16px Inter, sans-serif; fill: #FFFFFF; }
+          .a1aN { font: 400 12px Inter, sans-serif; fill: #5A5848; }
+        </style>
+
+        <text class="a1aH" x="30" y="28">KEELSON'S INVENTORY, FIVE ASSETS</text>
+        <text class="a1aS" x="290" y="28">constructed · the rights column decides who may buy</text>
+
+        <g filter="url(#a1aSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="30" y="50" width="250" height="100" rx="12" transform="rotate(-0.8 155 100)" fill="#0E5C66" stroke="#0E5C66"/>
+          <rect x="310" y="50" width="250" height="100" rx="12" transform="rotate(0.6 435 100)" fill="#F8F6E6" stroke="#494412"/>
+          <rect x="590" y="50" width="260" height="100" rx="12" transform="rotate(-0.6 720 100)" fill="#FFFFFF"/>
+          <rect x="120" y="176" width="300" height="100" rx="12" transform="rotate(0.6 270 226)" fill="#FEF2F2" stroke="#FCA5A5"/>
+          <rect x="460" y="176" width="300" height="100" rx="12" transform="rotate(-0.6 610 226)" fill="#FEF2F2" stroke="#FCA5A5"/>
+          <!-- doodle: a ledger page -->
+          <path d="M790 186 L830 186 L830 236 L790 236 Z M798 198 L822 198 M798 210 L822 210 M798 222 L816 222" stroke="#494412"/>
+        </g>
+
+        <text class="a1aW" x="48" y="76">MOTOR CLAIMS HISTORY</text>
+        <text class="a1aW" x="48" y="98">310.0k a year, held 8 years</text>
+        <text class="a1aX" x="48" y="126">14 lawful buyers</text>
+
+        <text class="a1aH" x="328" y="76">HOME CLAIMS AND PERILS</text>
+        <text class="a1aL" x="328" y="98">140.0k a year, held 6 years</text>
+        <text class="a1aV" x="328" y="126">6 lawful buyers</text>
+
+        <text class="a1aH" x="608" y="76">TELEMATICS PILOT</text>
+        <text class="a1aL" x="608" y="98">220.0k a year, held 2 years</text>
+        <text class="a1aV" x="608" y="126">3 lawful buyers</text>
+
+        <text class="a1aH" x="138" y="202">REPAIRER INVOICE LINES</text>
+        <text class="a1aL" x="138" y="224">90.0k a year, held 5 years</text>
+        <text class="a1aR" x="138" y="250">0 buyers: supplier contract bars onward use</text>
+
+        <text class="a1aH" x="478" y="202">CLAIMS CALL TRANSCRIPTS</text>
+        <text class="a1aL" x="478" y="224">60.0k a year, held 4 years</text>
+        <text class="a1aR" x="478" y="250">0 buyers: no consent for external use</text>
+
+        <text class="a1aN" x="30" y="304">Two of five assets have no lawful buyer at all. The inventory says so before anyone prices them.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the red cards are not worthless; they are worth something only inside Keelson</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>The six columns every inventory row needs<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>What it costs to collect and keep, per year,</strong> and <strong>how long it has been held.</strong> Together they give the cost lens.</p>
+        <p><strong>Who may lawfully buy it, and at what yearly fee.</strong> Together they give the market lens. "May lawfully" carries the weight: the answer depends on the privacy notice the data was collected under, the contracts it arrived with and the law. Leader session 2 and Analyst session 2 go deep on that.</p>
+        <p><strong>What it earns in use per year, what it costs to run, and for how many more years it stays useful.</strong> Together they give the economic lens.</p>
+        <p>Keelson's five rows are in the build-along widget. Your own inventory will be longer and rougher; a row with a guess in it is still better than a dataset nobody listed.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why the rights column comes first<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>A dataset can arrive with somebody else's terms attached. Keelson's repairer invoice lines come from partner garages under a supply contract that limits their use to settling Keelson's own claims: the right to use them is Keelson's, the right to pass them on is not. The claims call transcripts were recorded under a notice that mentioned quality and training, nothing about anyone outside Keelson. Neither has a market until those terms change, and changing them has its own cost. An inventory that lists those two assets next to a market price invites a decision that cannot be carried out.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The industry already pools claims data.</strong> Verisk describes its ClaimSearch service as a contributory "give to get" claims database holding over 1.8 billion US claims, about 95 percent of the US property and casualty market by its own account (Verisk, July 2025). Insurers contribute their claims and get matches back. That is data sold and shared at scale in exactly Keelson's industry, and it works because contribution terms were settled before any data moved.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers the cost, market and economic lenses</span>
+      <h2>Three lenses, three questions</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">Each lens answers a different question, which is why none of them is wrong. The cost lens asks what it would take to have this data again. The market lens asks what buyers outside would pay. The economic lens asks what it earns when the business uses it. Singapore's Trusted Data Sharing Framework (IMDA and PDPC, 2019) names the same three approaches as cost, market and income.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One hand-drawn dataset, motor claims history, with three price tags hanging from it. Cost lens: 310.0 thousand a year times 8 years equals 2,480.0 thousand. Market lens: 14 lawful buyers times 45.0 thousand a year equals 630.0 thousand. Economic lens: 520.0 thousand benefit minus 60.0 thousand run cost, times 5 years, equals 2,300.0 thousand. The market tag is filled in teal as the lens selling depends on.">
+        <defs>
+          <filter id="a1bSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="17" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a1bHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a1bAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a1bH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .a1bL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .a1bS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .a1bV { font: 800 16px Inter, sans-serif; fill: #2E2A08; }
+          .a1bW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+          .a1bX { font: 800 16px Inter, sans-serif; fill: #FFFFFF; }
+          .a1bN { font: 400 12px Inter, sans-serif; fill: #5A5848; }
+        </style>
+
+        <text class="a1bH" x="30" y="28">MOTOR CLAIMS HISTORY, THREE WAYS</text>
+
+        <g filter="url(#a1bSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="300" y="44" width="280" height="56" rx="12" transform="rotate(-0.5 440 72)" fill="url(#a1bHc)"/>
+          <path d="M360 104 L160 140" marker-end="url(#a1bAr)"/>
+          <path d="M440 104 L440 140" marker-end="url(#a1bAr)"/>
+          <path d="M520 104 L720 140" marker-end="url(#a1bAr)"/>
+          <rect x="30" y="146" width="260" height="104" rx="12" transform="rotate(0.8 160 198)" fill="#F8F6E6" stroke="#494412"/>
+          <rect x="310" y="146" width="260" height="104" rx="12" transform="rotate(-0.6 440 198)" fill="#0E5C66" stroke="#0E5C66"/>
+          <rect x="590" y="146" width="260" height="104" rx="12" transform="rotate(0.6 720 198)" fill="#FFFFFF"/>
+          <!-- doodle: a price tag hole on the market tag -->
+          <circle cx="548" cy="166" r="6" stroke="#FFFFFF"/>
+        </g>
+
+        <rect x="312" y="56" width="256" height="32" rx="6" fill="#FFFFFF"/>
+        <text class="a1bH" x="326" y="77">Motor claims history, 8 years</text>
+
+        <text class="a1bH" x="48" y="172">COST LENS</text>
+        <text class="a1bS" x="48" y="192">what it took to have it</text>
+        <text class="a1bL" x="48" y="212">310.0k x 8 years</text>
+        <text class="a1bV" x="48" y="238">2480.0k</text>
+
+        <text class="a1bW" x="328" y="172">MARKET LENS</text>
+        <text class="a1bW" x="328" y="192">what buyers would pay</text>
+        <text class="a1bW" x="328" y="212">14 buyers x 45.0k a year</text>
+        <text class="a1bX" x="328" y="238">630.0k</text>
+
+        <text class="a1bH" x="608" y="172">ECONOMIC LENS</text>
+        <text class="a1bS" x="608" y="192">what it earns in use</text>
+        <text class="a1bL" x="608" y="212">(520.0k - 60.0k) x 5 years</text>
+        <text class="a1bV" x="608" y="238">2300.0k</text>
+
+        <text class="a1bN" x="30" y="282">Teaching versions of each lens, undiscounted. All three are real questions; they are not the same question.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - one dataset, three honest prices, a factor of four apart</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The three formulas on the widget<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Cost lens = yearly cost to collect and keep x years held.</strong> A floor for what it would take to rebuild the asset, and the number auditors and insurers reach for. It says nothing about whether anyone wants the data.</p>
+        <p><strong>Market lens = lawful buyers x yearly licence fee.</strong> One year of licence income at a market price. It is zero for an asset nobody may buy, however useful.</p>
+        <p><strong>Economic lens = (yearly benefit in use - yearly run cost) x years of useful life.</strong> What the asset contributes to the business. Here it is undiscounted on purpose; Business Cases &amp; ROI shows how to discount a stream of benefits, <a href="https://phoebefu6.github.io/learn-business-cases-roi-with-phoebe/courses/a2-time-value-and-the-hurdle-rate.html">Analyst session 2 ↗</a>.</p>
+        <p>These are teaching versions, kept simple so the arithmetic fits on one line. A real valuation adds discounting, the share of a benefit truly due to the data, and the decay of old records.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Laney's six models, the fuller set<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Doug Laney's <em>Infonomics</em> sets out six ways to value information. In his own talks (TDWI keynote 2020; US Department of Energy talk, July 2020) he groups them as three foundational measures, the intrinsic, business and performance value of information (IVI, BVI, PVI), and three financial measures, the cost, market and economic value of information (CVI, MVI, EVI). His slides pose each as a question, for example how correct, complete and scarce the data is. The three lenses on tonight's widget borrow the names of the financial three; they are simplified teaching formulas, not Laney's published ones, which sit in the book and in paywalled Gartner research.</p>
+        <p>The foundational measures matter even when you never sell: an asset scoring poorly on correctness or completeness will disappoint any buyer, and Analyst session 2 shows how much of an asset survives the rights checks before quality is even asked.</p>
+      </div>
+    </details>
+  </section>
+
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers why the lenses disagree</span>
+      <h2>Same five assets, three rankings</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">Put all five assets through all three lenses and rank them. Only the motor claims history comes first every time. The repairer invoice lines are second most valuable in use (1200.0k) and last on the market (0.0k). The telematics pilot cost 440.0k to build and earns 15.0k in use. A team that picks the asset to sell by its cost picks wrong; a team that picks by its use value can pick something it may not sell.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn slope chart of ranks across three columns, cost, market and economic. Motor claims history is rank 1 in all three. Home claims goes 2, 2, 3. Repairer invoice lines goes 3, then 5 on the market, then 2 in use, drawn in teal as the asset that crosses the most. Telematics pilot goes 4, 3, 5. Call transcripts goes 5, 4, 4.">
+        <defs>
+          <filter id="a1cSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="23" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a1cHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a1cAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a1cH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .a1cL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .a1cS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .a1cA { font: 700 11px Inter, sans-serif; fill: #2E2A08; }
+          .a1cB { font: 800 12px Inter, sans-serif; fill: #083A40; }
+          .a1cN { font: 400 12px Inter, sans-serif; fill: #5A5848; }
+        </style>
+
+        <text class="a1cH" x="30" y="28">RANK BY LENS, 1 = MOST VALUABLE</text>
+
+        <g filter="url(#a1cSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M260 60 L260 280 M480 60 L480 280 M700 60 L700 280" stroke="#CFCCB8"/>
+          <path d="M260 76 L480 76 L700 76" stroke="#494412"/>
+          <path d="M260 124 L480 124 L700 172" stroke="#494412"/>
+          <path d="M260 172 L480 268 L700 124" stroke="#0E5C66" stroke-width="3.5"/>
+          <path d="M260 220 L480 172 L700 268" stroke="#6B641E"/>
+          <path d="M260 268 L480 220 L700 220" stroke="#6B641E"/>
+          <circle cx="260" cy="172" r="5" fill="#0E5C66" stroke="#0E5C66"/>
+          <circle cx="480" cy="268" r="5" fill="#0E5C66" stroke="#0E5C66"/>
+          <circle cx="700" cy="124" r="5" fill="#0E5C66" stroke="#0E5C66"/>
+        </g>
+
+        <text class="a1cA" x="236" y="52">cost</text>
+        <text class="a1cA" x="450" y="52">market</text>
+        <text class="a1cA" x="664" y="52">economic</text>
+
+        <text class="a1cL" x="40" y="80">1 · motor claims</text>
+        <text class="a1cL" x="40" y="128">2 · home claims</text>
+        <text class="a1cB" x="40" y="176">3 · invoice lines</text>
+        <text class="a1cL" x="40" y="224">4 · telematics</text>
+        <text class="a1cL" x="40" y="272">5 · transcripts</text>
+
+        <text class="a1cS" x="716" y="80">motor 1</text>
+        <text class="a1cB" x="716" y="128">invoice lines 2</text>
+        <text class="a1cS" x="716" y="176">home 3</text>
+        <text class="a1cS" x="716" y="224">transcripts 4</text>
+        <text class="a1cS" x="716" y="272">telematics 5</text>
+
+        <text class="a1cN" x="30" y="312">The teal line falls to last on the market because a contract forbids onward use, then climbs to second in use.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - every crossing line is a decision that changes with the lens you chose</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Which lens answers which question<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>"Should we sell it?"</strong> starts with the market lens: no lawful buyer, no sale, whatever the other two say. Then compare it with the economic lens: if using the data earns more than selling it, selling a copy is only worth it when it does not undercut that use.</p>
+        <p><strong>"Should we keep collecting it?"</strong> compares the cost lens with the economic lens. The telematics pilot costs 220.0k a year and earns 40.0k in use: the market lens is a distraction there.</p>
+        <p><strong>"What do we tell the board it is worth?"</strong> Give all three, with the arithmetic, and say which question each answers. A single number invites the wrong decision.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why none of this is on the balance sheet<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Under IFRS, IAS 38 paragraph 63 says internally generated brands, mastheads, publishing titles, customer lists "and items similar in substance" shall not be recognised as intangible assets, and paragraph 57 sets six conditions before development spending can become one. The standard never mentions data or databases. Treating a home-grown dataset like a customer list is an inference by analogy, and it is the reading most practitioners take, but say "by analogy" when you say it. The IASB has a research project on intangibles under way (reported). In practice: the value lenses are management numbers for decisions, not accounting values, and a CFO will expect you to know the difference.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The asset that was sold in the meeting.</strong> In the first index workshop, Sefa proposed adding the repairer invoice lines to the index, "our richest data on repair cost". Maya Okafor, the CDO, pulled up the supply contract: use limited to settling Keelson's own claims. The invoice lines stayed inside, where the economic lens says they earn 1200.0k, and the index was built on the motor claims history alone. Constructed Keelson Mutual example.</p>
+    </div>
+  </section>
+
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>Price five Keelson assets three ways</h2>
+      <span class="tag demo">★ 22 min · everyone builds</span>
+    </div>
+    <p class="lede">The widget holds Keelson's five constructed assets and computes all three lenses and their ranks in your browser. Pick a lens to sort by, tick the toggle that ignores licences and consent, and watch the market column change. The inputs are invented, so the lesson is the disagreement, not the totals.</p>
+
+    <div class="dmx-widget" data-mode="lenses"></div>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn map of the widget. Three lens buttons choose the sort. A toggle pretends every asset may be sold. Both feed the five asset rows. The widget prints bars for the chosen lens and a table with all three values and the three ranks. Rows that cannot be sold are flagged red. The table box is filled in teal.">
+        <defs>
+          <filter id="a1dSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="31" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a1dHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a1dAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a1dH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .a1dL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .a1dS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .a1dB { font: 800 11px Inter, sans-serif; fill: #083A40; }
+          .a1dW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+        </style>
+
+        <text class="a1dH" x="30" y="28">WHAT THE WIDGET COMPUTES</text>
+
+        <g filter="url(#a1dSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="30" y="48" width="200" height="60" rx="10" transform="rotate(-0.8 130 78)" fill="#F8F6E6" stroke="#494412"/>
+          <rect x="30" y="128" width="200" height="60" rx="10" transform="rotate(0.8 130 158)" fill="#FEF2F2" stroke="#FCA5A5"/>
+          <path d="M234 78 L300 110 M234 158 L300 126" marker-end="url(#a1dAr)"/>
+          <rect x="304" y="78" width="230" height="80" rx="10" transform="rotate(-0.4 419 118)" fill="url(#a1dHc)"/>
+          <path d="M538 118 L600 118" marker-end="url(#a1dAr)"/>
+          <rect x="606" y="56" width="244" height="124" rx="10" transform="rotate(0.4 728 118)" fill="#0E5C66" stroke="#0E5C66"/>
+        </g>
+
+        <rect x="316" y="92" width="206" height="52" rx="6" fill="#FFFFFF"/>
+
+        <text class="a1dL" x="44" y="74">three lens buttons</text>
+        <text class="a1dS" x="44" y="92">cost, market, economic</text>
+        <text class="a1dL" x="44" y="154">the pretend toggle</text>
+        <text class="a1dS" x="44" y="172">ignore licences and consent</text>
+        <text class="a1dL" x="328" y="112">five constructed assets</text>
+        <text class="a1dS" x="328" y="130">the inventory from Part 1</text>
+        <text class="a1dW" x="622" y="84">bars for the chosen lens</text>
+        <text class="a1dW" x="622" y="108">all three values</text>
+        <text class="a1dW" x="622" y="132">three ranks per asset</text>
+        <text class="a1dW" x="622" y="156">red rows: no lawful buyer</text>
+
+        <text class="a1dB" x="30" y="226">The pretend toggle shows what a market value looks like when nobody asks whose data it is.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the toggle changes only the market column, and that is enough to reorder it</figcaption>
+    </figure>
+
+    <div class="steps">
+      <div class="step">
+        <p><strong>Step 1 · Read the economic lens.</strong> It is selected when the page loads. Write down the five values and the order.</p>
+        <div class="prompt-box good"><span class="label">★ Step 1 · what the widget prints</span>Motor claims history 2300.0k · Repairer invoice lines 1200.0k · Home claims and weather perils 775.0k
+Claims call transcripts 300.0k · Telematics pilot 15.0k</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 2 · Check one value by hand.</strong> The home claims asset earns 180.0k a year in use, costs 25.0k a year to run and stays useful for 5 more years.</p>
+        <div class="prompt-box good"><span class="label">★ Step 2 · the economic lens by hand</span>(180.0k - 25.0k) x 5 years = 775.0k   (the widget's value)
+cost lens:   140.0k x 6 years = 840.0k
+market lens: 6 buyers x 30.0k = 180.0k</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 3 · Switch to the market lens.</strong> Write the order. Name the two assets at 0.0k and the reason the table gives for each.</p>
+        <div class="prompt-box good"><span class="label">★ Step 3 · the market lens</span>Motor 630.0k · Home 180.0k · Telematics 60.0k · Transcripts 0.0k · Invoice lines 0.0k
+why the two are zero: ____________________________________</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 4 · Pretend every asset may be sold.</strong> Tick the toggle. The two flagged assets get six notional buyers at 30.0k each. Write their new market value, then untick it and write the sentence you would say to a colleague who quotes that number.</p>
+        <div class="prompt-box good"><span class="label">★ Step 4 · the value that is not there</span>invoice lines, pretending:  180.0k
+transcripts, pretending:    180.0k
+what I would say: _______________________________________</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 5 · Your own inventory.</strong> List five datasets your organisation holds. For each, fill the six columns from Part 1, roughly, and mark the rights column honestly. Your numbers will differ.</p>
+        <div class="prompt-box good"><span class="label">★ Step 5 · your inventory</span>asset           cost/yr  years  lawful buyers  fee/yr  benefit/yr  run/yr  life   rights note
+____________    ____     ____   ____           ____    ____        ____    ____   __________
+____________    ____     ____   ____           ____    ____        ____    ____   __________
+____________    ____     ____   ____           ____    ____        ____    ____   __________</div>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>Keep the rights column.</strong> Analyst session 2 takes the motor claims history, the asset with the highest market value, and works out how much of it may actually be sold once consent, objections, licences and small cells are counted.</p>
+    </div>
+  </section>
+
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before Analyst session 2</h2>
+      <span class="tag exercise">30 min</span>
+    </div>
+    <ol>
+      <li><strong>Find one inbound contract.</strong> For a dataset you would like to sell, find the contract or notice it arrived under and copy the sentence that limits its use.</li>
+      <li><strong>Price one asset three ways.</strong> Use the three teaching formulas on one dataset you know. Write which lens you would show a board, and why.</li>
+      <li><strong>Find the crossing.</strong> Name one dataset whose cost lens is high and economic lens low. What would it take to stop collecting it?</li>
+      <li><strong>Ask finance one question.</strong> Does your company carry any data on its balance sheet, for example a purchased database? Write what they say.</li>
+    </ol>
+  </section>
+
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and Analyst session 1 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · Keelson's repairer invoice lines are worth 1200.0k in use and 0.0k on the market. Why the gap?</p>
+      <button class="qopt" type="button">A · The economic lens is wrong for invoice data</button>
+      <button class="qopt" type="button">B · A supplier contract limits their use to Keelson's own claims, so there is no lawful buyer</button>
+      <button class="qopt" type="button">C · Nobody would want repair cost data</button>
+      <button class="qopt" type="button">D · The market lens always comes out lower</button>
+      <p class="qwhy">The data is valuable; the right to pass it on is not Keelson's. The market lens counts lawful buyers only.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="3">
+      <p class="qtext">2 · The telematics pilot cost 440.0k on the cost lens and earns 15.0k on the economic lens. Which question does that gap answer?</p>
+      <button class="qopt" type="button">A · What price to sell it at</button>
+      <button class="qopt" type="button">B · Whether it can be sold at all</button>
+      <button class="qopt" type="button">C · Its value on the balance sheet</button>
+      <button class="qopt" type="button">D · Whether it is worth continuing to collect it</button>
+      <p class="qwhy">Cost against use value is a keep-or-stop question. The market lens answers a different one.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · A board member asks why Keelson's data is not on the balance sheet. What is the accurate answer?</p>
+      <button class="qopt" type="button">A · IAS 38 does not let internally generated items like customer lists be recognised, and data is treated the same way by analogy; the standard never mentions data</button>
+      <button class="qopt" type="button">B · IAS 38 paragraph 63 bans databases by name</button>
+      <button class="qopt" type="button">C · Because data has no value</button>
+      <button class="qopt" type="button">D · Because nobody has valued it yet</button>
+      <p class="qwhy">Paragraph 63 names brands, mastheads, publishing titles and customer lists. Applying it to data is a widely taken inference, and saying "by analogy" is the honest version.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Cost, market and income (economic) approaches to valuing data</span><span class="note">IMDA and PDPC, Trusted Data Sharing Framework (28 June 2019), companion guide; read via the factsheet and announcement</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">The data asset inventory and valuation methods</span><span class="note">CDAIO module 4, data monetisation strategy (data asset valuation framework)</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Laney's six information valuation models</span><span class="note">Doug Laney, Infonomics, as presented in his own 2020 talks; his published formulas are not reproduced</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Why internally built data is not recognised as an asset</span><span class="note">IAS 38 paragraphs 57 and 63, read at source; the application to data is an inference by analogy</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Keelson's five assets, three lenses, three rankings</span><span class="note">Constructed and labelled; computed by the engine in your browser and checked against an independent Python run</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Every fact on this page, and its verification tier, is recorded in the course's source map.</p>
+  </section>
+
+  <section class="cheat" id="cheatsheet">
+    <h3>Analyst session 1 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Rights column first</b><span>No lawful buyer, no market value, however useful the data.</span></div>
+      <div class="cheat-item"><b>Cost lens</b><span>Yearly cost x years held. What it took to have it.</span></div>
+      <div class="cheat-item"><b>Market lens</b><span>Lawful buyers x yearly fee. What outsiders would pay.</span></div>
+      <div class="cheat-item"><b>Economic lens</b><span>(Benefit - run) x useful life. What it earns in use.</span></div>
+      <div class="cheat-item"><b>Give all three</b><span>Each answers a different question; one number invites the wrong one.</span></div>
+      <div class="cheat-item"><b>Off the balance sheet</b><span>IAS 38 by analogy: say "by analogy".</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>The motor claims history has the highest market value: 14 lawful buyers. Analyst session 2 asks how much of it may actually go into a product: the records whose notice did not cover reuse, the customers who objected, the licence limits, the injury claims, and the cells too small to publish.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Analyst session 1 of 6 · learn-data-monetisation-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="b4-the-board-call.html">← Prev: The board call</a> &nbsp;·&nbsp; <a href="a2-the-sellable-share.html">Next: The sellable share →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/dm-live.js?v=1"></script>
+<script src="../assets/dm-bench.js?v=1"></script>
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

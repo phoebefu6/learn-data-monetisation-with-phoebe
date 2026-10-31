@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Data monetisation for data and AI leaders and the analysts who price it. Four Leader sessions on the three roads to data revenue, whether the data is yours to sell, products, prices and partners, and the board call; six Analyst sessions on valuing a dataset three ways, the sellable share after consent and anonymity, cost to serve, pricing a data product, partner deal maths and a P&amp;L desk that computes everything in your browser. Free, by Phoebe Fu.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="Learn Data Monetisation with Phoebe">
+<meta property="og:description" content="Selling data outside the firm: what is yours to sell, what it is worth, how to price and partner, and whether the P&amp;L survives, computed for real.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-data-monetisation-with-phoebe/">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-data-monetisation-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Learn Data Monetisation with Phoebe">
+<meta name="twitter:description" content="Two tracks: the Leader decides whether data leaves the building for money; the Analyst prices it, live in the browser.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-data-monetisation-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Learn Data Monetisation with Phoebe</title>
+<link rel="stylesheet" href="assets/style.css?v=1">
+<style>
+
+  .stats-row { display: flex; gap: 2.4rem; margin-top: 1.5rem; flex-wrap: wrap; }
+  .stat b { display: block; font-size: 2.1rem; font-weight: 800; line-height: 1.05; font-variant-numeric: tabular-nums; }
+  .stat span { font-size: .72rem; opacity: 1; text-transform: uppercase; letter-spacing: .09em; font-weight: 600; }
+
+  .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+  .course-card {
+    border: 1px solid var(--hairline);
+    border-top: 4px solid var(--diff, var(--indigo));
+    border-radius: var(--radius);
+    padding: 1.2rem 1.3rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    text-decoration: none;
+    color: var(--ink);
+    background: #fff;
+    transition: box-shadow .15s ease, border-color .15s ease, transform .15s ease;
+    position: relative;
+  }
+  .course-card:hover { border-color: var(--indigo-soft); border-top-color: var(--diff, var(--indigo)); box-shadow: 0 8px 28px rgba(var(--shadow-rgb),.16); transform: translateY(-3px); }
+  .course-card .cicon { font-size: 1.7rem; line-height: 1; }
+  .course-card .cnum { font-size: .72rem; font-weight: 700; color: var(--indigo); text-transform: uppercase; letter-spacing: .1em; }
+  .course-card h3 { font-size: 1.05rem; font-weight: 800; line-height: 1.3; }
+  .course-card p { font-size: .85rem; color: var(--muted); flex: 1; }
+  .course-card .meta { display: flex; gap: .4rem; flex-wrap: wrap; }
+
+  .diff-legend { display: flex; gap: 1rem; margin-top: 1.6rem; font-size: .74rem; color: var(--muted); font-weight: 600; flex-wrap: wrap; }
+  .diff-legend i { display: inline-block; width: .85rem; height: .35rem; border-radius: 999px; margin-right: .35rem; vertical-align: middle; }
+
+  .paths { margin-top: 2.6rem; }
+  .paths h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: .3rem; }
+  .paths .plede { color: var(--muted); font-size: .92rem; margin-bottom: .8rem; }
+  .path { display: flex; gap: .55rem; align-items: center; padding: .75rem 0; border-bottom: .5px solid var(--hairline); flex-wrap: wrap; }
+  .path:last-child { border-bottom: none; }
+  .path b { min-width: 15.5rem; font-size: .9rem; }
+  .path .pstep { background: var(--indigo-50); color: var(--indigo-deep); border-radius: 999px; padding: .16rem .68rem; font-weight: 700; font-size: .8rem; text-decoration: none; transition: all .12s ease; }
+  .path .pstep:hover { background: var(--indigo); color: #fff; }
+  .path .parr { color: var(--muted); font-weight: 700; }
+
+  .mm-section { margin-top: 1.6rem; }
+  .mm-section h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: .2rem; }
+  .mm-section .mm-lede { color: var(--muted); font-size: .92rem; margin-bottom: .4rem; }
+  .mm-wrap { border: 1px solid var(--hairline); border-radius: var(--radius); background: linear-gradient(180deg,#fff,var(--indigo-50)); padding: .6rem; overflow-x: auto; }
+  .mm-svg { width: 100%; height: auto; display: block; max-width: 60rem; margin: 0 auto; min-width: 34rem; }
+  .mm-link { cursor: pointer; text-decoration: none; }
+  .mm-node rect { transition: opacity .15s ease, filter .15s ease; }
+  .mm-node text { pointer-events: none; }
+  .mm-link:hover .mm-node rect { filter: brightness(1.06); }
+  .mm-edge { transition: opacity .15s ease; }
+
+  .not-this { border: 1px solid var(--hairline); border-left: 4px solid var(--clay); border-radius: var(--radius); background: #fff; padding: 1.1rem 1.3rem; margin-top: 1.2rem; }
+  .not-this h3 { font-size: .95rem; font-weight: 800; margin-bottom: .5rem; }
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn with Phoebe · Business</div>
+    <h1>Learn <span class="accent">Data Monetisation</span> with Phoebe</h1>
+    <p class="sub">Most companies sit on data someone outside would pay for, and most of that data cannot be sold: the privacy notice never covered it, a supplier contract forbids it, or the cells are too small to publish safely. These ten sessions are about the part that can. Four Leader sessions are for the people who decide whether data leaves the building for money: the three roads to data revenue, whether it is yours to sell, products, prices and partners, and the board call. Six Analyst sessions are for the people who build the numbers: three prices for one dataset, the sellable share, cost to serve, pricing a data product, partner deal maths, and a P&amp;L desk that computes all of it live in your browser. The running case, Keelson Mutual's repair cost index, is constructed.</p>
+    <div class="stats-row">
+      <div class="stat"><b data-count="10">10</b><span>sessions, two tracks</span></div>
+      <div class="stat"><b data-count="3">3</b><span>roads to data revenue</span></div>
+      <div class="stat"><b data-count="1152">1152</b><span>cells checked for size</span></div>
+      <div class="stat"><b data-count="110">110</b><span>prospects priced</span></div>
+      <div class="stat"><b data-count="5">5</b><span>desk rungs</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section">
+    <div class="paths" style="margin-top:0">
+      <h2>Leader track 🧭 <span style="font-size:.85rem;font-weight:600;color:var(--muted)">· four sessions, no code</span></h2>
+      <p class="plede">For chief data officers, heads of partnerships and product leads deciding whether data leaves the building for money. The three roads, the rights that make data sellable, packaging and pricing as decisions, and the board paper.</p>
+    </div>
+    <div class="course-grid">
+      <a class="course-card" href="courses/b1-three-roads-to-data-revenue.html" style="--diff:#34D399"><span class="cicon">🛣️</span><span class="cnum">Leader session 1 · start here</span><h3>Three roads to data revenue</h3><p>Improve, wrap or sell; the capabilities each road needs; and why one dataset can be worth 1200.0k in use and nothing on the market.</p><span class="meta"><span class="pill amber">▶ Start here</span></span></a>
+      <a class="course-card" href="courses/b2-is-it-ours-to-sell.html" style="--diff:#34D399"><span class="cicon">🔐</span><span class="cnum">Leader session 2</span><h3>Is it ours to sell</h3><p>Lawful basis, objections, the licence chain and special-category data: why only 72.4 percent of Keelson's claims records end up sellable.</p><span class="meta"><span class="pill">the sellable share</span></span></a>
+      <a class="course-card" href="courses/b3-products-prices-and-partners.html" style="--diff:#FBBF24"><span class="cicon">🏷️</span><span class="cnum">Leader session 3</span><h3>Products, prices and partners</h3><p>The packaging ladder, pricing by the buyer's value rather than by volume, two tiers, and who should do the selling.</p><span class="meta"><span class="pill">value, not volume</span></span></a>
+      <a class="course-card" href="courses/b4-the-board-call.html" style="--diff:#FB923C"><span class="cicon">🏛️</span><span class="cnum">Leader session 4</span><h3>The board call</h3><p>Five rungs on one desk, the risk register a data deal needs, and the go or no-go paper that hands the numbers to finance.</p><span class="meta"><span class="pill">the go or no-go paper</span></span></a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="paths" style="margin-top:0">
+      <h2>Analyst track 🧮 <span style="font-size:.85rem;font-weight:600;color:var(--muted)">· six sessions, hands-on in the browser</span></h2>
+      <p class="plede">For analysts and finance partners who build the numbers behind a data product. Every widget runs one engine in your browser: three value lenses, a consent funnel over 1,152 cells, a cost curve, a price search over 110 prospects, three deal routes and a five-year desk with 5,000 seeded draws, checked against an independent Python build.</p>
+    </div>
+    <div class="course-grid">
+      <a class="course-card" href="courses/a1-three-prices-for-one-dataset.html" style="--diff:#34D399"><span class="cicon">🔎</span><span class="cnum">Analyst session 1 · start here</span><h3>Three prices for one dataset</h3><p>Cost, market and economic lenses on five Keelson assets, why they rank the assets differently, and Laney's fuller set of models.</p><span class="meta"><span class="pill amber">▶ Start here</span></span></a>
+      <a class="course-card" href="courses/a2-the-sellable-share.html" style="--diff:#34D399"><span class="cicon">🧮</span><span class="cnum">Analyst session 2</span><h3>The sellable share</h3><p>Build the funnel stage by stage, then raise the smallest publishable cell and watch cells and records part company.</p><span class="meta"><span class="pill">the k threshold</span></span></a>
+      <a class="course-card" href="courses/a3-package-and-cost-to-serve.html" style="--diff:#FBBF24"><span class="cicon">📦</span><span class="cnum">Analyst session 3</span><h3>Package and cost to serve</h3><p>Four tiers on one shared platform: a fixed cost of 256.7k a year, 7.9k to serve one more customer, and the cost curve between.</p><span class="meta"><span class="pill">the cost curve</span></span></a>
+      <a class="course-card" href="courses/a4-pricing-a-data-product.html" style="--diff:#FBBF24"><span class="cicon">💹</span><span class="cnum">Analyst session 4</span><h3>Pricing a data product</h3><p>110 prospects, a capture share and a price search: one price at 32.0k, or two tiers that double the buyers.</p><span class="meta"><span class="pill">one price or two tiers</span></span></a>
+      <a class="course-card" href="courses/a5-partner-deal-maths.html" style="--diff:#FB923C"><span class="cicon">🤝</span><span class="cnum">Analyst session 5</span><h3>Partner deal maths</h3><p>Direct, reseller or one exclusive licensee, each simulated; the minimum guarantee as a floor and what it costs you.</p><span class="meta"><span class="pill">floors and caps</span></span></a>
+      <a class="course-card" href="courses/a6-the-data-product-pl-desk.html" style="--diff:#F87171"><span class="cicon">🧪</span><span class="cnum">Analyst session 6 · bench night</span><h3>The data product P&amp;L desk</h3><p>Five rungs in one engine: base, the sponsor's case, consent tightened, the exclusive deal and a break button. Then one sentence.</p><span class="meta"><span class="pill amber">★ the desk</span></span></a>
+    </div>
+    <div class="diff-legend">
+      <span><i style="background:#34D399"></i>foundations</span>
+      <span><i style="background:#FBBF24"></i>core</span>
+      <span><i style="background:#FB923C"></i>stretch</span>
+      <span><i style="background:#F87171"></i>bench night</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="paths" style="margin-top:0">
+      <h2>Your passport 🎫</h2>
+      <p class="plede">Clear all three quiz questions in a session and it gets stamped. Ten stamps means you can name the road a dataset is on, prove it is yours to sell, price it by the buyer's value, choose who sells it and show a board the range. Stamps live in this browser only.</p>
+    </div>
+    <div class="pp-strip"></div>
+  </section>
+
+  <section class="section">
+    <div class="not-this">
+      <h3>What this is not, so you land in the right place 🧭</h3>
+      <table class="clean">
+        <tr><th>If your question is</th><th>Go here instead</th></tr>
+        <tr><td>Which data bets should we fund inside the firm, and how do we track their value?</td><td><a href="https://phoebefu6.github.io/learn-data-strategy-with-phoebe/">Data Strategy ↗</a></td></tr>
+        <tr><td>Is this investment worth it: NPV, IRR, payback, the range?</td><td><a href="https://phoebefu6.github.io/learn-business-cases-roi-with-phoebe/">Business Cases &amp; ROI ↗</a></td></tr>
+        <tr><td>What do our privacy obligations require, day to day?</td><td><a href="https://phoebefu6.github.io/learn-pdpa-dnc-with-phoebe/">PDPA &amp; DNC ↗</a> or <a href="https://phoebefu6.github.io/learn-data-governance-with-phoebe/">Data Governance ↗</a></td></tr>
+        <tr><td>What kinds of data products exist?</td><td><a href="https://phoebefu6.github.io/learn-data-product-with-phoebe/">Data Products ↗</a></td></tr>
+        <tr><td>How do we prove a dataset is anonymous, mathematically?</td><td>Privacy Engineering, planned on the shelf</td></tr>
+        <tr><td><strong>Can we sell this data, to whom, at what price, and will it pay?</strong></td><td><strong>you are in the right place</strong></td></tr>
+      </table>
+      <p style="margin-top:.7rem;font-size:.86rem;color:var(--muted)"><strong>Selling data outside the firm, priced honestly.</strong> Keelson Mutual is constructed; the frameworks and laws are read at source and dated; reported deal figures say "reported".</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="paths">
+      <h2>Choose your path 🗺️</h2>
+      <p class="plede">Three doors into the same conviction: data is only an asset you can sell when the rights, the cells and the price all hold.</p>
+      <div class="path"><b>🧭 I decide what leaves the building</b>
+        <a class="pstep" href="courses/b1-three-roads-to-data-revenue.html">B1</a><span class="parr">→</span><a class="pstep" href="courses/b2-is-it-ours-to-sell.html">B2</a><span class="parr">→</span><a class="pstep" href="courses/b3-products-prices-and-partners.html">B3</a><span class="parr">→</span><a class="pstep" href="courses/b4-the-board-call.html">B4</a>
+        <span style="font-size:.82rem;color:var(--muted)">the road, the rights, the price, the paper</span>
+      </div>
+      <div class="path"><b>🧮 I build the numbers</b>
+        <a class="pstep" href="courses/a1-three-prices-for-one-dataset.html">A1</a><span class="parr">→</span><a class="pstep" href="courses/a2-the-sellable-share.html">A2</a><span class="parr">→</span><a class="pstep" href="courses/a3-package-and-cost-to-serve.html">A3</a><span class="parr">→</span><a class="pstep" href="courses/a4-pricing-a-data-product.html">A4</a><span class="parr">→</span><a class="pstep" href="courses/a5-partner-deal-maths.html">A5</a><span class="parr">→</span><a class="pstep" href="courses/a6-the-data-product-pl-desk.html">A6</a>
+        <span style="font-size:.82rem;color:var(--muted)">value, share, cost, price, deal, desk</span>
+      </div>
+      <div class="path"><b>🤝 I run partnerships</b>
+        <a class="pstep" href="courses/b2-is-it-ours-to-sell.html">B2</a><span class="parr">→</span><a class="pstep" href="courses/b3-products-prices-and-partners.html">B3</a><span class="parr">→</span><a class="pstep" href="courses/a4-pricing-a-data-product.html">A4</a><span class="parr">→</span><a class="pstep" href="courses/a5-partner-deal-maths.html">A5</a><span class="parr">→</span><a class="pstep" href="courses/b4-the-board-call.html">B4</a>
+        <span style="font-size:.82rem;color:var(--muted)">the rights, the offer, the terms, the paper</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="paths" style="margin-top:0">
+      <h2>What is honest here 🧾</h2>
+      <p class="plede">The running case is constructed and says so on every page. The arithmetic is real. Where evidence is contested or only reported, the page says so.</p>
+    </div>
+    <table class="clean">
+      <tr><th>Claim</th><th>Status</th></tr>
+      <tr><td>Keelson Mutual, its people, its records, cells, buyers, prices, costs and ranges</td><td><strong>Constructed,</strong> and labelled each time</td></tr>
+      <tr><td>Every value lens, funnel stage, suppressed cell, cost curve, price search, deal range and desk rung</td><td><strong>Computed in your browser;</strong> an independent Python build prints the same numbers, all 5,000 draws included</td></tr>
+      <tr><td>Improve, wrap and sell; the data monetisation capabilities</td><td><strong>Read at source</strong> in MIT CISR's published research, dated</td></tr>
+      <tr><td>Lawful bases, consent, objection, special-category data, anonymous and pseudonymous data</td><td><strong>Read at source</strong> in the GDPR and Singapore's PDPA and their regulators' guidance</td></tr>
+      <tr><td>Data licensing deals between platforms and AI companies</td><td><strong>Reported</strong> or taken from company filings, and labelled which</td></tr>
+      <tr><td>The size of the "data monetisation market"</td><td><strong>Not used:</strong> vendor estimates disagree and none is checkable</td></tr>
+    </table>
+  </section>
+
+  <section class="section mm-section">
+    <h2>The knowledge map 🧠</h2>
+    <p class="mm-lede">Both tracks at a glance - hover a session to spotlight its concepts, click any node to jump in.</p>
+    <div class="mm-wrap"><div id="mindmap"></div></div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>learn-data-monetisation-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span>Neighbours on the shelf: <a href="https://phoebefu6.github.io/learn-data-strategy-with-phoebe/">Data Strategy ↗</a> &nbsp;·&nbsp; <a href="https://phoebefu6.github.io/learn-business-cases-roi-with-phoebe/">Business Cases &amp; ROI ↗</a> &nbsp;·&nbsp; <a href="https://phoebefu6.github.io/learn-data-governance-with-phoebe/">Data Governance ↗</a></span>
+  </footer>
+
+</main>
+
+<script>
+/*MINDMAP*/
+</script>
+<script src="assets/mindmap.js?v=1"></script>
+<script src="assets/app.js?v=1"></script>
+</body>
+</html>

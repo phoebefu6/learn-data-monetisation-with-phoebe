@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Leader session 1 of 4. Three roads to data revenue: improving work, wrapping products and selling information offerings, how MIT CISR found returns split across them, the capabilities each road leans on, and how to tell which road a dataset belongs on. Keelson Mutual's repair cost index, constructed.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="Three roads to data revenue - learn data monetisation with phoebe">
+<meta property="og:description" content="Leader session 1 of 4. Improve, wrap or sell: where data returns come from and which road a dataset belongs on.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-data-monetisation-with-phoebe/courses/b1-three-roads-to-data-revenue.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-data-monetisation-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Three roads to data revenue - learn data monetisation with phoebe">
+<meta name="twitter:description" content="Leader session 1 of 4. Improve, wrap or sell, and which road a dataset belongs on.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-data-monetisation-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Leader session 1 · Three roads to data revenue - learn data monetisation with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-data-monetisation-with-phoebe</a> / Leader session 1 of 4</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Data Monetisation with Phoebe · Leader session 1 of 4</div>
+    <h1>Three roads to <span class="accent">data revenue</span></h1>
+    <p class="sub">"Monetise our data" usually means "sell our data", and selling is the road that brings in the smallest share of what companies actually earn from data. MIT's Center for Information Systems Research found three roads: improving how work is done, wrapping data into existing products, and selling information offerings to others. Tonight: what each road is, where the returns came from in their research, what each road asks of the organisation, and a way to tell which road a particular dataset belongs on. Keelson Mutual is constructed.</p>
+    <div class="chip-row">
+      <span class="chip level">🟢 Leader</span>
+      <span class="chip audience">Data and AI leaders deciding whether data leaves the building for money</span>
+      <span class="chip audience">No code</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-18 · Three roads, five capabilities, choosing the road</span>
+      <span class="a3" style="flex:5">18-40 · Build-along: put Keelson's assets on a road</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we start</h2>
+    </div>
+    <p class="lede">The Leader track is for the people who decide whether data leaves the building for money: the chief data officer, the head of partnerships, the product lead with a buyer on the phone. Four sessions: tonight, the three roads; then whether the data is yours to sell; then products, prices and partners; then the board call. No code. The Analyst track builds the same numbers in a working engine, and every Keelson number on these pages is one that engine prints. The running case is Keelson Mutual, a constructed mid-size motor and home insurer. Sefa Adjei, its new head of partnerships, has had three calls from fleet operators asking to buy repair cost data. Maya Okafor, the chief data officer, wants to know which road that request is really on before anyone quotes a price. Every Keelson person and number is invented.</p>
+
+    <div class="legend">
+      <span class="pill">🎫 Clear all three quiz questions to stamp your passport</span>
+      <span class="pill">Live = presented in the 45 minutes</span>
+      <span class="pill">Self-study = the full depth, after class</span>
+      <span class="pill">★ Build-along = everyone works it through</span>
+    </div>
+
+    <div class="callout win">
+      <p><strong>★ What you walk out with tonight.</strong> A one-page road map for your own data: each major dataset placed on improve, wrap or sell, with the reason, the capability it is missing, and the one asset worth testing for sale. Leader session 2 asks whether that asset is actually yours to sell.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers improve, wrap and sell</span>
+      <h2>Selling is one road of three, and the narrowest</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">MIT CISR defines it plainly: "Data monetization is the act of turning data into money" (Wixom, Beath and Owens, 2023). Their book, <em>Data Is Everybody's Business</em>, names three ways: improving work, so processes run better or cheaper; wrapping products, adding data and analytics to something customers already buy; and selling information offerings, which CISR stresses is "not just about selling data; it's also about selling insights".</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three hand-drawn roads leaving one pile of data. Improving work carries 51 percent of monetisation returns in MIT CISR's 2023 research; wrapping products carries 31 percent; selling information offerings carries 18 percent. Road widths are drawn in proportion. The selling road is filled in teal because it is the subject of these sessions. A note says these are shares of returns, not of revenue and not of companies.">
+        <defs>
+          <filter id="b1aSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="13" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="b1aHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="b1aAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .b1aH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .b1aL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .b1aS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .b1aV { font: 800 18px Inter, sans-serif; fill: #2E2A08; }
+          .b1aW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+          .b1aX { font: 800 18px Inter, sans-serif; fill: #FFFFFF; }
+          .b1aN { font: 400 12px Inter, sans-serif; fill: #5A5848; }
+        </style>
+
+        <text class="b1aH" x="30" y="28">WHERE DATA MONETISATION RETURNS CAME FROM</text>
+        <text class="b1aS" x="380" y="28">MIT CISR, press release 16 Oct 2023 · share of returns</text>
+
+        <g filter="url(#b1aSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="30" y="110" width="150" height="110" rx="14" transform="rotate(-1 105 165)" fill="url(#b1aHc)"/>
+          <path d="M184 140 L300 72" marker-end="url(#b1aAr)"/>
+          <path d="M184 165 L300 165" marker-end="url(#b1aAr)"/>
+          <path d="M184 190 L300 252" marker-end="url(#b1aAr)"/>
+          <rect x="306" y="46" width="420" height="58" rx="10" transform="rotate(-0.4 516 75)" fill="#F8F6E6" stroke="#494412"/>
+          <rect x="306" y="140" width="256" height="52" rx="10" transform="rotate(0.4 434 166)" fill="#FFFFFF"/>
+          <rect x="306" y="228" width="150" height="48" rx="10" transform="rotate(-0.6 381 252)" fill="#0E5C66" stroke="#0E5C66"/>
+          <!-- doodle: a coin beside the selling road -->
+          <circle cx="490" cy="252" r="14" stroke="#494412"/>
+          <path d="M486 246 L494 246 M486 258 L494 258 M490 242 L490 262" stroke="#494412"/>
+        </g>
+
+        <rect x="42" y="148" width="126" height="34" rx="6" fill="#FFFFFF"/>
+        <text class="b1aH" x="52" y="170">your data</text>
+
+        <text class="b1aH" x="322" y="70">IMPROVING WORK</text>
+        <text class="b1aS" x="322" y="90">better, cheaper processes inside</text>
+        <text class="b1aV" x="660" y="84">51%</text>
+
+        <text class="b1aH" x="322" y="162">WRAPPING PRODUCTS</text>
+        <text class="b1aS" x="322" y="180">data inside what customers buy</text>
+        <text class="b1aV" x="508" y="176">31%</text>
+
+        <text class="b1aW" x="318" y="248">SELLING</text>
+        <text class="b1aX" x="400" y="266">18%</text>
+        <text class="b1aS" x="520" y="258">information offerings to others</text>
+
+        <text class="b1aN" x="30" y="312">Shares of returns reported by CISR's survey firms. Not shares of revenue, and not shares of companies.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the narrowest road is the one these sessions walk, with its width in view</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>The three roads, in one line each<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Improving work.</strong> Data makes your own processes better: Keelson's claims fast-track triage, fraud scoring at first notice of loss. The money shows up as lower cost. Data Strategy owns this road: <a href="https://phoebefu6.github.io/learn-data-strategy-with-phoebe/">Data Strategy ↗</a>.</p>
+        <p><strong>Wrapping products.</strong> Data is added to something customers already buy, so they buy more, stay longer or pay more: a driving-score dashboard inside a fleet insurance policy. The money shows up as product revenue and retention.</p>
+        <p><strong>Selling information offerings.</strong> Someone outside pays for the data or for insight built from it: an index, a report, an API feed, an analysis. The money shows up as a new revenue line, with new obligations attached.</p>
+        <p>CISR's 2023 release reported 51 percent of returns from improving, 31 percent from wrapping and 18 percent from selling. Those are shares of returns among the firms surveyed. They do not say selling is a bad idea; they say it is the road with the smallest share, and it is the one with a buyer, a contract and a regulator watching.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Direct and indirect, the other way to slice it<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Doug Laney, author of <em>Infonomics</em>, splits monetisation into indirect and direct in his talks (2020). Indirect includes improving process performance, developing new solutions, building partner relationships and "publishing branded indices". Direct includes bartering or trading information, enhancing products with it, "selling raw data through brokers or data markets" and "offering insights, analyses and reports". Keelson's repair cost index sits interestingly on both lists: published freely it is a branded index that builds reputation; sold, it is a direct offering. That choice is part of tonight's build-along.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>Choosing not to charge.</strong> Strava Metro, built from the activity data of Strava's users, has been offered free of charge to urban planners, city governments, transport departments and safe infrastructure advocates since September 2020 (reported). A company with saleable data chose a road where the return is goodwill, partnerships and better cycling infrastructure for its own users. Selling was available; it was not the only road.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers the data monetisation capabilities</span>
+      <h2>Every road runs on the same five capabilities</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">CISR's research ties monetisation to a set of enterprise capabilities. As of its July 2026 briefing they are five for monetising data: data management, data platform, data science, customer understanding and acceptable data use, with a sixth, AI explanation, added for AI. The names have changed since CISR's earlier work, so quote the date with them.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three hand-drawn roads, improve, wrap and sell, resting on five foundation blocks: data management, data platform, data science, customer understanding and acceptable data use. The acceptable data use block is filled in teal because selling leans hardest on it: data leaves the organisation and someone else's use must also be acceptable. A sixth block, AI explanation, sits to the side, dashed, as CISR's 2026 addition.">
+        <defs>
+          <filter id="b1bSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="19" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="b1bHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="b1bAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .b1bH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .b1bL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .b1bS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .b1bW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+          .b1bN { font: 400 12px Inter, sans-serif; fill: #5A5848; }
+        </style>
+
+        <text class="b1bH" x="30" y="28">THREE ROADS, ONE FOUNDATION</text>
+        <text class="b1bS" x="260" y="28">MIT CISR capability names as of July 2026</text>
+
+        <g filter="url(#b1bSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="40" y="52" width="200" height="50" rx="10" transform="rotate(-0.6 140 77)" fill="#F8F6E6" stroke="#494412"/>
+          <rect x="270" y="52" width="200" height="50" rx="10" transform="rotate(0.6 370 77)" fill="#F8F6E6" stroke="#494412"/>
+          <rect x="500" y="52" width="200" height="50" rx="10" transform="rotate(-0.6 600 77)" fill="#F8F6E6" stroke="#494412"/>
+          <path d="M40 132 L700 132" stroke="#5A5848"/>
+          <rect x="40" y="150" width="124" height="70" rx="8" transform="rotate(0.5 102 185)" fill="url(#b1bHc)"/>
+          <rect x="174" y="150" width="124" height="70" rx="8" transform="rotate(-0.5 236 185)" fill="url(#b1bHc)"/>
+          <rect x="308" y="150" width="124" height="70" rx="8" transform="rotate(0.5 370 185)" fill="url(#b1bHc)"/>
+          <rect x="442" y="150" width="124" height="70" rx="8" transform="rotate(-0.5 504 185)" fill="url(#b1bHc)"/>
+          <rect x="576" y="150" width="124" height="70" rx="8" transform="rotate(0.5 638 185)" fill="#0E5C66" stroke="#0E5C66"/>
+          <rect x="730" y="150" width="124" height="70" rx="8" transform="rotate(-0.5 792 185)" fill="#FFFFFF" stroke-dasharray="6 5"/>
+          <!-- doodle: a key on the acceptable data use block -->
+          <circle cx="676" cy="248" r="8" stroke="#494412"/>
+          <path d="M684 248 L704 248 M698 248 L698 256 M704 248 L704 254" stroke="#494412"/>
+        </g>
+
+        <text class="b1bH" x="96" y="82">improve</text>
+        <text class="b1bH" x="344" y="82">wrap</text>
+        <text class="b1bH" x="580" y="82">sell</text>
+
+        <rect x="48" y="168" width="108" height="34" rx="5" fill="#FFFFFF"/>
+        <rect x="182" y="168" width="108" height="34" rx="5" fill="#FFFFFF"/>
+        <rect x="316" y="168" width="108" height="34" rx="5" fill="#FFFFFF"/>
+        <rect x="450" y="168" width="108" height="34" rx="5" fill="#FFFFFF"/>
+        <text class="b1bL" x="56" y="182">data</text>
+        <text class="b1bL" x="56" y="196">management</text>
+        <text class="b1bL" x="190" y="182">data</text>
+        <text class="b1bL" x="190" y="196">platform</text>
+        <text class="b1bL" x="324" y="182">data</text>
+        <text class="b1bL" x="324" y="196">science</text>
+        <text class="b1bL" x="458" y="182">customer</text>
+        <text class="b1bL" x="458" y="196">understanding</text>
+        <text class="b1bW" x="586" y="182">acceptable</text>
+        <text class="b1bW" x="586" y="198">data use</text>
+        <text class="b1bL" x="740" y="182">AI explanation</text>
+        <text class="b1bS" x="740" y="198">added 2026</text>
+
+        <text class="b1bN" x="30" y="290">Selling leans hardest on acceptable data use: once data leaves, the buyer's use has to be acceptable too.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the roads differ in how hard they lean on each block, not in which blocks they need</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>What selling asks of each capability<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Data management and data platform.</strong> A buyer expects the index on time, every quarter, with documented definitions. Internal users forgive a late refresh; a paying customer asks for a credit.</p>
+        <p><strong>Data science.</strong> Building insight someone outside will trust, not only a model your own team understands.</p>
+        <p><strong>Customer understanding.</strong> For selling, this means understanding a customer you have never served: what a fleet operator would do with repair cost data, and what that is worth to them. Analyst session 4 prices exactly this.</p>
+        <p><strong>Acceptable data use.</strong> Whether the data may leave at all, in what form, and what the buyer may do with it. It is the subject of Leader session 2.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>How much do high performers earn from data?<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>CISR's briefings of November 2024 and July 2026, the latter based on a survey of 349 executives, report that top performers attribute 11 percent of revenues to data monetisation, more than five times the 2 percent of the bottom performers. It is self-reported, not audited, and it covers all three roads, not selling alone.</p>
+        <p>What you will not find is a reliable success rate for data monetisation programmes. A 2019 BARC survey sponsored by Tableau (about 200 respondents) found 17 percent of companies had established data monetisation initiatives, which measures adoption, not success. Figures quoted for how many such programmes "fail" could not be traced to a study. If a slide shows one, ask what it measured.</p>
+      </div>
+    </details>
+  </section>
+
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers choosing the road for a dataset</span>
+      <h2>Which road is this dataset on?</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">A buyer on the phone makes selling feel like the obvious road. Three questions, asked in order, usually show whether it is. The first is about rights, the second about your own use, the third about whether you can run a product. Fail the first and the other two do not matter.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn decision path with three questions. One: is there a lawful buyer? If no, the dataset stays on improve. Two: would selling a copy undercut our own use of it? If yes, consider wrap instead, where the data stays inside our product. Three: can we run it as a product, with refresh, support and contracts? If no, consider a partner or improve. If yes to the end, the dataset is a candidate to sell, filled in teal.">
+        <defs>
+          <filter id="b1cSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="29" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="b1cHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="b1cAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .b1cH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .b1cL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .b1cS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .b1cA { font: 700 11px Inter, sans-serif; fill: #2E2A08; }
+          .b1cW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+          .b1cN { font: 400 12px Inter, sans-serif; fill: #5A5848; }
+        </style>
+
+        <text class="b1cH" x="30" y="28">THREE QUESTIONS, IN ORDER</text>
+
+        <g filter="url(#b1cSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="30" y="50" width="230" height="60" rx="10" transform="rotate(-0.6 145 80)" fill="#F8F6E6" stroke="#494412"/>
+          <rect x="320" y="50" width="230" height="60" rx="10" transform="rotate(0.6 435 80)" fill="#F8F6E6" stroke="#494412"/>
+          <rect x="610" y="50" width="240" height="60" rx="10" transform="rotate(-0.6 730 80)" fill="#F8F6E6" stroke="#494412"/>
+          <path d="M264 80 L314 80" marker-end="url(#b1cAr)"/>
+          <path d="M554 80 L604 80" marker-end="url(#b1cAr)"/>
+          <path d="M145 114 L145 178" marker-end="url(#b1cAr)"/>
+          <path d="M435 114 L435 178" marker-end="url(#b1cAr)"/>
+          <path d="M730 114 L730 178" marker-end="url(#b1cAr)"/>
+          <rect x="30" y="184" width="230" height="56" rx="10" transform="rotate(0.6 145 212)" fill="#FFFFFF"/>
+          <rect x="320" y="184" width="230" height="56" rx="10" transform="rotate(-0.6 435 212)" fill="#FFFFFF"/>
+          <rect x="610" y="184" width="240" height="56" rx="10" transform="rotate(0.6 730 212)" fill="#FFFFFF"/>
+          <path d="M790 244 L790 266" marker-end="url(#b1cAr)"/>
+          <rect x="610" y="272" width="240" height="48" rx="10" transform="rotate(-0.6 730 296)" fill="#0E5C66" stroke="#0E5C66"/>
+          <!-- doodle: a telephone receiver for the buyer's call -->
+          <path d="M40 286 Q48 270 60 278 L70 290 Q74 298 66 302 L58 296 Q54 304 64 312" stroke="#494412"/>
+        </g>
+
+        <text class="b1cL" x="44" y="76">1 · Is there a lawful buyer?</text>
+        <text class="b1cS" x="44" y="94">notice, contract, law</text>
+        <text class="b1cL" x="334" y="76">2 · Would selling undercut</text>
+        <text class="b1cL" x="334" y="94">our own use of it?</text>
+        <text class="b1cL" x="624" y="76">3 · Can we run it as a product?</text>
+        <text class="b1cS" x="624" y="94">refresh, support, contracts</text>
+
+        <text class="b1cA" x="154" y="152">no</text>
+        <text class="b1cA" x="444" y="152">yes</text>
+        <text class="b1cA" x="740" y="152">no</text>
+
+        <text class="b1cH" x="44" y="208">stay on improve</text>
+        <text class="b1cS" x="44" y="226">use it inside, where it may be used</text>
+        <text class="b1cH" x="334" y="208">consider wrap</text>
+        <text class="b1cS" x="334" y="226">keep it inside your own product</text>
+        <text class="b1cH" x="624" y="208">consider a partner, or improve</text>
+        <text class="b1cS" x="624" y="226">someone else runs the product</text>
+        <text class="b1cA" x="800" y="262">yes</text>
+        <text class="b1cW" x="626" y="301">a candidate to sell</text>
+
+        <text class="b1cN" x="96" y="300">The buyer's call starts the conversation. It does not answer question 1.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - most datasets leave the path at question 1 or 2, and that is a result, not a failure</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Asking the three questions about the repair cost index<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>1 · A lawful buyer?</strong> For aggregated motor claims, probably yes, for most records; Leader session 2 measures how many. For the repairer invoice lines, no: a supply contract limits them to settling Keelson's own claims.</p>
+        <p><strong>2 · Would selling undercut our own use?</strong> Keelson prices motor policies partly on repair cost. Selling a regional repair cost index to smaller insurers hands competitors part of that edge. Selling it to fleet operators and repair networks does not. The answer depends on the buyer, which is why Analyst session 4 prices segments separately.</p>
+        <p><strong>3 · Can Keelson run a product?</strong> Not yet: there is no refresh process a customer could rely on, no support, and no contract template. That points either to building those (Analyst session 3 costs them) or to a partner who already has them (Analyst session 5).</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Three lenses on what a dataset is worth<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Before choosing a road, it helps to know what the dataset is worth on each. Analyst session 1 computes three lenses on Keelson's five assets: what each cost to build and keep, what lawful buyers would pay, and what it earns in use. The repairer invoice lines show why the order of the three questions matters: 1200.0k in use, 0.0k on the market. The motor claims history is the only asset that ranks first on all three, which is why the index is built on it. The widget in the build-along below shows the same numbers.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The second question, asked late.</strong> Two of the three fleet operators who called Sefa turned out to be insurers' fleet arms. Tom Reyes, the COO, asked whether a regional repair cost index sold to them would help them undercut Keelson on fleet policies. The answer reshaped the buyer list before anyone discussed price. Constructed Keelson Mutual example.</p>
+    </div>
+  </section>
+
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>Put Keelson's assets on a road, then yours</h2>
+      <span class="tag demo">★ 22 min · everyone works it through</span>
+    </div>
+    <p class="lede">No code. The widget shows Keelson's five constructed assets through three value lenses, computed in your browser. Use it to answer the three questions for each asset together in steps 1 to 3, then place your own data in pairs for steps 4 and 5. Your roads will differ from Keelson's.</p>
+
+    <div class="dmx-widget" data-mode="lenses"></div>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn worksheet. Five Keelson assets on the left each get a road on the right: motor claims history to sell, as a candidate; home claims and perils to wrap; repairer invoice lines to improve, because no lawful buyer; telematics pilot to improve, or stop; call transcripts to improve. The motor claims row is filled in teal.">
+        <defs>
+          <filter id="b1dSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="37" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="b1dHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="b1dAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .b1dH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .b1dL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .b1dS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .b1dB { font: 800 11px Inter, sans-serif; fill: #083A40; }
+          .b1dW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+        </style>
+
+        <text class="b1dH" x="30" y="28">KEELSON'S ROAD MAP, ONE ROW PER ASSET</text>
+
+        <g filter="url(#b1dSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="30" y="44" width="560" height="30" rx="7" fill="#0E5C66" stroke="#0E5C66"/>
+          <rect x="30" y="82" width="560" height="30" rx="7" transform="rotate(0.2 310 97)" fill="#FFFFFF"/>
+          <rect x="30" y="120" width="560" height="30" rx="7" transform="rotate(-0.2 310 135)" fill="#FFFFFF"/>
+          <rect x="30" y="158" width="560" height="30" rx="7" transform="rotate(0.2 310 173)" fill="#FFFFFF"/>
+          <rect x="30" y="196" width="560" height="30" rx="7" transform="rotate(-0.2 310 211)" fill="#FFFFFF"/>
+          <!-- doodle: three signposts -->
+          <path d="M700 60 L700 220 M700 80 L770 80 L782 92 L770 104 L700 104 M700 130 L640 130 L628 142 L640 154 L700 154" stroke="#494412"/>
+        </g>
+
+        <text class="b1dW" x="44" y="64">motor claims history</text>
+        <text class="b1dW" x="300" y="64">sell: a candidate, built on this</text>
+        <text class="b1dL" x="44" y="102">home claims and perils</text>
+        <text class="b1dS" x="300" y="102">wrap: into a home policy feature</text>
+        <text class="b1dL" x="44" y="140">repairer invoice lines</text>
+        <text class="b1dS" x="300" y="140">improve: no lawful buyer</text>
+        <text class="b1dL" x="44" y="178">telematics pilot</text>
+        <text class="b1dS" x="300" y="178">improve, or stop collecting</text>
+        <text class="b1dL" x="44" y="216">claims call transcripts</text>
+        <text class="b1dS" x="300" y="216">improve: no consent to share</text>
+
+        <text class="b1dB" x="30" y="242">One answer per row, with the question that decided it. Your own map will differ.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - one asset on the selling road, four elsewhere, each for a stated reason</figcaption>
+    </figure>
+
+    <div class="steps">
+      <div class="step">
+        <p><strong>Step 1 · Read the three lenses.</strong> Switch the widget between cost, market and economic. Write the market value of each asset.</p>
+        <div class="prompt-box good"><span class="label">★ Step 1 · the market lens, as the widget prints it</span>Motor claims history 630.0k · Home claims and weather perils 180.0k · Telematics pilot 60.0k
+Claims call transcripts 0.0k · Repairer invoice lines 0.0k</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 2 · Question 1 for every asset.</strong> Which assets fail "is there a lawful buyer?" and what does the widget say is the reason?</p>
+        <div class="prompt-box good"><span class="label">★ Step 2 · the rights question</span>fails question 1: repairer invoice lines (supplier contract bars onward use)
+fails question 1: claims call transcripts (no consent for any external use)
+their road: improve, where the economic lens says they earn 1200.0k and 300.0k</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 3 · Questions 2 and 3 for the motor claims history.</strong> Name one buyer group that would undercut Keelson's own use, and one capability Keelson lacks to run the index as a product.</p>
+        <div class="prompt-box good"><span class="label">★ Step 3 · the candidate</span>buyers who would undercut our use: ________________________
+capability we lack today: ________________________________
+road: sell, to ____________________, or through a partner</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 4 · Your own five.</strong> In pairs, list five datasets your organisation holds and run each through the three questions. Write the question that decided each one.</p>
+        <div class="prompt-box good"><span class="label">★ Step 4 · your road map</span>dataset             lawful buyer?   undercuts our use?   can we run it?   road
+________________    ____            ____                 ____             ______
+________________    ____            ____                 ____             ______
+________________    ____            ____                 ____             ______</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 5 · Pick one to test.</strong> Choose the one dataset you would test for sale and write one sentence on why it, and not the others.</p>
+        <div class="prompt-box good"><span class="label">★ Step 5 · the one to test</span>"We will test ____________ for sale because it is the only one that ______________,
+and we will keep ____________ inside because ______________."</div>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>Keep the road map.</strong> Leader session 2 takes your one candidate and asks whether you are allowed to sell it, record by record.</p>
+    </div>
+  </section>
+
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before Leader session 2</h2>
+      <span class="tag exercise">30 min</span>
+    </div>
+    <ol>
+      <li><strong>Find your improving road.</strong> Name one place your organisation already earns from data by improving work, and roughly how much.</li>
+      <li><strong>Find your privacy notice.</strong> For your candidate dataset, find the notice it was collected under and copy what it says about other uses.</li>
+      <li><strong>Ask about the capabilities.</strong> Which of the five capabilities is weakest in your organisation for a product sold outside? Ask one colleague who would know.</li>
+      <li><strong>Check a statistic.</strong> Find one slide in your organisation quoting a data monetisation success or failure rate, and look for what it measured.</li>
+    </ol>
+  </section>
+
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and Leader session 1 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">1 · MIT CISR reported 51, 31 and 18 percent for improving, wrapping and selling. What are those percentages of?</p>
+      <button class="qopt" type="button">A · Companies that use each road</button>
+      <button class="qopt" type="button">B · Company revenue</button>
+      <button class="qopt" type="button">C · Data monetisation returns among the firms surveyed</button>
+      <button class="qopt" type="button">D · Successful projects on each road</button>
+      <p class="qwhy">They are shares of returns. Quoting them as revenue, or as a share of firms, changes what they claim.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">2 · Which question should be asked first about a dataset a buyer wants?</p>
+      <button class="qopt" type="button">A · Is there a lawful buyer, given the notice, contracts and law it came with?</button>
+      <button class="qopt" type="button">B · What price can we get?</button>
+      <button class="qopt" type="button">C · Which partner should sell it?</button>
+      <button class="qopt" type="button">D · How fast can we build an API?</button>
+      <p class="qwhy">If nobody may lawfully buy it, the other questions do not arise. Keelson's invoice lines stop here.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="3">
+      <p class="qtext">3 · A slide says "most data monetisation programmes fail". What is the honest response?</p>
+      <button class="qopt" type="button">A · Agree: everybody knows that</button>
+      <button class="qopt" type="button">B · Replace it with CISR's 18 percent</button>
+      <button class="qopt" type="button">C · Replace it with BARC's 17 percent</button>
+      <button class="qopt" type="button">D · Ask what it measured: no reputable study of the success rate was found, and the nearest figures measure returns or adoption</button>
+      <p class="qwhy">CISR's 18 percent is a share of returns; BARC's 17 percent is adoption. Neither is a failure rate.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Data monetisation defined; improving, wrapping and selling; the 51, 31 and 18 percent returns split</span><span class="note">Wixom, Beath and Owens, Data Is Everybody's Business (MIT Press, 2023); MIT CISR research briefing (Aug 2023) and press release (16 Oct 2023), read at source</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">The data monetisation capabilities, as of July 2026; the 11 against 2 percent revenue spread</span><span class="note">MIT CISR research briefings, Nov 2024 and July 2026, read at source</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">The internal, wrapped and direct value spectrum</span><span class="note">CDAIO module 4, data monetisation strategy</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Direct and indirect monetisation</span><span class="note">Doug Laney, Infonomics, as presented in his 2020 talks</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Strava Metro free to planners; BARC's adoption figure; the absence of a reliable success rate</span><span class="note">Reported (Bicycle Retailer, Sept 2020); BARC, 2019, read at source; no success-rate study found</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Every fact on this page, and its verification tier, is recorded in the course's source map.</p>
+  </section>
+
+  <section class="cheat" id="cheatsheet">
+    <h3>Leader session 1 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Three roads</b><span>Improve work, wrap products, sell information offerings.</span></div>
+      <div class="cheat-item"><b>Selling is narrowest</b><span>18 percent of returns in CISR's 2023 research. Returns, not revenue.</span></div>
+      <div class="cheat-item"><b>Same five capabilities</b><span>Selling leans hardest on acceptable data use.</span></div>
+      <div class="cheat-item"><b>Question 1 is rights</b><span>No lawful buyer, no sale. Ask before price.</span></div>
+      <div class="cheat-item"><b>Question 2 is your own use</b><span>Selling to a competitor can cost more than it earns.</span></div>
+      <div class="cheat-item"><b>No success rate exists</b><span>Ask what a "most fail" slide measured.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>The motor claims history passed question 1 on the asset list. Leader session 2 checks it record by record: the privacy notice, the customers who objected, the supplier licences, the injury claims, and the cells too small to publish, until 72.4 percent of the records are left.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Leader session 1 of 4 · learn-data-monetisation-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="../index.html">Course home</a> &nbsp;·&nbsp; <a href="b2-is-it-ours-to-sell.html">Next: Is it ours to sell →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/dm-live.js?v=1"></script>
+<script src="../assets/dm-bench.js?v=1"></script>
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

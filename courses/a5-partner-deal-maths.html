@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Analyst session 5 of 6. Partner deal maths: selling a data product direct, through a reseller, or to one exclusive licensee, with the per-customer formulas worked by hand, 5,000 seeded draws per route, and the contract terms that set the floor, the cap and the spread. Constructed Keelson Mutual case, computed in your browser.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="Partner deal maths - learn data monetisation with phoebe">
+<meta property="og:description" content="Analyst session 5 of 6. Direct, reseller or exclusive licence: three formulas, three ranges, and the terms that carry them.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-data-monetisation-with-phoebe/courses/a5-partner-deal-maths.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-data-monetisation-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Partner deal maths - learn data monetisation with phoebe">
+<meta name="twitter:description" content="Analyst session 5 of 6. Three deal routes for one data product, simulated live.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-data-monetisation-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Analyst session 5 · Partner deal maths - learn data monetisation with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-data-monetisation-with-phoebe</a> / Analyst session 5 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Data Monetisation with Phoebe · Analyst session 5 of 6</div>
+    <h1>Partner <span class="accent">deal maths</span></h1>
+    <p class="sub">A data product can reach its buyers three ways: you sell it yourself, a reseller sells it for a commission, or one partner licenses it exclusively for a guaranteed sum. Each route has its own formula, its own range and its own failure mode, and the contract decides which of those you live with. Tonight: the three formulas by hand, 5,000 seeded draws per route, and the six terms that carry the numbers into a signed deal. Keelson is constructed; the arithmetic runs in your browser.</p>
+    <div class="chip-row">
+      <span class="chip level">🟠 Analyst</span>
+      <span class="chip audience">Analysts and finance partners who build the numbers behind a data product</span>
+      <span class="chip audience">Hands-on in the browser</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-18 · Three formulas, three ranges, the terms</span>
+      <span class="a3" style="flex:5">18-40 · Build-along: price three deal routes</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we start</h2>
+    </div>
+    <p class="lede">By now the Keelson Repair Cost Index has a sellable share (Analyst session 2), a cost to serve (session 3) and a value price of 32.0k a customer a year (session 4). What it does not have is a route to market. Sefa Adjei, Keelson's head of partnerships, has three offers on the table: sell direct with Keelson's own small sales effort, hand it to a data marketplace that resells it for a commission, or license it exclusively to a fleet-telematics firm that will pay a minimum guarantee. Tonight puts one steady-state year of each route side by side. Every Keelson input is invented, in thousands of currency units per year.</p>
+
+    <div class="legend">
+      <span class="pill">🎫 Clear all three quiz questions to stamp your passport</span>
+      <span class="pill">Live = presented in the 45 minutes</span>
+      <span class="pill">Self-study = the full depth, after class</span>
+      <span class="pill">★ Build-along = everyone builds it</span>
+    </div>
+
+    <div class="callout win">
+      <p><strong>★ What you walk out with tonight.</strong> The per-customer margin of each route worked by hand, a P10 to P90 range for each from the widget, a sentence on which route has the highest middle and which has the highest floor, and a draft term sheet for one partner deal of your own with each clause tied to the number it moves. Analyst session 6 feeds the commission and the exclusive switch into the five-year P&amp;L desk.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers three routes and their formulas</span>
+      <h2>Three ways to reach a buyer, three formulas</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">Every route starts from the same price, 32.0k a customer a year, and the same cost to serve, 8.0k. What changes is who finds the customer, who keeps how much of the price, and whether anyone else may buy. Write each route as one line of arithmetic before you simulate anything: if you cannot, you do not yet understand the deal.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three hand-drawn formula strips side by side. Sell direct: price 32.0 thousand minus cost to serve 8.0 thousand minus cost to win 5.0 thousand equals 19.0 thousand a customer, times Keelson's own customers, 10 low, 16 likely, 22 high. Through a reseller: 32.0 thousand times 70 percent is 22.4 thousand, minus 8.0 thousand cost to serve, equals 14.4 thousand a customer, times direct customers times a reach of 1.2, 1.8 or 2.6. One exclusive licensee: a 300.0 thousand guarantee and a 20 percent share of licensee revenue both feed a node that takes the larger of the two, filled in teal; licensee customers 20, 45 or 90 at 32.0 thousand each, and nobody else may buy.">
+        <defs>
+          <filter id="a5aSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="51" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a5aHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a5aAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a5aH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .a5aL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .a5aS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .a5aV { font: 800 16px Inter, sans-serif; fill: #2E2A08; }
+          .a5aW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+          .a5aN { font: 400 12px Inter, sans-serif; fill: #5A5848; }
+        </style>
+
+        <text class="a5aH" x="30" y="28">ONE STEADY-STATE YEAR, THREE ROUTES</text>
+        <text class="a5aS" x="330" y="28">constructed · price 32.0k, cost to serve 8.0k, cost to win 5.0k</text>
+
+        <g filter="url(#a5aSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="30" y="48" width="260" height="240" rx="12" transform="rotate(-0.6 160 168)" fill="#F8F6E6" stroke="#494412"/>
+          <rect x="310" y="48" width="260" height="240" rx="12" transform="rotate(0.5 440 168)" fill="#F8F6E6" stroke="#494412"/>
+          <rect x="590" y="48" width="260" height="240" rx="12" transform="rotate(-0.5 720 168)" fill="#FFFFFF"/>
+          <rect x="46" y="156" width="228" height="34" rx="8" transform="rotate(0.8 160 173)" fill="#FFFFFF"/>
+          <rect x="326" y="156" width="228" height="34" rx="8" transform="rotate(-0.8 440 173)" fill="#FFFFFF"/>
+          <rect x="604" y="86" width="112" height="56" rx="8" transform="rotate(-1.5 660 114)" fill="#F8F6E6" stroke="#494412"/>
+          <rect x="726" y="86" width="112" height="56" rx="8" transform="rotate(1.5 782 114)" fill="#F8F6E6" stroke="#494412"/>
+          <path d="M660 146 L690 166" marker-end="url(#a5aAr)"/>
+          <path d="M782 146 L752 166" marker-end="url(#a5aAr)"/>
+          <rect x="632" y="170" width="176" height="38" rx="10" transform="rotate(-0.6 720 189)" fill="#0E5C66" stroke="#0E5C66"/>
+          <!-- doodle: a signature squiggle on the licence -->
+          <path d="M774 262 Q784 250 794 262 T814 262 M770 270 L824 270" stroke="#494412"/>
+        </g>
+
+        <text class="a5aH" x="48" y="76">SELL DIRECT</text>
+        <text class="a5aL" x="48" y="100">price 32.0k</text>
+        <text class="a5aL" x="48" y="120">- cost to serve 8.0k</text>
+        <text class="a5aL" x="48" y="140">- cost to win 5.0k</text>
+        <text class="a5aV" x="60" y="179">= 19.0k a customer</text>
+        <text class="a5aL" x="48" y="214">x Keelson's own customers</text>
+        <text class="a5aL" x="48" y="234">10 low · 16 likely · 22 high</text>
+        <text class="a5aS" x="48" y="262">Keelson finds, signs and serves each one</text>
+
+        <text class="a5aH" x="328" y="76">THROUGH A RESELLER</text>
+        <text class="a5aL" x="328" y="100">price 32.0k x 70% = 22.4k</text>
+        <text class="a5aL" x="328" y="120">- cost to serve 8.0k</text>
+        <text class="a5aS" x="328" y="140">no cost to win: the reseller sells</text>
+        <text class="a5aV" x="340" y="179">= 14.4k a customer</text>
+        <text class="a5aL" x="328" y="214">x direct customers x reach</text>
+        <text class="a5aL" x="328" y="234">reach 1.2 · 1.8 · 2.6</text>
+        <text class="a5aS" x="328" y="262">30% commission; Keelson still serves</text>
+
+        <text class="a5aH" x="606" y="74">ONE EXCLUSIVE LICENSEE</text>
+        <text class="a5aL" x="616" y="108">guarantee</text>
+        <text class="a5aV" x="616" y="130">300.0k</text>
+        <text class="a5aL" x="738" y="108">20% share</text>
+        <text class="a5aL" x="738" y="128">of revenue</text>
+        <text class="a5aW" x="720" y="194" text-anchor="middle">max(guarantee, share)</text>
+        <text class="a5aL" x="606" y="234">licensee customers 20 · 45 · 90</text>
+        <text class="a5aS" x="606" y="252">at 32.0k each, so revenue moves</text>
+        <text class="a5aS" x="606" y="270">nobody else may buy</text>
+
+        <text class="a5aN" x="30" y="314">Direct and reseller pay per customer; the exclusive pays one sum, and the larger of two numbers sets it.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the teal node is the whole exclusive deal: a floor and a share, and you get whichever is bigger</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>The per-customer arithmetic, by hand<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Sell direct.</strong> Keelson keeps the whole price and pays both costs: 32.0k - 8.0k - 5.0k = 19.0k a customer. Multiply by the customers Keelson signs itself, somewhere between 10 and 22, most likely 16. At 16 customers: 16 x 19.0k = 304.0k.</p>
+        <p><strong>Through a reseller.</strong> The reseller keeps a 30% commission, so Keelson receives 32.0k x 70% = 22.4k. Keelson still serves the customer, so subtract 8.0k: 14.4k a customer. The reseller does the selling, so there is no cost to win. Each customer is worth 4.6k less than a direct one; the reseller has to bring enough extra customers to cover that. Its reach is a multiple of Keelson's direct customers, between 1.2 and 2.6, most likely 1.8.</p>
+        <p><strong>One exclusive licensee.</strong> Keelson receives the larger of a 300.0k minimum guarantee and 20% of the licensee's revenue. The licensee has between 20 and 90 customers, most likely 45, at 32.0k each, and pays no cost to serve to Keelson because the licensee serves them. The share overtakes the guarantee only when 20% x customers x 32.0k is above 300.0k: 300.0k / (20% x 32.0k) = 300.0k / 6.4k = 46.9 customers. The most likely licensee has 45, so the guarantee is doing real work.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>What each formula leaves out<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>These are one steady-state year, with no build cost, no platform run cost and no years of ramp-up. Those belong to the five-year desk in Analyst session 6, which adds them back. Tonight the question is narrower: once the product exists, which route turns it into the most money a year, and how sure can you be?</p>
+        <p>Two simplifications to say out loud. The reseller sells at Keelson's list price; real marketplaces sometimes discount, which moves the 22.4k. And the exclusive route assumes the licensee charges its own customers the same 32.0k; a licensee who bundles the index into a bigger product may charge more or less, and your share moves with it. The contract terms in Part 3 are how you pin those down.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>Three offers on Sefa's desk.</strong> A data marketplace offered to list the index for a 30% commission and do all the selling. A fleet-telematics firm asked for the index exclusively, so that none of its competitors could buy it, and offered a 300.0k minimum guarantee with a 20% revenue share on top. Keelson's own option was a small direct sales effort. Ines Carvalho, the CFO, asked for one thing before any meeting: the worst ordinary year of each route, on one page. Constructed Keelson Mutual example.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers the simulation</span>
+      <h2>Three ranges on one axis</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">The three formulas each have an input nobody knows: how many customers Keelson signs, how far the reseller reaches, how big the licensee grows. So the widget draws each route 5,000 times from those ranges and prints the 10th, 50th and 90th percentile of the year's result. The same seed, 20261033, fixes the draws, so every laptop in the room prints the same table.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three hand-drawn range bars on one axis from 200 to 700 thousand, each from P10 to P90 with a tick at P50. Sell direct runs from plus 240.2 to plus 366.9 thousand, P50 plus 304.8. Through a reseller runs from plus 270.4 to plus 629.8 thousand, P50 plus 429.0, the widest bar. One exclusive licensee runs from plus 300.0 to plus 462.2 thousand, P50 plus 323.8, with a teal wall at 300.0 thousand marking the guarantee as a floor; 41.0 percent of draws sit on it.">
+        <defs>
+          <filter id="a5bSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="53" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a5bHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a5bAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a5bH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .a5bL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .a5bS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .a5bA { font: 700 11px Inter, sans-serif; fill: #2E2A08; }
+          .a5bB { font: 800 11px Inter, sans-serif; fill: #083A40; }
+          .a5bN { font: 400 12px Inter, sans-serif; fill: #5A5848; }
+        </style>
+
+        <text class="a5bH" x="30" y="28">ONE YEAR, 5,000 SEEDED DRAWS PER ROUTE</text>
+        <text class="a5bS" x="340" y="28">bar = P10 to P90 · tick = P50 · constructed</text>
+
+        <g filter="url(#a5bSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M140 300 L840 300 M140 300 L140 306 M280 300 L280 306 M420 300 L420 306 M560 300 L560 306 M700 300 L700 306 M840 300 L840 306" stroke="#5A5848"/>
+          <rect x="196" y="70" width="178" height="18" rx="5" transform="rotate(-0.3 285 79)" fill="#F8F6E6" stroke="#494412"/>
+          <path d="M287 66 L287 92" stroke-width="3"/>
+          <rect x="239" y="150" width="503" height="18" rx="5" transform="rotate(0.2 490 159)" fill="#F8F6E6" stroke="#494412"/>
+          <path d="M461 146 L461 172" stroke-width="3"/>
+          <rect x="280" y="230" width="227" height="18" rx="5" transform="rotate(-0.3 393 239)" fill="#FFFFFF"/>
+          <path d="M313 226 L313 252" stroke-width="3"/>
+          <rect x="270" y="224" width="9" height="30" rx="2" fill="#0E5C66" stroke="#0E5C66"/>
+          <!-- doodle: ground hatching under the floor -->
+          <path d="M250 232 L262 244 M250 240 L262 252 M256 228 L266 238" stroke="#0E5C66"/>
+        </g>
+
+        <text class="a5bH" x="30" y="58">SELL DIRECT</text>
+        <text class="a5bA" x="287" y="62" text-anchor="middle">P50 +304.8k</text>
+        <text class="a5bS" x="196" y="104" text-anchor="middle">+240.2k</text>
+        <text class="a5bS" x="374" y="104" text-anchor="middle">+366.9k</text>
+
+        <text class="a5bH" x="30" y="138">THROUGH A RESELLER</text>
+        <text class="a5bA" x="461" y="142" text-anchor="middle">P50 +429.0k</text>
+        <text class="a5bS" x="239" y="184" text-anchor="middle">+270.4k</text>
+        <text class="a5bS" x="742" y="184" text-anchor="middle">+629.8k</text>
+
+        <text class="a5bH" x="30" y="218">ONE EXCLUSIVE LICENSEE</text>
+        <text class="a5bA" x="320" y="220">P50 +323.8k</text>
+        <text class="a5bB" x="280" y="270" text-anchor="middle">+300.0k floor</text>
+        <text class="a5bS" x="507" y="270" text-anchor="middle">+462.2k</text>
+        <text class="a5bB" x="560" y="244">41.0% of draws sit on the guarantee</text>
+
+        <text class="a5bS" x="140" y="320" text-anchor="middle">200k</text>
+        <text class="a5bS" x="280" y="320" text-anchor="middle">300k</text>
+        <text class="a5bS" x="420" y="320" text-anchor="middle">400k</text>
+        <text class="a5bS" x="560" y="320" text-anchor="middle">500k</text>
+        <text class="a5bS" x="700" y="320" text-anchor="middle">600k</text>
+        <text class="a5bS" x="840" y="320" text-anchor="middle">700k</text>
+
+        <text class="a5bN" x="30" y="344">The reseller has the highest middle and the widest spread; the exclusive cannot fall below its teal wall.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the exclusive's P10 is not a forecast, it is a contract clause</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Reading the table<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Sell direct:</strong> P10 +240.2k, P50 +304.8k, P90 +366.9k, mean +304.0k. The narrowest range: Keelson controls every step and the only unknown is how many customers it signs.</p>
+        <p><strong>Through a reseller:</strong> P10 +270.4k, P50 +429.0k, P90 +629.8k, mean +440.3k. The highest middle and the widest spread. Even its P10 sits above the direct P10.</p>
+        <p><strong>One exclusive licensee:</strong> P10 +300.0k, P50 +323.8k, P90 +462.2k, mean +354.7k, at the guarantee in 41.0% of draws. The highest floor, and the floor is exactly the guarantee. In four draws out of ten the licensee is small enough that the guarantee is what Keelson gets.</p>
+        <p>So the answer depends on the question. "Which route earns most in a typical year?" The reseller. "Which route can we least afford to see go badly?" The exclusive has the best bad year. A CFO and a head of partnerships can both be right about the same table.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>How the draws are tied together<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Each draw is one random number that sets every uncertain input of a route at once. In the reseller route that means a draw with few direct customers also has a short reach: the two move together, which is a strong assumption and makes the reseller's spread wider than if they were independent. Each input is drawn from a triangular range (low, most likely, high), the simplest honest shape when you have three numbers and no data.</p>
+        <p>The method itself, why a range beats a single number, what P10 and P90 mean to a funder, and why a fixed seed matters, is taught in Business Cases &amp; ROI, <a href="https://phoebefu6.github.io/learn-business-cases-roi-with-phoebe/courses/a5-the-range-and-the-option-to-wait.html">Analyst session 5 ↗</a>. Use it here; do not rebuild it.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The page Ines asked for.</strong> Sefa brought the three ranges to the CFO. Ines Carvalho read the bottom row first: the exclusive could not do worse than +300.0k, because the guarantee is written into the contract. Then she read the reseller's middle, +429.0k, and asked what the exclusive gave up to buy that certainty. That question is Part 3. Constructed Keelson Mutual example.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers floors, caps and the terms that carry them</span>
+      <h2>A guarantee is a floor, exclusivity is a cap</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">The minimum guarantee lifts the bottom of the range; that is what Keelson buys. Exclusivity is what Keelson pays for it: a cap on everything it could have sold to anyone else. In a thin market the floor wins. In a strong one the cap bites. On the desk in Analyst session 6, the sponsor's case sold direct ends five years at +1362.4k; the same case with the exclusive licence ends at +953.4k. The guarantee did not change between those two runs; the market did.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn term sheet card with six clauses, each with an arrow to the number it moves. Minimum guarantee and true-up moves the floor, 300.0 thousand. Field of use and territory, exclusivity scope and derived data at the end move the cap, shown as plus 953.4 thousand against plus 1,362.4 thousand over five years in the sponsor's case. Audit rights and term and renewal move the spread. Exclusivity scope is filled in teal.">
+        <defs>
+          <filter id="a5cSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="57" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a5cHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a5cAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a5cH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .a5cL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .a5cS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .a5cV { font: 800 16px Inter, sans-serif; fill: #2E2A08; }
+          .a5cW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+          .a5cN { font: 400 12px Inter, sans-serif; fill: #5A5848; }
+        </style>
+
+        <text class="a5cH" x="30" y="28">KEELSON INDEX LICENCE, SIX CLAUSES</text>
+        <text class="a5cS" x="300" y="28">constructed · each clause moves one number</text>
+
+        <g filter="url(#a5cSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="30" y="44" width="530" height="262" rx="12" transform="rotate(-0.4 295 175)" fill="#FFFFFF"/>
+          <rect x="48" y="62" width="494" height="30" rx="7" transform="rotate(0.5 295 77)" fill="#F8F6E6" stroke="#494412"/>
+          <rect x="48" y="100" width="494" height="30" rx="7" transform="rotate(-0.4 295 115)" fill="#F8F6E6" stroke="#494412"/>
+          <rect x="48" y="138" width="494" height="30" rx="7" transform="rotate(0.4 295 153)" fill="#0E5C66" stroke="#0E5C66"/>
+          <rect x="48" y="176" width="494" height="30" rx="7" transform="rotate(-0.5 295 191)" fill="#F8F6E6" stroke="#494412"/>
+          <rect x="48" y="214" width="494" height="30" rx="7" transform="rotate(0.4 295 229)" fill="#F8F6E6" stroke="#494412"/>
+          <rect x="48" y="252" width="494" height="30" rx="7" transform="rotate(-0.4 295 267)" fill="#F8F6E6" stroke="#494412"/>
+          <rect x="640" y="56" width="210" height="58" rx="10" transform="rotate(-1 745 85)" fill="#F8F6E6" stroke="#494412"/>
+          <rect x="640" y="140" width="210" height="76" rx="10" transform="rotate(1 745 178)" fill="#F8F6E6" stroke="#494412"/>
+          <rect x="640" y="240" width="210" height="58" rx="10" transform="rotate(-1 745 269)" fill="#F8F6E6" stroke="#494412"/>
+          <path d="M548 77 L634 84" marker-end="url(#a5cAr)"/>
+          <path d="M548 115 L634 166" marker-end="url(#a5cAr)"/>
+          <path d="M548 153 L634 178" marker-end="url(#a5cAr)"/>
+          <path d="M548 191 L634 192" marker-end="url(#a5cAr)"/>
+          <path d="M548 229 L634 262" marker-end="url(#a5cAr)"/>
+          <path d="M548 267 L634 276" marker-end="url(#a5cAr)"/>
+          <!-- doodle: a paperclip on the card -->
+          <path d="M520 36 L520 54 Q520 60 526 60 Q532 60 532 54 L532 40 Q532 36 528 36 Q524 36 524 40 L524 52" stroke="#494412"/>
+        </g>
+
+        <text class="a5cL" x="62" y="82">Minimum guarantee and true-up</text>
+        <text class="a5cS" x="300" y="82">paid even in a thin year</text>
+        <text class="a5cL" x="62" y="120">Field of use and territory</text>
+        <text class="a5cS" x="300" y="120">what is left to sell to others</text>
+        <text class="a5cW" x="62" y="158">Exclusivity scope</text>
+        <text class="a5cW" x="300" y="158">segment, region, time</text>
+        <text class="a5cL" x="62" y="196">Derived data at the end</text>
+        <text class="a5cS" x="300" y="196">what the licensee keeps after</text>
+        <text class="a5cL" x="62" y="234">Audit rights</text>
+        <text class="a5cS" x="300" y="234">you collect only what you can check</text>
+        <text class="a5cL" x="62" y="272">Term and renewal</text>
+        <text class="a5cS" x="300" y="272">when the income can stop</text>
+
+        <text class="a5cH" x="656" y="80">FLOOR</text>
+        <text class="a5cS" x="656" y="100">the 300.0k guarantee</text>
+        <text class="a5cH" x="656" y="164">CAP</text>
+        <text class="a5cV" x="656" y="186">+953.4k</text>
+        <text class="a5cS" x="656" y="204">vs +1362.4k direct, 5 years</text>
+        <text class="a5cH" x="656" y="264">SPREAD</text>
+        <text class="a5cS" x="656" y="284">how wide P10 to P90 runs</text>
+
+        <text class="a5cN" x="30" y="328">Three clauses set the cap, which is why exclusivity scope is the one to negotiate hardest.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the numbers on Part 2's axis are only as good as the clauses on this card</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Six clauses that carry the numbers<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Minimum guarantee and true-up.</strong> The guarantee is the floor; the true-up is how the share above it gets paid, and when. Without a true-up date, a share that beats the guarantee can arrive late or not at all.</p>
+        <p><strong>Field of use and territory.</strong> What the licensee may use the index for, and where. A narrow field leaves Keelson free to sell the same index to repair networks or parts makers outside it.</p>
+        <p><strong>Exclusivity scope.</strong> Exclusive against whom: one segment (fleet operators), one region, for a fixed time. "Exclusive" with no scope is a cap on the whole market forever. This is the clause that decides whether +953.4k or +1362.4k is closer to your future.</p>
+        <p><strong>Derived data at the end.</strong> What happens to models, tables and products the licensee built from the index when the licence ends. If they keep them, the licensee no longer needs to renew, and the cap reaches past the term.</p>
+        <p><strong>Audit rights.</strong> A revenue share is only as large as the revenue you can verify. The right to inspect the licensee's customer counts and invoices is what makes the 20% real.</p>
+        <p><strong>Term and renewal.</strong> How long, how it renews, and who may walk away. The range in Part 2 is one year; the end of a term is when the whole of it can stop.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>No law sets the price of a voluntary deal<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The EU Data Act (Regulation (EU) 2023/2854), which applies from 12 September 2025 with some parts staggered into 2026 and 2027, has rules on terms and price in Articles 8 and 9: fair, reasonable and non-discriminatory terms, and reasonable compensation that "may include a margin". Those articles apply only where a data holder is obliged by law to make data available. Keelson licensing its index to a partner it chose is a voluntary deal, so the price, the guarantee and the share are whatever the two sides negotiate. Do not cite Articles 8 and 9 as a pricing rule for a voluntary licence.</p>
+        <p>What still applies is everything Analyst session 2 settled: the index may only contain what Keelson may lawfully pass on, and the licence chain carries that limit into the partner's contract. The field of use clause is where the inbound limits become outbound ones.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>Two licensees, and both terms ending.</strong> Reddit's annual report for fiscal 2025 (10-K) says its data licensing revenue came from two partners. Its quarterly report filed on 30 October 2026 (10-Q) says those agreements are "approaching the end of their respective current terms". Two buyers is a concentration risk even when both pay well: the term and renewal clause, not the price, decides what next year looks like. An exclusive licence is the extreme case, with one buyer by design.</p>
+    </div>
+  </section>
+
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>Price three deal routes</h2>
+      <span class="tag demo">★ 22 min · everyone builds</span>
+    </div>
+    <p class="lede">The widget runs the three routes, 5,000 seeded draws each, in your browser. Three sliders change the deal: the reseller's commission (default 30.0%), the exclusive minimum guarantee (default 300.0k) and the exclusive revenue share (default 20.0%). The table under them reprints P10, P50, P90 and the mean for each route every time you move one. The inputs are invented, so the lesson is the shape of each range, not the totals.</p>
+
+    <div class="dmx-widget" data-mode="deal"></div>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn map of the widget. Three sliders, reseller commission, exclusive minimum guarantee and exclusive revenue share, feed the three routes with their constructed ranges. The engine runs 5,000 seeded draws per route and prints a table with P10, P50, P90 and mean for each route, plus the share of draws at the guarantee for the exclusive, and a note restating the three formulas. The table box is filled in teal.">
+        <defs>
+          <filter id="a5dSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="59" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a5dHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a5dAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a5dH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .a5dL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .a5dS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .a5dB { font: 800 11px Inter, sans-serif; fill: #083A40; }
+          .a5dW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+        </style>
+
+        <text class="a5dH" x="30" y="28">WHAT THE WIDGET COMPUTES</text>
+
+        <g filter="url(#a5dSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="30" y="48" width="210" height="140" rx="10" transform="rotate(-0.8 135 118)" fill="#F8F6E6" stroke="#494412"/>
+          <path d="M244 118 L298 118" marker-end="url(#a5dAr)"/>
+          <rect x="304" y="78" width="230" height="80" rx="10" transform="rotate(-0.4 419 118)" fill="url(#a5dHc)"/>
+          <path d="M538 118 L600 118" marker-end="url(#a5dAr)"/>
+          <rect x="606" y="48" width="244" height="140" rx="10" transform="rotate(0.4 728 118)" fill="#0E5C66" stroke="#0E5C66"/>
+        </g>
+
+        <rect x="316" y="92" width="206" height="52" rx="6" fill="#FFFFFF"/>
+
+        <text class="a5dL" x="44" y="74">three sliders</text>
+        <text class="a5dS" x="44" y="98">reseller commission</text>
+        <text class="a5dS" x="44" y="118">exclusive minimum guarantee</text>
+        <text class="a5dS" x="44" y="138">exclusive revenue share</text>
+        <text class="a5dS" x="44" y="166">defaults 30% · 300.0k · 20%</text>
+        <text class="a5dL" x="328" y="112">5,000 seeded draws</text>
+        <text class="a5dS" x="328" y="130">per route, seed 20261033</text>
+        <text class="a5dW" x="622" y="76">a row per route</text>
+        <text class="a5dW" x="622" y="100">P10 · P50 · P90 · mean</text>
+        <text class="a5dW" x="622" y="124">share of draws at the</text>
+        <text class="a5dW" x="622" y="142">guarantee (exclusive)</text>
+        <text class="a5dW" x="622" y="168">a note with the formulas</text>
+
+        <text class="a5dB" x="30" y="226">Price, cost to serve and cost to win stay fixed; only the deal terms move, so every change you see is the deal.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - three sliders, three routes, one table that reprints on every move</figcaption>
+    </figure>
+
+    <div class="steps">
+      <div class="step">
+        <p><strong>Step 1 · Read the table.</strong> Leave the sliders at their defaults. Copy the three rows, then circle the highest P50 and the highest P10.</p>
+        <div class="prompt-box good"><span class="label">★ Step 1 · what the widget prints</span>Route                    P10      P50      P90      Mean     Years at the guarantee
+Sell direct              +240.2k  +304.8k  +366.9k  +304.0k  -
+Through a reseller       +270.4k  +429.0k  +629.8k  +440.3k  -
+One exclusive licensee   +300.0k  +323.8k  +462.2k  +354.7k  41.0%</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 2 · Check two margins by hand.</strong> Use the note under the table: price 32.0k, serve 8.0k, sales 5.0k, and Keelson keeps 70.0% of price through the reseller.</p>
+        <div class="prompt-box good"><span class="label">★ Step 2 · the per-customer margin by hand</span>direct:    32.0k - 8.0k - 5.0k       = 19.0k a customer
+reseller:  32.0k x 70% = 22.4k
+           22.4k - 8.0k               = 14.4k a customer
+direct at the likely 16 customers:  16 x 19.0k = 304.0k   (printed P50: +304.8k)</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 3 · Take the floor away.</strong> Drag "Exclusive minimum guarantee" to 0.0k. Watch the exclusive P10 fall, and the last column with it. Write what your widget prints, then put the slider back to 300.0k.</p>
+        <div class="prompt-box good"><span class="label">★ Step 3 · the exclusive with no guarantee</span>exclusive P10 at guarantee 0.0k:      __________
+years at the guarantee:               __________
+what the 300.0k was buying:  ____________________________________</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 4 · Find the commission that flips the middle.</strong> Raise "Reseller commission" one notch at a time. Find the first setting where the reseller's P50 falls below the direct P50. Write what your widget prints.</p>
+        <div class="prompt-box good"><span class="label">★ Step 4 · where the reseller stops winning</span>commission:                 __________
+reseller P50 at that point: __________
+direct P50 (unchanged):     +304.8k
+the commission I would walk away above: __________</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 5 · Your own term sheet.</strong> Pick one partner deal your organisation has or might sign for a data product. Fill the six clauses from Part 3 and name the number each one moves. Your numbers will differ.</p>
+        <div class="prompt-box good"><span class="label">★ Step 5 · your term sheet</span>partner:                ______________   route: direct / reseller / exclusive
+minimum guarantee:      ______  true-up date: ______        moves: floor
+field of use, territory: ______________________________     moves: cap
+exclusivity scope:      segment ____ region ____ until ____  moves: cap
+derived data at end:    ______________________________     moves: cap
+audit rights:           ______________________________     moves: spread
+term and renewal:       ______ years, renews ____________   moves: spread</div>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>Keep the commission and the guarantee.</strong> Analyst session 6 puts both into a five-year P&amp;L: the partner commission comes off revenue every year, and a switch replaces the whole sale with the exclusive licence so you can see the cap over five years, not one.</p>
+    </div>
+  </section>
+
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before Analyst session 6</h2>
+      <span class="tag exercise">30 min</span>
+    </div>
+    <ol>
+      <li><strong>Write one route as one line.</strong> For a data product you know, write the direct per-customer margin as price minus cost to serve minus cost to win. If you cannot fill a term, that is the number to go and find.</li>
+      <li><strong>Find the break point.</strong> For one exclusive offer, real or imagined, divide the guarantee by the share times the price. That is the number of licensee customers at which the share overtakes the floor. Is the licensee's likely size above or below it?</li>
+      <li><strong>Read one partner contract.</strong> Find a licence or reseller agreement your organisation has signed, for data or anything else, and copy its exclusivity scope and its term and renewal clause word for word.</li>
+      <li><strong>Count your buyers.</strong> List the buyers of one data product or service. What share of its revenue comes from the largest two? Write one sentence on what happens if both reach the end of their terms in the same year.</li>
+    </ol>
+  </section>
+
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and Analyst session 5 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">1 · Keelson's exclusive offer carries a 300.0k minimum guarantee. What does the guarantee do to the range of a year's result?</p>
+      <button class="qopt" type="button">A · It raises the P90, because the licensee pays more</button>
+      <button class="qopt" type="button">B · It narrows every route's range equally</button>
+      <button class="qopt" type="button">C · It sets the floor: the exclusive's P10 is +300.0k, and 41.0% of draws sit exactly on it</button>
+      <button class="qopt" type="button">D · Nothing, because the licensee usually beats it</button>
+      <p class="qwhy">The guarantee is a floor written into the contract. It lifts the bottom of the range and leaves the top to the revenue share.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">2 · With the sponsor's inputs on the desk, selling direct ends five years at +1362.4k and the exclusive licence at +953.4k. What does that gap show?</p>
+      <button class="qopt" type="button">A · Exclusivity caps a strong market: everything Keelson could have sold to others is given up for the guarantee and the share</button>
+      <button class="qopt" type="button">B · The guarantee was set too high</button>
+      <button class="qopt" type="button">C · Exclusive licences always lose money</button>
+      <button class="qopt" type="button">D · The reseller would have done better than both</button>
+      <p class="qwhy">The guarantee wins in a thin market and caps a strong one. In the sponsor's case the market is strong, so the cap costs more than the floor is worth.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="3">
+      <p class="qtext">3 · Reddit's FY2025 10-K says its data licensing revenue came from two partners, and its 10-Q filed 30 October 2026 says those agreements are approaching the end of their current terms. Why is that a risk?</p>
+      <button class="qopt" type="button">A · Because two partners always pay less than many small ones</button>
+      <button class="qopt" type="button">B · Because the Data Act sets the price at renewal</button>
+      <button class="qopt" type="button">C · Because licensing revenue cannot be audited</button>
+      <button class="qopt" type="button">D · Because with only two buyers, a renewal that fails takes away a large part of the revenue at once</button>
+      <p class="qwhy">Concentration means the term and renewal clause carries most of the risk. An exclusive licence takes that to one buyer by design.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Partnership terms and revenue share</span><span class="note">CDAIO module 5, data monetisation execution (partner routes, guarantees, revenue share and contract terms)</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Concentration in two licensees</span><span class="note">Reddit, Form 10-K for fiscal 2025 (licensing from two partners) and Form 10-Q filed 30 October 2026 (agreements approaching the end of their current terms)</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Where a law sets data terms and where it does not</span><span class="note">EU Data Act (Regulation (EU) 2023/2854), Articles 8 and 9, which apply only where a holder is obliged to make data available</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Keelson's three deal routes and their ranges</span><span class="note">Constructed and labelled; 5,000 seeded draws per route computed by the engine in your browser and checked against an independent Python run</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Every fact on this page, and its verification tier, is recorded in the course's source map.</p>
+  </section>
+
+  <section class="cheat" id="cheatsheet">
+    <h3>Analyst session 5 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Direct</b><span>Price - serve - win, x your own customers. Narrow, and all yours.</span></div>
+      <div class="cheat-item"><b>Reseller</b><span>Price x (1 - commission) - serve, x a wider reach. Highest middle, widest spread.</span></div>
+      <div class="cheat-item"><b>Exclusive</b><span>The larger of the guarantee and the share. Highest floor; nobody else may buy.</span></div>
+      <div class="cheat-item"><b>Break point</b><span>Guarantee / (share x price) = licensee customers where the share takes over.</span></div>
+      <div class="cheat-item"><b>Floor vs cap</b><span>The guarantee wins in a thin market; exclusivity costs most in a strong one.</span></div>
+      <div class="cheat-item"><b>Terms carry the numbers</b><span>Scope, field, derived data set the cap; audit and renewal set the spread.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>One year is not a business. Analyst session 6, the data product P&amp;L desk, adds the build, the platform's run cost, customers won and lost year by year, and the partner commission from tonight, then prints five years and a range. Its fourth rung is tonight's exclusive licence, held over five years.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Analyst session 5 of 6 · learn-data-monetisation-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="a4-pricing-a-data-product.html">← Prev: Pricing a data product</a> &nbsp;·&nbsp; <a href="a6-the-data-product-pl-desk.html">Next: The data product P&amp;L desk →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/dm-live.js?v=1"></script>
+<script src="../assets/dm-bench.js?v=1"></script>
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

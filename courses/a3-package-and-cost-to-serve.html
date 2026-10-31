@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Analyst session 3 of 6. Package and cost to serve: four ways to hand over the Keelson Repair Cost Index, the shared fixed cost against the cost to serve one more customer, the cost curve as customers grow, and why cost-plus is a floor, never the price. Constructed case, computed in your browser.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="Package and cost to serve - learn data monetisation with phoebe">
+<meta property="og:description" content="Analyst session 3 of 6. Tiers, fixed against variable cost, and the cost curve of a data product, computed live.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-data-monetisation-with-phoebe/courses/a3-package-and-cost-to-serve.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-data-monetisation-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Package and cost to serve - learn data monetisation with phoebe">
+<meta name="twitter:description" content="Analyst session 3 of 6. What one more customer of a data product really costs, computed live.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-data-monetisation-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Analyst session 3 · Package and cost to serve - learn data monetisation with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-data-monetisation-with-phoebe</a> / Analyst session 3 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Data Monetisation with Phoebe · Analyst session 3 of 6</div>
+    <h1>Package and <span class="accent">cost to serve</span></h1>
+    <p class="sub">The same index can leave the building as a quarterly report, a dashboard, an API feed or an analyst's afternoon, and each of those costs something different to build and to keep serving. Underneath all four sits a platform every customer shares. Tonight: the four tiers Keelson Mutual could offer, the split between the cost that stays fixed and the cost that grows with each customer, the curve that falls as customers arrive, and why a cost-plus price is a floor to check against, never the price itself. Keelson is constructed; the arithmetic runs in your browser.</p>
+    <div class="chip-row">
+      <span class="chip level">🟡 Analyst</span>
+      <span class="chip audience">Analysts and finance partners who build the numbers behind a data product</span>
+      <span class="chip audience">Hands-on in the browser</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-18 · Tiers, fixed against variable, the cost curve</span>
+      <span class="a3" style="flex:5">18-40 · Build-along: cost one Keelson customer</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we start</h2>
+    </div>
+    <p class="lede">Analyst session 2 ended with a sellable share: 72.4% of Keelson's motor claims records can go into published cells of the Keelson Repair Cost Index. That tells you what may be sold. It does not tell you what it costs to sell it. Sefa Adjei, head of partnerships, has prospects asking for the index in different shapes, and Ines Carvalho, the CFO, wants one number before any price is discussed: what does a customer cost us? Tonight we build that number from Keelson's constructed cost structure, in thousands of currency units a year, and learn why it changes every time the customer count does.</p>
+
+    <div class="legend">
+      <span class="pill">🎫 Clear all three quiz questions to stamp your passport</span>
+      <span class="pill">Live = presented in the 45 minutes</span>
+      <span class="pill">Self-study = the full depth, after class</span>
+      <span class="pill">★ Build-along = everyone builds it</span>
+    </div>
+
+    <div class="callout win">
+      <p><strong>★ What you walk out with tonight.</strong> A tier and cost table for a data product of your own, the split between shared fixed cost and cost to serve one more customer with the arithmetic shown, the cost per customer at five customer counts, and a cost-plus floor you can hold a price against. Analyst session 4 takes that floor into pricing, where the price is set by what buyers get, not by what Keelson spends.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers packaging tiers</span>
+      <h2>Four ways to hand over the same index</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">Packaging is the decision about what the buyer actually receives. The index numbers are the same in every tier; what changes is how they arrive, how much each format costs to build once, and how much it costs to keep one customer served for a year. Underneath every tier sits the same platform: the anonymisation pipeline, a data steward, the data protection impact assessment and the legal review. No customer buys the platform, and every customer pays for it.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Four hand-drawn tier boxes standing on one shared platform slab. Quarterly report: build 40.0k, serve 1.5k per customer, 50% of customers. Dashboard: build 90.0k, serve 4.0k, not offered at launch. API feed: build 160.0k, serve 9.0k, 40% of customers. Bespoke analysis: build 0.0k, serve 35.0k, 10% of customers. The shared platform below is filled in teal: build 120.0k, run 150.0k a year, for pipeline, data steward, DPIA and legal review.">
+        <defs>
+          <filter id="a3aSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="37" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a3aHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a3aAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a3aH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .a3aL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .a3aS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .a3aV { font: 800 16px Inter, sans-serif; fill: #2E2A08; }
+          .a3aW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+          .a3aN { font: 400 12px Inter, sans-serif; fill: #5A5848; }
+        </style>
+
+        <text class="a3aH" x="30" y="28">FOUR TIERS, ONE PLATFORM UNDERNEATH</text>
+        <text class="a3aS" x="320" y="28">constructed · build once, then serve every year</text>
+
+        <g filter="url(#a3aSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="30" y="50" width="190" height="104" rx="12" transform="rotate(-0.8 125 102)" fill="#F8F6E6" stroke="#494412"/>
+          <rect x="240" y="50" width="190" height="104" rx="12" transform="rotate(0.6 335 102)" fill="#FFFFFF" stroke="#CFCCB8"/>
+          <rect x="450" y="50" width="190" height="104" rx="12" transform="rotate(-0.6 545 102)" fill="#F8F6E6" stroke="#494412"/>
+          <rect x="660" y="50" width="190" height="104" rx="12" transform="rotate(0.8 755 102)" fill="#FFFFFF"/>
+          <path d="M80 156 L80 182 M170 156 L170 182 M500 156 L500 182 M590 156 L590 182 M710 156 L710 182 M800 156 L800 182"/>
+          <path d="M290 156 L290 182 M380 156 L380 182" stroke="#CFCCB8"/>
+          <rect x="30" y="184" width="820" height="66" rx="12" transform="rotate(-0.3 440 217)" fill="#0E5C66" stroke="#0E5C66"/>
+          <!-- doodle: a database drum on the slab -->
+          <path d="M800 196 L800 232 M836 196 L836 232 M800 232 C800 240 836 240 836 232 M800 196 C800 188 836 188 836 196 C836 204 800 204 800 196" stroke="#FFFFFF"/>
+        </g>
+
+        <text class="a3aH" x="46" y="76">QUARTERLY REPORT</text>
+        <text class="a3aL" x="46" y="98">build 40.0k</text>
+        <text class="a3aS" x="46" y="118">serve 1.5k per customer</text>
+        <text class="a3aV" x="46" y="142">50% of customers</text>
+
+        <text class="a3aH" x="256" y="76">DASHBOARD</text>
+        <text class="a3aL" x="256" y="98">build 90.0k</text>
+        <text class="a3aS" x="256" y="118">serve 4.0k per customer</text>
+        <text class="a3aS" x="256" y="140">not offered at launch</text>
+
+        <text class="a3aH" x="466" y="76">API FEED</text>
+        <text class="a3aL" x="466" y="98">build 160.0k</text>
+        <text class="a3aS" x="466" y="118">serve 9.0k per customer</text>
+        <text class="a3aV" x="466" y="142">40% of customers</text>
+
+        <text class="a3aH" x="676" y="76">BESPOKE ANALYSIS</text>
+        <text class="a3aL" x="676" y="98">build 0.0k</text>
+        <text class="a3aS" x="676" y="118">serve 35.0k per customer</text>
+        <text class="a3aV" x="676" y="142">10% of customers</text>
+
+        <text class="a3aW" x="50" y="210">SHARED PLATFORM · build 120.0k, run 150.0k a year</text>
+        <text class="a3aW" x="50" y="234">pipeline, data steward, DPIA, legal review · every customer leans on it</text>
+
+        <text class="a3aN" x="30" y="282">The tiers decide what a customer receives. The slab is what Keelson pays before anyone receives anything.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the slab is the cost every customer shares, whichever box they buy</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Four tiers, two numbers each<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Build</strong> is what it costs once to make the format exist: the report template and its checks (40.0k), the dashboard (90.0k), the API with its access control and uptime promise (160.0k). Bespoke analysis has no build cost, because every piece of it is made to order.</p>
+        <p><strong>Cost to serve</strong> is what one customer costs for a year once the format exists: 1.5k to send a quarterly report and answer its questions, 4.0k for a dashboard seat and its support, 9.0k for an API customer's onboarding, monitoring and support, 35.0k of analyst time for a bespoke piece.</p>
+        <p><strong>The shared platform</strong> is built once for 120.0k and runs at 150.0k a year. It is the reason the index can be sold at all: the pipeline applies the rights checks and cell suppression from Analyst session 2, the steward owns quality, and the DPIA and legal review keep it lawful.</p>
+        <p>Keelson's launch mix: half the customers take the report, 40% the API, 10% bespoke analysis. The dashboard is not offered at launch, so its 90.0k is not spent.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Which format fits which buyer<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>CDAIO module 5 (data monetisation execution) sets out six delivery formats and who each suits. A dashboard or report suits non-technical stakeholders and is the least complex to run. A shared database view suits analysts with SQL skills. An API endpoint suits developers and applications. File delivery suits batch consumers and partners. Embedded analytics suits product teams and is complex. A data marketplace listing suits external monetisation and is also complex.</p>
+        <p>The same module's advice for a first release: do not over-engineer it, ship a CSV before building an API. For Keelson that points at the quarterly report with its index table as a file: the cheapest tier to build, the cheapest to serve, and the one that tells you whether buyers come back for the second quarter before 160.0k goes into an API.</p>
+        <p>A tour of data product types in their own right, beyond the selling decision, lives in <a href="https://phoebefu6.github.io/learn-data-product-with-phoebe/">Data Products ↗</a>.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The API that waited a quarter.</strong> Sefa came to the packaging meeting with two repair networks asking for a live feed and argued for building the API first: "that is what serious buyers want". Maya Okafor, the CDO, put the tier table on the screen. The API costs 160.0k to build and 9.0k a year to serve each customer; the report costs 40.0k and 1.5k. She argued for the quarterly report first, so that the first paying customers would prove the index was worth repeat business before the larger build. The plan that went to Ines ships the report in the first quarter and keeps the API in the launch mix for the buyers who need a feed. Constructed Keelson Mutual example.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers fixed against variable cost</span>
+      <h2>The cost that stays and the cost that grows</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">Split every cost by one question: does it change when one more customer signs? The platform run, the steward and the builds do not. The report mailing, the API support and the analyst's hours do. The first pile is the shared fixed cost, and it is large. The second is the cost to serve one more customer, and for most of a data product it is small, because a copy of an index costs almost nothing to make.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn stacked bar for one Keelson customer when there are 16 customers. The shared fixed share, 16.0k, is filled in teal: 256.7k a year divided by 16 customers. The cost to serve, 7.9k, follows: 50% times 1.5 plus 40% times 9 plus 10% times 35. Total 23.9k a customer. Below it, a thin sliver marks the cost of one more copy of the index itself, close to zero.">
+        <defs>
+          <filter id="a3bSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="41" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a3bHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a3bAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a3bH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .a3bL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .a3bS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .a3bV { font: 800 18px Inter, sans-serif; fill: #2E2A08; }
+          .a3bW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+          .a3bB { font: 800 11px Inter, sans-serif; fill: #083A40; }
+          .a3bN { font: 400 12px Inter, sans-serif; fill: #5A5848; }
+        </style>
+
+        <text class="a3bH" x="30" y="28">ONE CUSTOMER'S COST, AT 16 CUSTOMERS</text>
+        <text class="a3bS" x="340" y="28">constructed · thousands a year</text>
+
+        <g filter="url(#a3bSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="60" y="62" width="480" height="64" rx="8" transform="rotate(-0.3 300 94)" fill="#0E5C66" stroke="#0E5C66"/>
+          <rect x="540" y="62" width="237" height="64" rx="8" transform="rotate(0.3 658 94)" fill="#F8F6E6" stroke="#494412"/>
+          <path d="M62 140 L538 140 M542 140 L775 140" stroke="#CFCCB8"/>
+          <rect x="60" y="196" width="4" height="22" fill="#1F1E14"/>
+          <!-- doodle: a tiny photocopy pair -->
+          <path d="M820 186 L846 186 L846 218 L820 218 Z M826 180 L852 180 L852 212" stroke="#494412"/>
+        </g>
+
+        <text class="a3bW" x="78" y="88">SHARED FIXED 16.0k</text>
+        <text class="a3bW" x="78" y="110">256.7k a year / 16 customers</text>
+        <text class="a3bH" x="554" y="88">SERVE 7.9k</text>
+        <text class="a3bS" x="554" y="110">the tier mix, per customer</text>
+        <text class="a3bV" x="794" y="100">23.9k</text>
+
+        <text class="a3bS" x="62" y="158">150 run + 40.0 + 66.7 (builds spread over 3 years)</text>
+        <text class="a3bS" x="548" y="158">50% x 1.5 + 40% x 9 + 10% x 35</text>
+        <text class="a3bS" x="548" y="174">= 7.85, shown as 7.9k</text>
+
+        <text class="a3bB" x="78" y="212">one more copy of the index itself: close to zero. The 7.9k pays for serving, not copying.</text>
+
+        <text class="a3bN" x="30" y="252">Two thirds of this customer's cost would be there whether they signed or not.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the teal block shrinks as customers arrive; the pale one does not</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Two numbers, shown by hand<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Shared fixed cost per year.</strong> The platform runs at 150.0k a year. The builds are spent once, so spread them over three years: the platform 120 / 3 = 40.0, the report 40 and the API 160 together (40 + 160) / 3 = 66.7. The dashboard is not offered and bespoke has no build. So 150 + 40.0 + 66.7 = 256.7k a year, the same as 150 + (120 + 40 + 160) / 3.</p>
+        <p><strong>Cost to serve one more customer.</strong> A new customer is, on average, half a report customer, four tenths of an API customer and one tenth of a bespoke one: 50% x 1.5 + 40% x 9 + 10% x 35 = 0.75 + 3.6 + 3.5 = 7.85, shown on the widget as 7.9k.</p>
+        <p>The first number is shared by however many customers there are. The second is paid again for every one of them.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Zero marginal cost, and the one tier that breaks it<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Jian Pei's survey of data pricing (IEEE Transactions on Knowledge and Data Engineering, 2022) describes information goods as having "zero marginal costs" and as non-rival: one buyer reading the index does not use it up for the next. That is why Keelson's report tier costs only 1.5k a year per customer, and most of that is people answering questions, not the copy.</p>
+        <p>The high fixed cost that comes with it is a point about Keelson's own cost structure, read off tonight's numbers, not something to attribute to Pei. The pipeline, steward and reviews must exist before the first sale, and they do not shrink when sales are slow.</p>
+        <p><strong>Bespoke analysis is the exception.</strong> It is labour, not copies: every bespoke customer needs analyst hours, so its cost to serve is 35.0k and it scales one to one with customers. One customer in ten on bespoke adds 3.5 of the 7.85, nearly half the variable cost. A product that drifts towards bespoke work stops behaving like a data product and starts behaving like a consultancy.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why gross margin flatters a data product<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Gross margin here is revenue minus the cost to serve, over revenue. It leaves the shared fixed cost out, and for a data product the shared fixed cost is most of the cost. So the margin looks excellent while the product loses money. The P&amp;L desk in Analyst session 6 shows exactly this: in Keelson's base case the gross margin is 72.5% in every year, while cumulative cash stays below zero until year 5 (-374.3k after year 1, +40.3k after year 5). Quote gross margin next to the fixed cost, never alone.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>"It is a file, it costs nothing."</strong> When Ines Carvalho asked what one more customer would cost, the first answer from the platform team was "almost nothing, we just send another copy". The tier table said 7.9k, because one customer in ten buys bespoke analysis at 35.0k of analyst time and four in ten need API support at 9.0k. Ines asked for the bespoke share to be tracked every quarter as its own line. Constructed Keelson Mutual example.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers the cost curve and cost-plus as a floor</span>
+      <h2>A curve that falls, and a floor under the price</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">Divide the fixed 256.7k by the number of customers, add the 7.9k, and you get the cost per customer. With 5 customers it is 59.2k. With 80 it is 11.1k. The curve falls steeply at first and then flattens, and it never drops below 7.9k, because that part is paid again for every customer however many there are.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn cost curve. Cost per customer against paying customers: 5 customers 59.2k, 10 customers 33.5k, 16 customers 23.9k marked in teal, 20 customers 20.7k, 40 customers 14.3k, 80 customers 11.1k. A dashed horizontal line at 7.9k is labelled never below the cost to serve one more.">
+        <defs>
+          <filter id="a3cSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="43" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a3cHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a3cAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a3cH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .a3cL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .a3cS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .a3cA { font: 700 11px Inter, sans-serif; fill: #2E2A08; }
+          .a3cB { font: 800 12px Inter, sans-serif; fill: #083A40; }
+          .a3cN { font: 400 12px Inter, sans-serif; fill: #5A5848; }
+        </style>
+
+        <text class="a3cH" x="30" y="28">COST PER CUSTOMER AS CUSTOMERS GROW</text>
+        <text class="a3cS" x="330" y="28">constructed · launch mix · thousands a year</text>
+        <text class="a3cA" x="92" y="52">cost per customer</text>
+
+        <g filter="url(#a3cSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M90 60 L90 270 L830 270" stroke="#5A5848"/>
+          <path d="M90 242 L830 242" stroke="#6B641E" stroke-dasharray="7 6"/>
+          <path d="M135 63 L180 153 L234 186 L270 198 L450 220 L810 231" stroke="#494412" stroke-width="2.6"/>
+          <circle cx="135" cy="63" r="4.5" fill="#FFFFFF"/>
+          <circle cx="180" cy="153" r="4.5" fill="#FFFFFF"/>
+          <circle cx="234" cy="186" r="6" fill="#0E5C66" stroke="#0E5C66"/>
+          <circle cx="270" cy="198" r="4.5" fill="#FFFFFF"/>
+          <circle cx="450" cy="220" r="4.5" fill="#FFFFFF"/>
+          <circle cx="810" cy="231" r="4.5" fill="#FFFFFF"/>
+          <!-- doodle: a downhill skier's slope mark -->
+          <path d="M770 78 L800 78 L800 108 M776 92 L792 92" stroke="#494412"/>
+        </g>
+
+        <text class="a3cL" x="147" y="67">5 · 59.2k</text>
+        <text class="a3cL" x="194" y="142">10 · 33.5k</text>
+        <text class="a3cB" x="248" y="178">16 · 23.9k</text>
+        <text class="a3cL" x="262" y="224">20 · 20.7k</text>
+        <text class="a3cL" x="430" y="206">40 · 14.3k</text>
+        <text class="a3cL" x="760" y="218">80 · 11.1k</text>
+
+        <text class="a3cA" x="480" y="261">never below the cost to serve one more: 7.9k</text>
+
+        <text class="a3cS" x="131" y="288">5</text>
+        <text class="a3cS" x="173" y="288">10</text>
+        <text class="a3cS" x="227" y="288">16</text>
+        <text class="a3cS" x="263" y="288">20</text>
+        <text class="a3cS" x="443" y="288">40</text>
+        <text class="a3cS" x="803" y="288">80</text>
+        <text class="a3cA" x="700" y="306">paying customers</text>
+        <text class="a3cA" x="600" y="140">steep, then flat</text>
+
+        <text class="a3cN" x="30" y="328">From 20 to 40 customers, cost per customer falls 20.7k to 14.3k. It nears 7.9k and never reaches it.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the teal point is Keelson's planning case; the dashed line is the floor no volume removes</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Read the curve, then put a floor under the price<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Steep at the start.</strong> Going from 5 to 10 customers takes 25.7k off each customer's cost (59.2k to 33.5k). Going from 40 to 80 takes off 3.2k (14.3k to 11.1k). Early customers carry the platform; late customers mostly carry their own serve cost.</p>
+        <p><strong>Cost-plus.</strong> At 16 customers the cost per customer is 23.9k. Add a 30% markup and the cost-plus price is 31.1k (23.9 x 1.3 = 31.07, from the unrounded 23.89).</p>
+        <p><strong>A floor and a check, never the price.</strong> In Analyst session 4 the value-based price for the API comes out at 32.0k. That cost-plus lands next to it is a coincidence of these constructed numbers, not a method. CDAIO module 5 puts the rule plainly: do not price based on cost, price based on customer value. Use cost-plus to check that a value price covers the cost at a customer count you believe, and use 7.9k as the line no single customer's price should go below.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The circularity trap<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Cost per customer depends on how many customers there are. How many customers there are depends on the price. So a cost-plus price depends on itself. Raise the price to cover a 59.2k cost at 5 customers and fewer buyers sign, which pushes the cost per customer up again. Lower it assuming 80 customers and you are pricing at 11.1k for a market you have not won.</p>
+        <p>The way out is to set the price from value (Analyst session 4), read off how many buyers that price wins, and only then read the cost curve at that count. The curve is the check, never the starting point.</p>
+        <p>Consumer price elasticity and price testing on retail goods belong to Pricing Analytics (planned). Business-to-business data pricing, by value to the buyer, is Analyst session 4.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>Pricing below the floor on purpose.</strong> Strava Metro has been free of charge to urban planners, city governments, transport departments and safe infrastructure advocates since September 2020 (reported, Bicycle Retailer). Serving those users still costs something, so a zero price sits below any cost-to-serve floor. Strava's reasons are not set out in the sources we checked; the lesson is only that going below the floor is a decision a firm takes deliberately and pays for elsewhere, never one it drifts into because the cost curve was read at an optimistic customer count.</p>
+    </div>
+  </section>
+
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>Cost one Keelson customer, then sixteen, then eighty</h2>
+      <span class="tag demo">★ 22 min · everyone builds</span>
+    </div>
+    <p class="lede">The widget holds Keelson's constructed platform, four tiers and launch mix, and computes the cost per customer in your browser. Two sliders: paying customers (starting at 16) and the cost-plus markup (starting at 30%). It prints four metrics, the tier table and the cost curve, with your current customer count highlighted. The inputs are invented, so the lesson is the shape of the curve, not the totals.</p>
+
+    <div class="dmx-widget" data-mode="cost"></div>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn map of the widget. Two sliders, paying customers and cost-plus markup, feed the cost engine, which divides 256.7k of shared fixed cost by the customer count and adds 7.9k to serve. The engine prints four metrics, the tier table and the cost curve table, in a box filled in teal.">
+        <defs>
+          <filter id="a3dSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="47" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a3dHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a3dAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a3dH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .a3dL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .a3dS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .a3dB { font: 800 11px Inter, sans-serif; fill: #083A40; }
+          .a3dW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+        </style>
+
+        <text class="a3dH" x="30" y="28">WHAT THE WIDGET COMPUTES</text>
+
+        <g filter="url(#a3dSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="30" y="48" width="200" height="60" rx="10" transform="rotate(-0.8 130 78)" fill="#F8F6E6" stroke="#494412"/>
+          <rect x="30" y="128" width="200" height="60" rx="10" transform="rotate(0.8 130 158)" fill="#F8F6E6" stroke="#494412"/>
+          <path d="M234 78 L300 110 M234 158 L300 126" marker-end="url(#a3dAr)"/>
+          <rect x="304" y="78" width="230" height="80" rx="10" transform="rotate(-0.4 419 118)" fill="url(#a3dHc)"/>
+          <path d="M538 118 L600 118" marker-end="url(#a3dAr)"/>
+          <rect x="606" y="56" width="244" height="124" rx="10" transform="rotate(0.4 728 118)" fill="#0E5C66" stroke="#0E5C66"/>
+        </g>
+
+        <rect x="316" y="92" width="206" height="52" rx="6" fill="#FFFFFF"/>
+
+        <text class="a3dL" x="44" y="74">paying customers</text>
+        <text class="a3dS" x="44" y="92">2 to 100, starts at 16</text>
+        <text class="a3dL" x="44" y="154">cost-plus markup</text>
+        <text class="a3dS" x="44" y="172">0% to 100%, starts at 30%</text>
+        <text class="a3dL" x="328" y="112">the cost engine</text>
+        <text class="a3dS" x="328" y="130">256.7k / customers + 7.9k</text>
+        <text class="a3dW" x="622" y="84">four metrics</text>
+        <text class="a3dW" x="622" y="108">the tier table</text>
+        <text class="a3dW" x="622" y="132">the cost curve table</text>
+        <text class="a3dW" x="622" y="156">your count highlighted</text>
+
+        <text class="a3dB" x="30" y="226">The markup slider moves only the cost-plus metric. The customers slider moves everything else.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - one division and one addition, run every time a slider moves</figcaption>
+    </figure>
+
+    <div class="steps">
+      <div class="step">
+        <p><strong>Step 1 · Read the four metrics.</strong> The widget loads at 16 customers and a 30% markup. Write down the four numbers and what each one is.</p>
+        <div class="prompt-box good"><span class="label">★ Step 1 · what the widget prints</span>23.9k   cost per customer per year
+16.0k   of which shared fixed cost
+7.9k    of which cost to serve one more
+31.1k   cost-plus price at 30.0%</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 2 · Check 16 customers by hand.</strong> Use the shared fixed cost from Part 2 and the serve cost from the tier mix.</p>
+        <div class="prompt-box good"><span class="label">★ Step 2 · the cost per customer by hand</span>shared fixed:  150 + 40.0 + 66.7 = 256.7k a year
+per customer:  256.7k / 16 = 16.0k
+serve:         50% x 1.5 + 40% x 9 + 10% x 35 = 7.85, shown as 7.9k
+total:         16.0k + 7.9k = 23.9k   (the widget's value)
+cost-plus:     23.9k x 1.3 = 31.1k</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 3 · Slide to 5 customers, then to 80.</strong> Watch the first metric and the highlighted row of the cost curve table. Write both values, then say in one sentence why the second number falls so much less than the first.</p>
+        <div class="prompt-box good"><span class="label">★ Step 3 · the two ends of the curve</span>5 customers:   59.2k per customer
+80 customers:  11.1k per customer
+why the fall slows down: ________________________________</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 4 · Read the tier table.</strong> Put the slider back to 16. Find the tier whose cost to serve would make the variable cost jump if more customers chose it, and its value.</p>
+        <div class="prompt-box good"><span class="label">★ Step 4 · the tier that scales with labour</span>tier:           Bespoke analysis
+cost to serve:  35.0k per customer
+why it jumps:   ________________________________________</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 5 · Your own tier and cost table.</strong> Pick a data product your organisation could offer. List the formats you would hand it over in, a rough build cost and yearly cost to serve for each, the shared platform underneath, and a launch mix. Work out the shared fixed cost per year and the cost to serve one more customer. Your numbers will differ.</p>
+        <div class="prompt-box good"><span class="label">★ Step 5 · your tiers and costs</span>tier            build    serve/customer/yr   share of customers
+____________    ____     ____                ____
+____________    ____     ____                ____
+____________    ____     ____                ____
+shared platform: build ____  run ____ a year
+shared fixed per year = run + builds / years spread = ____
+cost to serve one more = sum of (share x serve) = ____</div>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>Keep the 7.9k and the curve.</strong> Analyst session 4 sets the price from what buyers get and reads how many buyers each price wins. Bring the curve so you can check the cost at that count, and the 7.9k so no price slips under it.</p>
+    </div>
+  </section>
+
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before Analyst session 4</h2>
+      <span class="tag exercise">30 min</span>
+    </div>
+    <ol>
+      <li><strong>Split one real cost line.</strong> Take the budget for one data service you run and mark each line fixed (does not move with one more user) or variable (does). Write the share that is fixed.</li>
+      <li><strong>Find your bespoke tier.</strong> Name the requests that arrive as "can you just pull this for us". Estimate the hours one of them takes; that is labour, not copies.</li>
+      <li><strong>Draw your cost curve.</strong> From your Step 5 table, compute the cost per customer at 5, 10, 20 and 40 customers and sketch the curve with the cost-to-serve floor dashed under it.</li>
+      <li><strong>Hold a price against the floor.</strong> If you already charge for any data or report, compare its price with your cost per customer at today's customer count. Write whether it clears the floor and by how much.</li>
+    </ol>
+  </section>
+
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and Analyst session 3 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">1 · Why does gross margin flatter a data product like the Keelson index?</p>
+      <button class="qopt" type="button">A · Because data products have no costs at all</button>
+      <button class="qopt" type="button">B · Because gross margin includes the build cost twice</button>
+      <button class="qopt" type="button">C · Because it subtracts only the cost to serve, and the large shared fixed cost sits outside it</button>
+      <button class="qopt" type="button">D · Because revenue is counted before tax</button>
+      <p class="qwhy">The serve cost is small and the platform is large. A margin that ignores the platform looks healthy while cash stays negative, as the desk's 72.5% gross margin beside a negative cumulative cash shows.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">2 · Cost-plus at 16 customers gives 31.1k. Why is that a floor and a check, not the price?</p>
+      <button class="qopt" type="button">A · Because the price should come from the value buyers get, and cost per customer itself depends on how many buyers the price wins</button>
+      <button class="qopt" type="button">B · Because a 30% markup is illegal for data products</button>
+      <button class="qopt" type="button">C · Because 31.1k is always higher than the value price</button>
+      <button class="qopt" type="button">D · Because cost-plus ignores the cost to serve</button>
+      <p class="qwhy">Price on value, not cost. Cost-plus checks that a value price covers the cost at a believable customer count; it landing near 32.0k here is a coincidence.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="3">
+      <p class="qtext">3 · Keelson's customers double from 20 to 40. What happens to the cost per customer?</p>
+      <button class="qopt" type="button">A · It halves, because every cost is shared</button>
+      <button class="qopt" type="button">B · It stays at 20.7k, because cost to serve is per customer</button>
+      <button class="qopt" type="button">C · It falls to 7.9k, the cost to serve one more</button>
+      <button class="qopt" type="button">D · It falls from 20.7k to 14.3k: the fixed share halves, the 7.9k does not</button>
+      <p class="qwhy">256.7k / 20 = 12.8k and 256.7k / 40 = 6.4k, each plus 7.9k. Only the fixed share is divided; the serve cost is paid again for every customer.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Delivery formats and which buyer each suits; ship a CSV before an API; price on value, not cost</span><span class="note">CDAIO module 5, data monetisation execution (delivery formats table and anti-patterns)</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Information goods have zero marginal cost and are non-rival</span><span class="note">Jian Pei, "A Survey on Data Pricing: From Economics to Data Science", IEEE Transactions on Knowledge and Data Engineering 34(10), 2022; the high fixed cost point is Keelson's own, not Pei's</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Keelson's four tiers, shared fixed cost, cost to serve and cost curve</span><span class="note">Constructed and labelled; computed by the engine in your browser and checked against an independent Python run</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Strava Metro offered free to planners and cities</span><span class="note">Reported (Bicycle Retailer), since September 2020; no earlier price is stated</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Every fact on this page, and its verification tier, is recorded in the course's source map.</p>
+  </section>
+
+  <section class="cheat" id="cheatsheet">
+    <h3>Analyst session 3 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Two numbers per tier</b><span>Build once, then cost to serve per customer per year.</span></div>
+      <div class="cheat-item"><b>Shared fixed</b><span>Run + builds spread over their years. Keelson: 256.7k a year.</span></div>
+      <div class="cheat-item"><b>Serve one more</b><span>Sum of share x serve across the mix. Keelson: 7.9k.</span></div>
+      <div class="cheat-item"><b>Bespoke is labour</b><span>It scales one to one with customers; track its share.</span></div>
+      <div class="cheat-item"><b>The curve</b><span>Fixed / customers + serve. Steep, then flat, never below serve.</span></div>
+      <div class="cheat-item"><b>Cost-plus is a floor</b><span>Check a value price against it; never set the price with it.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>Keelson now knows a customer costs 23.9k at 16 customers and never less than 7.9k. Analyst session 4 turns the question around: what is the index worth to each of 110 prospects, how much of that can Keelson capture, which single price wins the most contribution, and whether two tiers do better than one.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Analyst session 3 of 6 · learn-data-monetisation-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="a2-the-sellable-share.html">← Prev: The sellable share</a> &nbsp;·&nbsp; <a href="a4-pricing-a-data-product.html">Next: Pricing a data product →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/dm-live.js?v=1"></script>
+<script src="../assets/dm-bench.js?v=1"></script>
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

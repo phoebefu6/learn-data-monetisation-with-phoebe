@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Analyst session 4 of 6. Pricing a data product: willingness to pay as value to the buyer times a capture share, the single-price search on 110 constructed prospects, who actually buys at the best price, and what a second tier adds. Constructed Keelson Mutual case, computed in your browser.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="Pricing a data product - learn data monetisation with phoebe">
+<meta property="og:description" content="Analyst session 4 of 6. Price the decision a dataset improves, search one price, then two tiers, computed live.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-data-monetisation-with-phoebe/courses/a4-pricing-a-data-product.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-data-monetisation-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pricing a data product - learn data monetisation with phoebe">
+<meta name="twitter:description" content="Analyst session 4 of 6. Value-based pricing for a data product: one price, then two tiers, computed live.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-data-monetisation-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Analyst session 4 · Pricing a data product - learn data monetisation with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-data-monetisation-with-phoebe</a> / Analyst session 4 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Data Monetisation with Phoebe · Analyst session 4 of 6</div>
+    <h1>Pricing a <span class="accent">data product</span></h1>
+    <p class="sub">A data product costs almost nothing to copy one more time, so its cost tells you very little about its price. What sets the price is the decision the data improves for the buyer, and how much of that improvement the buyer will hand over. Tonight: willingness to pay built from value and a capture share, a search for the best single price across 110 constructed prospects, a hard look at who actually buys at that price, and what a second tier adds. Keelson is constructed; the arithmetic runs in your browser.</p>
+    <div class="chip-row">
+      <span class="chip level">🟡 Analyst</span>
+      <span class="chip audience">Analysts and finance partners who build the numbers behind a data product</span>
+      <span class="chip audience">Hands-on in the browser</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-18 · Value to the buyer, one price, two tiers</span>
+      <span class="a3" style="flex:5">18-40 · Build-along: price the Keelson index</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we start</h2>
+    </div>
+    <p class="lede">Analyst session 3 ended with a cost curve: at 16 customers the Keelson Repair Cost Index costs 23.9k per customer a year, and a 30 percent markup on that gives 31.1k. That is a floor, not a price. Tonight we turn the question round and ask what the index is worth to the people who would buy it: fleet operators, repair networks, parts makers and smaller insurers. Sefa Adjei, Keelson's head of partnerships, has to put a number on a quote. Every Keelson input is invented, in thousands of currency units a year.</p>
+
+    <div class="legend">
+      <span class="pill">🎫 Clear all three quiz questions to stamp your passport</span>
+      <span class="pill">Live = presented in the 45 minutes</span>
+      <span class="pill">Self-study = the full depth, after class</span>
+      <span class="pill">★ Build-along = everyone builds it</span>
+    </div>
+
+    <div class="callout win">
+      <p><strong>★ What you walk out with tonight.</strong> A willingness-to-pay sheet for your own data product, built from the decision it improves for each kind of buyer; a best single price with the contribution checked by hand; the list of who buys at that price, read as a strategy question as well as a revenue one; and a two-tier offer you can defend. Analyst session 5 takes the price and asks who should sell it.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers value to the buyer and capture share</span>
+      <h2>Price the decision it improves, not the rows</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">A buyer does not want rows. A fleet operator wants to set its repair budget by region with fewer surprises; a parts maker wants to know where to stock. Each prospect gets a yearly value from the index, and pays at most a share of it. Keelson's constructed assumption is a capture share of 25 percent: a buyer pays at most a quarter of the value it gets. Willingness to pay is value x capture share. Sort the 110 prospects by it and a price becomes a horizontal line.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn staircase of 110 constructed prospects sorted by willingness to pay, highest first, falling steeply then flattening into a long low tail. A horizontal price line at 32.0 thousand cuts the staircase after the eighteenth step. The 18 steps above the line are filled teal and labelled 18 buyers at 32.0k. The 92 steps below the line are hatched.">
+        <defs>
+          <filter id="a4aSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="41" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a4aHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a4aAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a4aH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .a4aL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .a4aS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .a4aB { font: 800 11px Inter, sans-serif; fill: #083A40; }
+          .a4aV { font: 800 16px Inter, sans-serif; fill: #083A40; }
+          .a4aA { font: 700 11px Inter, sans-serif; fill: #2E2A08; }
+          .a4aN { font: 400 12px Inter, sans-serif; fill: #5A5848; }
+        </style>
+
+        <text class="a4aH" x="30" y="24">110 PROSPECTS, SORTED BY WHAT EACH WOULD PAY</text>
+        <text class="a4aA" x="70" y="46">willingness to pay = yearly value from the index x capture share 25%</text>
+
+        <g filter="url(#a4aSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M60 270 L60 56 M60 270 L850 270" stroke="#5A5848"/>
+          <path d="M70 270 L70 62 L77 62 L77 69 L84 69 L84 76 L91 76 L91 82 L98 82 L98 89 L105 89 L105 95 L112 95 L112 101 L119 101 L119 106 L126 106 L126 112 L133 112 L133 117 L140 117 L140 122 L147 122 L147 127 L154 127 L154 132 L161 132 L161 136 L168 136 L168 141 L175 141 L175 145 L182 145 L182 149 L189 149 L189 153 L196 153 L196 270 Z" fill="#0E5C66" stroke="#0E5C66"/>
+          <path d="M196 270 L196 157 L203 157 L203 161 L210 161 L210 164 L217 164 L217 168 L224 168 L224 171 L231 171 L231 174 L238 174 L238 177 L245 177 L245 180 L252 180 L252 183 L259 183 L259 186 L266 186 L266 188 L273 188 L273 191 L280 191 L280 193 L287 193 L287 196 L294 196 L294 198 L301 198 L301 200 L308 200 L308 203 L315 203 L315 205 L322 205 L322 207 L329 207 L329 209 L336 209 L336 211 L343 211 L343 212 L350 212 L350 214 L357 214 L357 216 L364 216 L364 217 L371 217 L371 219 L378 219 L378 220 L385 220 L385 222 L392 222 L392 223 L399 223 L399 225 L406 225 L406 226 L413 226 L413 227 L420 227 L420 228 L427 228 L427 230 L434 230 L434 231 L441 231 L441 232 L448 232 L448 233 L455 233 L455 234 L462 234 L462 235 L469 235 L469 236 L476 236 L476 237 L483 237 L483 238 L490 238 L490 239 L504 239 L504 240 L511 240 L511 241 L518 241 L518 242 L532 242 L532 243 L539 243 L539 244 L553 244 L553 245 L560 245 L560 246 L574 246 L574 247 L588 247 L588 248 L602 248 L602 249 L616 249 L616 250 L630 250 L630 251 L651 251 L651 252 L672 252 L672 253 L693 253 L693 254 L714 254 L714 255 L742 255 L742 256 L777 256 L777 257 L819 257 L819 258 L840 258 L840 270 Z" fill="url(#a4aHc)" stroke="#494412"/>
+          <path d="M60 155 L850 155" stroke="#2E2A08" stroke-width="2.4"/>
+          <!-- doodle: a price tag hanging off the line -->
+          <path d="M800 112 L826 112 L838 124 L826 136 L800 136 Z" stroke="#494412"/>
+          <circle cx="826" cy="124" r="3" stroke="#494412"/>
+        </g>
+
+        <text class="a4aV" x="230" y="104">18 buyers at 32.0k</text>
+        <text class="a4aB" x="230" y="124">the teal steps sit above the line: they buy</text>
+        <text class="a4aA" x="600" y="146">price line 32.0k</text>
+        <text class="a4aS" x="70" y="290">buyers sorted by willingness to pay, highest first; each step is one constructed prospect</text>
+
+        <text class="a4aN" x="30" y="316">The other 92 would buy at a lower price. Move the line down and you trade margin per buyer for buyers.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - a price is a line across the staircase; the steps above it are your customers</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Value to the buyer, then the capture share<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Start with the decision.</strong> For each kind of buyer, name the decision the index improves and what a better decision is worth to them in a year. In Keelson's constructed prospect list, fleet operators value it between 10k and 90k a year, repair networks between 20k and 160k, parts makers between 60k and 320k, and smaller insurers between 40k and 240k. The values are seeded and skewed low: most prospects sit near the bottom of their range.</p>
+        <p><strong>Then the capture share.</strong> No buyer pays all the value it gets; if it did, buying would leave it no better off. The capture share is the slice you can ask for. Keelson uses 25 percent as a constructed assumption, and the widget puts it on a slider because it is the least certain number on the page.</p>
+        <p><strong>Willingness to pay = value x capture share.</strong> A parts maker pays at most a quarter of whatever the index is worth to it in a year. Sorted from highest to lowest, the 110 prospects make the staircase in the figure.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why volume is the wrong unit<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Pricing per row, per record or per gigabyte feels fair because it is countable. It fails for two reasons. First, the cost of one more row is close to zero, so a per-row price has nothing underneath it. Second, the value to the buyer does not scale with rows: a fleet operator with ten vans in one region gets as much from the regional index as one with ten thousand rows of raw claims it would have to clean itself. The CDAIO data monetisation module puts it plainly: price by the decision the data enables, not by the volume delivered.</p>
+        <p>Volume still matters as a fence. A buyer who wants every region at monthly grain gets more decisions out of the data than one who wants a single region quarterly, and the price can follow that. That is a tier, which is Part 3.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The first quote was per row.</strong> Sefa's first draft quote for a fleet operator priced the index by the number of claims records behind each regional figure. The operator's buyer asked why a quieter region cost less when it was the region they were expanding into. Sefa rewrote the quote around the operator's repair budget instead, and the conversation moved from counting records to what a better budget saves. Constructed Keelson Mutual example.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers the single-price search</span>
+      <h2>One price, and the buyers it picks for you</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">With one product, the API feed, the search is simple: at each price count the buyers whose willingness to pay clears it, then contribution = buyers x (price - cost to serve). The API costs 9.0k a year to serve per customer. Too high and you sell to a handful; too low and each sale earns little. The best single price prints as 32.0k: 18 buyers, revenue 576.0k, contribution 414.0k.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 368" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Left: a hand-drawn hump of contribution by price with three marked points. At 24.0k, 22 buyers and 330.0k contribution. At 32.0k, 18 buyers and 414.0k, filled teal as the best single price. At 40.0k, 10 buyers and 310.0k. Right: a strip of four segment bars showing who buys at 32.0k. Fleet operators 0 of 60. Repair networks 4 of 25. Parts makers 6 of 10. Smaller insurers 8 of 15.">
+        <defs>
+          <filter id="a4bSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="43" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a4bHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a4bAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a4bH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .a4bL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .a4bS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .a4bB { font: 800 11px Inter, sans-serif; fill: #083A40; }
+          .a4bA { font: 700 11px Inter, sans-serif; fill: #2E2A08; }
+          .a4bN { font: 400 12px Inter, sans-serif; fill: #5A5848; }
+        </style>
+
+        <text class="a4bH" x="30" y="26">CONTRIBUTION BY PRICE, THE API ALONE</text>
+        <text class="a4bH" x="520" y="26">WHO BUYS AT 32.0k</text>
+        <text class="a4bA" x="60" y="48">contribution = buyers x (price - 9.0k to serve)</text>
+
+        <g filter="url(#a4bSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M60 280 L60 64" stroke="#5A5848"/>
+          <path d="M60 280 L480 280" stroke="#5A5848" marker-end="url(#a4bAr)"/>
+          <path d="M70 246 Q120 160 164 148 Q220 110 268 114 Q320 116 372 156 Q410 190 440 250" stroke="#494412" stroke-width="2.4"/>
+          <path d="M164 152 L164 278 M268 118 L268 278 M372 160 L372 278" stroke="#CFCCB8"/>
+          <circle cx="164" cy="148" r="6" fill="#F8F6E6" stroke="#494412"/>
+          <circle cx="268" cy="114" r="8" fill="#0E5C66" stroke="#0E5C66"/>
+          <circle cx="372" cy="156" r="6" fill="#F8F6E6" stroke="#494412"/>
+
+          <rect x="650" y="68" width="180" height="18" rx="3" transform="rotate(0.4 740 77)" fill="#FFFFFF"/>
+          <rect x="650" y="118" width="12" height="18" rx="3" fill="#6B641E" stroke="#6B641E"/>
+          <rect x="664" y="118" width="61" height="18" rx="3" transform="rotate(-0.4 694 127)" fill="#FFFFFF"/>
+          <rect x="650" y="168" width="18" height="18" rx="3" fill="#6B641E" stroke="#6B641E"/>
+          <rect x="670" y="168" width="10" height="18" rx="3" fill="#FFFFFF"/>
+          <rect x="650" y="218" width="24" height="18" rx="3" fill="#6B641E" stroke="#6B641E"/>
+          <rect x="676" y="218" width="19" height="18" rx="3" fill="#FFFFFF"/>
+          <!-- doodle: a small flag on the insurers row -->
+          <path d="M712 236 L712 208 L730 214 L712 220" stroke="#991B1B"/>
+        </g>
+
+        <text class="a4bB" x="210" y="98">best: 414.0k at 32.0k</text>
+
+        <text class="a4bL" x="164" y="298" text-anchor="middle">24.0k</text>
+        <text class="a4bL" x="268" y="298" text-anchor="middle">32.0k</text>
+        <text class="a4bL" x="372" y="298" text-anchor="middle">40.0k</text>
+        <text class="a4bS" x="164" y="314" text-anchor="middle">330.0k</text>
+        <text class="a4bB" x="268" y="314" text-anchor="middle">414.0k</text>
+        <text class="a4bS" x="372" y="314" text-anchor="middle">310.0k</text>
+        <text class="a4bS" x="164" y="330" text-anchor="middle">22 buyers</text>
+        <text class="a4bB" x="268" y="330" text-anchor="middle">18 buyers</text>
+        <text class="a4bS" x="372" y="330" text-anchor="middle">10 buyers</text>
+        <text class="a4bA" x="440" y="298">price</text>
+
+        <text class="a4bL" x="520" y="82">Fleet operators</text>
+        <text class="a4bS" x="520" y="98">0 of 60 buy</text>
+        <text class="a4bL" x="520" y="132">Repair networks</text>
+        <text class="a4bS" x="520" y="148">4 of 25 buy</text>
+        <text class="a4bL" x="520" y="182">Parts makers</text>
+        <text class="a4bS" x="520" y="198">6 of 10 buy</text>
+        <text class="a4bL" x="520" y="232">Smaller insurers</text>
+        <text class="a4bS" x="520" y="248">8 of 15 buy</text>
+        <text class="a4bB" x="520" y="274">8 of the 18 buyers are smaller insurers:</text>
+        <text class="a4bB" x="520" y="290">Keelson's own competitors</text>
+
+        <text class="a4bN" x="30" y="354">The best single price is a buyer list as well as a number. Read the list before you quote the number.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the top of the hump is the best price for revenue, and it picks your competitors as customers</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Reading the hump<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>At 32.0k:</strong> 18 buyers, revenue 18 x 32.0k = 576.0k, contribution 18 x (32.0k - 9.0k) = 414.0k.</p>
+        <p><strong>At 40.0k:</strong> 10 buyers, contribution 310.0k. Each sale earns more, but eight buyers drop away.</p>
+        <p><strong>At 24.0k:</strong> 22 buyers, contribution 330.0k. Four more buyers do not make up for 8.0k less on each of the eighteen who would have paid more.</p>
+        <p>The hump is flat near the top and steep on both sides, which is normal: small moves near the best price cost little, big moves cost a lot. Contribution here is before Keelson's shared fixed cost; Analyst session 3 put that at 256.7k a year, and the P&amp;L desk in Analyst session 6 adds it back.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The buyer list is a strategy question<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>At 32.0k the buyers by segment are fleet operators 0 of 60, repair networks 4 of 25, parts makers 6 of 10, smaller insurers 8 of 15. The largest group is Keelson's competitors. Leader session 1 asked this as its second question: would selling undercut our own use? Keelson prices motor policies partly on repair cost, and a regional repair cost index in a smaller insurer's hands narrows that edge.</p>
+        <p>The revenue-maximising price did not ask whether a buyer should be a customer. That is a separate decision, and it belongs to the person who owns the strategy, not to the price search. Options include excluding a segment, delaying its access, or selling it a coarser product. Each one moves the numbers; run the widget again after you decide.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>What this search leaves out<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>This is business-to-business data pricing: a few dozen named prospects, each with a value you can reason about. Consumer price elasticity and price tests on retail goods are a different discipline, with thousands of buyers and experiments to measure response; that belongs to Pricing Analytics (planned). The search also treats every prospect as independent. In practice one buyer's decision moves another's: if two repair networks buy, a third may feel it has to.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>Tom reads the list, not the total.</strong> When the single-price result went round, Tom Reyes, the COO, skipped the 414.0k and went straight to the segment table. "Eight of eighteen are people we compete with for fleet business." Maya Okafor asked for the same search with a second, coarser tier before anyone discussed excluding insurers. Constructed Keelson Mutual example.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers two tiers</span>
+      <h2>Two tiers, and who each one brings in</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">A single price leaves money on both sides: buyers who would pay more pay the same as everyone, and buyers who would pay something pay nothing. A second tier fixes part of both. Keelson's Standard tier is the quarterly report, worth half the value of the full index and costing 1.5k a year to serve; Pro is the API at full value, costing 9.0k. Each buyer takes the tier with the larger surplus, meaning willingness to pay minus price. The best pair prints as Standard 9.0k + Pro 25.0k.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 296" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn axis of willingness to pay for the full index, low to high, split by two thresholds into three zones. Neither: fleet operators 52, repair networks 16, smaller insurers 6. Standard at 9.0k, filled teal as the zone that newly brings buyers in: 18 buyers, fleet 8, repair 5, parts 4, insurers 1. Pro at 25.0k: 18 buyers, repair 4, parts 6, insurers 8. Two tiers sell to 36 buyers for revenue 612.0k and contribution 423.0k, against 414.0k at one price.">
+        <defs>
+          <filter id="a4cSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="47" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a4cHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a4cAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a4cH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .a4cL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .a4cS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .a4cA { font: 700 11px Inter, sans-serif; fill: #2E2A08; }
+          .a4cW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+          .a4cN { font: 400 12px Inter, sans-serif; fill: #5A5848; }
+        </style>
+
+        <text class="a4cH" x="30" y="28">TWO TIERS SORT THE SAME 110 PROSPECTS</text>
+        <text class="a4cL" x="368" y="64">Standard at 9.0k</text>
+        <text class="a4cL" x="608" y="64">Pro at 25.0k</text>
+
+        <g filter="url(#a4cSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="60" y="84" width="298" height="112" rx="12" transform="rotate(-0.5 209 140)" fill="#FFFFFF"/>
+          <rect x="366" y="84" width="232" height="112" rx="12" transform="rotate(0.5 482 140)" fill="#0E5C66" stroke="#0E5C66"/>
+          <rect x="606" y="84" width="234" height="112" rx="12" transform="rotate(-0.4 723 140)" fill="#F8F6E6" stroke="#494412"/>
+          <path d="M362 72 L362 208 M602 72 L602 208" stroke="#2E2A08" stroke-width="2.4"/>
+          <path d="M60 226 L846 226" stroke="#5A5848" marker-end="url(#a4cAr)"/>
+          <!-- doodle: prospects as dots along the axis -->
+          <circle cx="90" cy="226" r="3" fill="#1F1E14"/>
+          <circle cx="130" cy="226" r="3" fill="#1F1E14"/>
+          <circle cx="170" cy="226" r="3" fill="#1F1E14"/>
+          <circle cx="210" cy="226" r="3" fill="#1F1E14"/>
+          <circle cx="260" cy="226" r="3" fill="#1F1E14"/>
+          <circle cx="310" cy="226" r="3" fill="#1F1E14"/>
+          <circle cx="400" cy="226" r="3" fill="#0E5C66" stroke="#0E5C66"/>
+          <circle cx="460" cy="226" r="3" fill="#0E5C66" stroke="#0E5C66"/>
+          <circle cx="530" cy="226" r="3" fill="#0E5C66" stroke="#0E5C66"/>
+          <circle cx="650" cy="226" r="3" fill="#494412" stroke="#494412"/>
+          <circle cx="730" cy="226" r="3" fill="#494412" stroke="#494412"/>
+          <circle cx="800" cy="226" r="3" fill="#494412" stroke="#494412"/>
+        </g>
+
+        <text class="a4cH" x="76" y="110">NEITHER</text>
+        <text class="a4cS" x="76" y="132">fleet 52 · repair 16 · insurers 6</text>
+        <text class="a4cS" x="76" y="152">too little value for either tier</text>
+
+        <text class="a4cW" x="382" y="110">STANDARD · 18 BUYERS</text>
+        <text class="a4cW" x="382" y="132">the report, half the value</text>
+        <text class="a4cW" x="382" y="154">fleet 8 · repair 5</text>
+        <text class="a4cW" x="382" y="174">parts 4 · insurers 1</text>
+
+        <text class="a4cH" x="622" y="110">PRO · 18 BUYERS</text>
+        <text class="a4cL" x="622" y="132">the API, full value</text>
+        <text class="a4cS" x="622" y="154">repair 4 · parts 6</text>
+        <text class="a4cS" x="622" y="174">insurers 8</text>
+
+        <text class="a4cA" x="60" y="248">willingness to pay for the full index, low to high</text>
+        <text class="a4cS" x="520" y="248">each buyer takes the tier with the bigger surplus</text>
+
+        <text class="a4cN" x="30" y="278">Two tiers: 36 buyers, revenue 612.0k, contribution 423.0k, against 18 buyers and 414.0k at one price.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the teal zone is new business: buyers who paid nothing at one price</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>What the second tier adds<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Twice the buyers.</strong> 18 Standard + 18 Pro = 36 buyers, against 18 at one price.</p>
+        <p><strong>A little more contribution.</strong> Revenue 18 x 9.0k + 18 x 25.0k = 162.0k + 450.0k = 612.0k. Contribution 18 x (9.0k - 1.5k) + 18 x (25.0k - 9.0k) = 135.0k + 288.0k = 423.0k, against 414.0k for the single price: 9.0k more.</p>
+        <p><strong>A different customer base.</strong> By segment (Standard / Pro / neither): fleet operators 8 / 0 / 52, repair networks 5 / 4 / 16, parts makers 4 / 6 / 0, smaller insurers 1 / 8 / 6. The Standard tier is what brings fleet operators in at all. The Pro price fell from 32.0k to 25.0k because a high Pro price would push Pro buyers down into Standard; the tiers have to be priced together.</p>
+        <p>The 9.0k is small, and that is honest. The bigger gain is strategic: the product now reaches the buyers Keelson would rather serve, which changes the answer to Part 2's buyer-list question.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The pricing families in the literature<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Jian Pei's survey, "A Survey on Data Pricing: From Economics to Data Science" (IEEE Transactions on Knowledge and Data Engineering, 2022, online 2020), starts from the economics: information goods have "zero marginal costs" and are non-rival, so one buyer's use does not use the data up. The pricing models it reviews include versioning, bundling, subscription, auctions and query-based pricing. Keelson's Standard and Pro are versioning: the same underlying index offered at two levels of detail and delivery. Selling it by the year is subscription.</p>
+        <p>The point that a data product carries a large fixed cost and a small cost per extra customer is ours, from the Analyst session 3 cost curve, not Pei's.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Cost-plus as a floor and a check<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Analyst session 3 printed a cost-plus price of 31.1k: 23.9k per customer at 16 customers, plus a 30 percent markup. Tonight's value price is 32.0k. The two land close together here by coincidence, not by method. Change the capture share or the customer count and they part company.</p>
+        <p>Use cost-plus two ways. As a floor: a price below cost per customer at a realistic customer count loses money however good the story. As a check: if the value price sits far above cost-plus, ask whether the value estimates are too generous; if far below, ask whether the product is too expensive to build for this market.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>Choosing a price of zero for one segment.</strong> Strava Metro, the activity-data product for transport planning, has been free of charge to urban planners, city governments, transport departments and safe infrastructure advocates since September 2020 (reported, Bicycle Retailer). Whatever the reasons, it is a segment decision made on purpose: the price for one group of buyers was set by what the company wanted from that group, not by a search for maximum contribution.</p>
+    </div>
+  </section>
+
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>Price the Keelson index, one tier then two</h2>
+      <span class="tag demo">★ 22 min · everyone builds</span>
+    </div>
+    <p class="lede">The widget holds the 110 constructed prospects and runs the price search in your browser. It opens at a capture share of 25.0% and an API price of 32.0k. Two sliders: "Share of value a buyer will pay" and "Your API price per year". It prints four figures, a contribution-by-price bar chart, a segment table and a line on the best two tiers. The inputs are invented, so the lesson is the method and the buyer list, not the totals.</p>
+
+    <div class="dmx-widget" data-mode="price"></div>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn map of the widget. Two sliders, the capture share and your API price, feed the 110 constructed prospects. The widget prints, in a teal box, buyers at your price, contribution, the best single price, the best Standard and Pro prices, contribution-by-price bars and a segment table.">
+        <defs>
+          <filter id="a4dSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="53" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a4dHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a4dAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a4dH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .a4dL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .a4dS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .a4dB { font: 800 11px Inter, sans-serif; fill: #083A40; }
+          .a4dW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+        </style>
+
+        <text class="a4dH" x="30" y="28">WHAT THE WIDGET COMPUTES</text>
+
+        <g filter="url(#a4dSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="30" y="48" width="200" height="60" rx="10" transform="rotate(-0.8 130 78)" fill="#F8F6E6" stroke="#494412"/>
+          <rect x="30" y="128" width="200" height="60" rx="10" transform="rotate(0.8 130 158)" fill="#F8F6E6" stroke="#494412"/>
+          <path d="M234 78 L300 110 M234 158 L300 126" marker-end="url(#a4dAr)"/>
+          <rect x="304" y="78" width="230" height="80" rx="10" transform="rotate(-0.4 419 118)" fill="url(#a4dHc)"/>
+          <path d="M538 118 L600 118" marker-end="url(#a4dAr)"/>
+          <rect x="606" y="44" width="244" height="164" rx="10" transform="rotate(0.4 728 126)" fill="#0E5C66" stroke="#0E5C66"/>
+        </g>
+
+        <rect x="316" y="92" width="206" height="52" rx="6" fill="#FFFFFF"/>
+
+        <text class="a4dL" x="44" y="74">capture share slider</text>
+        <text class="a4dS" x="44" y="92">share of value a buyer pays</text>
+        <text class="a4dL" x="44" y="154">API price slider</text>
+        <text class="a4dS" x="44" y="172">your price per year</text>
+        <text class="a4dL" x="328" y="112">110 constructed prospects</text>
+        <text class="a4dS" x="328" y="130">four segments, seeded values</text>
+        <text class="a4dW" x="622" y="70">buyers at your price</text>
+        <text class="a4dW" x="622" y="94">contribution</text>
+        <text class="a4dW" x="622" y="118">best single price</text>
+        <text class="a4dW" x="622" y="142">best Standard + Pro</text>
+        <text class="a4dW" x="622" y="166">contribution-by-price bars</text>
+        <text class="a4dW" x="622" y="190">segment table at your price</text>
+
+        <text class="a4dB" x="30" y="236">The price slider moves the first two figures; the capture share moves everything, best prices included.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - two levers, and the capture share is the one that moves the best price</figcaption>
+    </figure>
+
+    <div class="steps">
+      <div class="step">
+        <p><strong>Step 1 · Read the four figures and the segment table.</strong> Leave both sliders at their defaults. Write down what the widget prints.</p>
+        <div class="prompt-box good"><span class="label">★ Step 1 · what the widget prints</span>buyers at 32.0k: 18 · contribution: 414.0k
+best single price / its contribution: 32.0k / 414.0k
+best Standard + Pro prices: 9.0k + 25.0k (423.0k)
+segment table, buy at 32.0k: Fleet operators 0 of 60 · Repair networks 4 of 25
+                             Parts makers 6 of 10 · Smaller insurers 8 of 15</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 2 · Check contribution by hand.</strong> The API costs 9.0k a year to serve per customer.</p>
+        <div class="prompt-box good"><span class="label">★ Step 2 · contribution by hand</span>contribution = buyers x (price - cost to serve)
+            = 18 x (32.0k - 9.0k)
+            = 18 x 23.0k
+            = 414.0k   (the widget's value)
+revenue      = 18 x 32.0k = 576.0k</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 3 · Move the price.</strong> Slide the API price to 40.0k, then to 24.0k. Write the buyers and the contribution each time, and which segments lose or gain buyers.</p>
+        <div class="prompt-box good"><span class="label">★ Step 3 · two other prices</span>at 40.0k:  10 buyers · contribution 310.0k
+at 24.0k:  22 buyers · contribution 330.0k
+segments that changed: ____________________________________</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 4 · Read the two-tier line.</strong> Set the price back to 32.0k. Read the line under the segment table and say which segment the Standard tier wins.</p>
+        <div class="prompt-box good"><span class="label">★ Step 4 · two tiers</span>best pair: Standard 9.0k + Pro 25.0k, contribution 423.0k
+sells 18 Standard and 18 Pro, revenue 612.0k
+gain over one price: 423.0k - 414.0k = 9.0k
+the segment Standard brings in: _______________   (Part 3 has the split)</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 5 · Move the capture share.</strong> Slide "Share of value a buyer will pay" down, then up. Watch the best single price and the best Standard + Pro prices move. Write what your widget prints at two settings of your choice, then put it back to 25.0%.</p>
+        <div class="prompt-box good"><span class="label">★ Step 5 · the least certain lever</span>capture share ____%:  best single price ______  contribution ______  tiers ______ + ______
+capture share ____%:  best single price ______  contribution ______  tiers ______ + ______
+write what your widget prints; the lesson is which way the best price moves</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 6 · Your own price worksheet.</strong> For your own data product, list three or four buyer segments. For each, name the decision the data improves, a yearly value range, and your capture share. Then sketch one price and a two-tier version. Your numbers will differ.</p>
+        <div class="prompt-box good"><span class="label">★ Step 6 · your price worksheet</span>segment          decision it improves        value/yr range   capture   willingness to pay
+____________     ______________________      ____ to ____     ____%     ____ to ____
+____________     ______________________      ____ to ____     ____%     ____ to ____
+____________     ______________________      ____ to ____     ____%     ____ to ____
+one price: ______   buyers ____   contribution ______
+two tiers: Standard ______ + Pro ______   who Standard brings in: ____________</div>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>Keep the buyer list next to the price.</strong> Analyst session 5 takes 32.0k as the price and asks who should do the selling: Keelson directly, a reseller, or one exclusive licensee. The buyer list decides whether an exclusive deal is even acceptable.</p>
+    </div>
+  </section>
+
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before Analyst session 5</h2>
+      <span class="tag exercise">30 min</span>
+    </div>
+    <ol>
+      <li><strong>Interview one buyer.</strong> Ask one real or likely buyer of your data what decision it would change and what a better version of that decision is worth to them in a year. Write their words, not your estimate.</li>
+      <li><strong>Pick a capture share and defend it.</strong> Write the share you would assume and one reason it might be too high. Then run your price worksheet at half and double that share.</li>
+      <li><strong>Read your buyer list.</strong> At your best single price, list who buys. Mark any buyer you compete with, and write what you would do about them.</li>
+      <li><strong>Design a second tier.</strong> Name what the cheaper tier leaves out, what it costs to serve, and which segment it is meant to bring in.</li>
+    </ol>
+  </section>
+
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and Analyst session 4 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">1 · Why price a data product by the value of the decision it improves rather than by the volume of records delivered?</p>
+      <button class="qopt" type="button">A · Because volume is hard to count</button>
+      <button class="qopt" type="button">B · Because buyers always prefer a single flat fee</button>
+      <button class="qopt" type="button">C · Because one more copy costs almost nothing and the buyer's value does not scale with rows, so volume has nothing underneath it</button>
+      <button class="qopt" type="button">D · Because regulators require value-based pricing for data</button>
+      <p class="qwhy">With near-zero cost per extra copy, the only solid anchor for price is what the data does for the buyer. A small region can be worth more to a buyer expanding into it than a large one.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">2 · At the best single price of 32.0k, 8 of Keelson's 18 buyers are smaller insurers. Why is that a problem the price search cannot solve?</p>
+      <button class="qopt" type="button">A · They are Keelson's competitors, and selling them a repair cost index can narrow Keelson's own pricing edge; whether they should be customers is a strategy decision, not a revenue one</button>
+      <button class="qopt" type="button">B · Insurers are not allowed to buy data</button>
+      <button class="qopt" type="button">C · Insurers pay less than other segments</button>
+      <button class="qopt" type="button">D · Eight buyers is too few to matter</button>
+      <p class="qwhy">The search maximises contribution. It never asks whether a buyer should be served. Leader session 1's second question, would selling undercut our own use, has to be asked separately.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="3">
+      <p class="qtext">3 · Keelson adds a Standard tier at 9.0k beside a Pro tier at 25.0k. What does the second tier add here?</p>
+      <button class="qopt" type="button">A · It doubles contribution</button>
+      <button class="qopt" type="button">B · Nothing, because Pro buyers switch down to Standard</button>
+      <button class="qopt" type="button">C · It removes the competitors from the buyer list</button>
+      <button class="qopt" type="button">D · It doubles the buyers to 36, brings fleet operators in, and adds 9.0k of contribution (423.0k against 414.0k)</button>
+      <p class="qwhy">The money gain is modest; the reach is not. Standard is what brings fleet operators in at all, which changes who the product serves.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Price by the decision the data enables, not by volume</span><span class="note">CDAIO modules 4 and 5, data monetisation strategy and execution (pricing advice)</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Pricing families for information goods</span><span class="note">Jian Pei, "A Survey on Data Pricing: From Economics to Data Science", IEEE TKDE 34(10), 2022 (online 2020): zero marginal cost, non-rival; versioning, bundling, subscription, auctions, query-based pricing</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Keelson's price search: one price, two tiers, buyers by segment</span><span class="note">Constructed and labelled; computed by the engine in your browser and checked against an independent Python run</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Cost-plus as a floor and a check</span><span class="note">From the Analyst session 3 cost curve; the closeness to the value price here is a coincidence of the constructed inputs</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">A segment priced at zero on purpose</span><span class="note">Strava Metro, free to planners and city governments since September 2020 (reported, Bicycle Retailer)</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Every fact on this page, and its verification tier, is recorded in the course's source map.</p>
+  </section>
+
+  <section class="cheat" id="cheatsheet">
+    <h3>Analyst session 4 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Value, not volume</b><span>Price the decision the data improves. One more copy costs almost nothing.</span></div>
+      <div class="cheat-item"><b>Willingness to pay</b><span>Yearly value to the buyer x capture share. The share is the least certain number.</span></div>
+      <div class="cheat-item"><b>Contribution</b><span>Buyers x (price - cost to serve). Search it across prices; expect a hump.</span></div>
+      <div class="cheat-item"><b>Read the buyer list</b><span>The best price picks your customers. Check for competitors before you quote.</span></div>
+      <div class="cheat-item"><b>Two tiers</b><span>Price them together; each buyer takes the larger surplus. A cheaper tier brings new segments in.</span></div>
+      <div class="cheat-item"><b>Cost-plus</b><span>A floor and a check, never the method.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>Keelson has a price and a buyer list. Analyst session 5, partner deal maths, asks who should sell it: Keelson directly, a reseller who reaches more buyers for a commission, or one exclusive licensee with a minimum guarantee. A seeded simulation prints each route's range for one year.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Analyst session 4 of 6 · learn-data-monetisation-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="a3-package-and-cost-to-serve.html">← Prev: Package and cost to serve</a> &nbsp;·&nbsp; <a href="a5-partner-deal-maths.html">Next: Partner deal maths →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/dm-live.js?v=1"></script>
+<script src="../assets/dm-bench.js?v=1"></script>
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

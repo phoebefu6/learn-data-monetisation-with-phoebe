@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Leader session 3 of 4. Products, prices and partners: the packaging ladder from raw records to embedded answers, pricing by the value a buyer gets, why the best single price can sell mostly to the wrong buyers, two tiers, and three routes to market with their floors and caps. Keelson Mutual's repair cost index, constructed.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="Products, prices and partners - learn data monetisation with phoebe">
+<meta property="og:description" content="Leader session 3 of 4. What exactly you sell, what it is worth to each buyer, and who sells it.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-data-monetisation-with-phoebe/courses/b3-products-prices-and-partners.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-data-monetisation-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Products, prices and partners - learn data monetisation with phoebe">
+<meta name="twitter:description" content="Leader session 3 of 4. The packaging ladder, value pricing and three routes to market.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-data-monetisation-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Leader session 3 · Products, prices and partners - learn data monetisation with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-data-monetisation-with-phoebe</a> / Leader session 3 of 4</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Data Monetisation with Phoebe · Leader session 3 of 4</div>
+    <h1>Products, prices and <span class="accent">partners</span></h1>
+    <p class="sub">Once you know a dataset may be sold, three decisions remain, and they are usually made in the wrong order. What exactly is the product: rows, an index, a report, a feed? What is it worth to each buyer, and what does a price do to who buys? And who sells it: you, a reseller, or one licensee with a guarantee? Tonight: the packaging ladder, pricing on value, and the three routes to market with their floors and caps. Keelson Mutual is constructed.</p>
+    <div class="chip-row">
+      <span class="chip level">🟡 Leader</span>
+      <span class="chip audience">Data and AI leaders deciding whether data leaves the building for money</span>
+      <span class="chip audience">No code</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-18 · The packaging ladder, pricing on value, who sells it</span>
+      <span class="a3" style="flex:5">18-40 · Build-along: price the index, then your own</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we start</h2>
+    </div>
+    <p class="lede">Leader session 2 left Keelson Mutual with an answer it could defend: after the privacy notice, the objections, the supplier licences, the injury claims and the small cells, 72.4 percent of the motor claims records may go into a product. Sefa Adjei, head of partnerships, now has a harder set of questions on his desk. The fleet operators who called asked for "the data". Maya Okafor, the chief data officer, wants to know what Keelson would actually ship, at what price, and through whom, before anyone signs anything. Ines Carvalho, the CFO, wants the numbers to survive Leader session 4. Every Keelson person and number is invented.</p>
+
+    <div class="legend">
+      <span class="pill">🎫 Clear all three quiz questions to stamp your passport</span>
+      <span class="pill">Live = presented in the 45 minutes</span>
+      <span class="pill">Self-study = the full depth, after class</span>
+      <span class="pill">★ Build-along = everyone works it through</span>
+    </div>
+
+    <div class="callout win">
+      <p><strong>★ What you walk out with tonight.</strong> A one-page product decision sheet for your candidate dataset: the packaging rung you would sell, the buyers you would and would not sell to, the basis for the price, and the route to market with its floor and cap. Leader session 4 puts that sheet in front of a board.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers the packaging ladder</span>
+      <h2>From rows to answers: what exactly are we selling?</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">"Sell the data" hides a choice between six different products. At the bottom of the ladder the buyer gets raw records and does all the work. At the top, the answer arrives inside the buyer's own software and the records never leave. Each rung up carries more of the buyer's decision and less of the raw record, which is also less privacy exposure. CISR said it in one line: selling "is not just about selling data; it's also about selling insights".</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn staircase of six packaging rungs, rising from left to right: raw records, rarely allowed; aggregated data, counts and averages; an index, filled in teal because it is Keelson's rung; insight and reports; an API feed, live by query; embedded in the buyer's own tools. A padlock sits above the raw records rung. An arrow under the staircase says that each rung up carries more of the buyer's decision and exposes less of the raw record.">
+        <defs>
+          <filter id="b3aSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="41" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="b3aHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="b3aAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .b3aH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .b3aL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .b3aS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .b3aW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+          .b3aA { font: 700 11px Inter, sans-serif; fill: #2E2A08; }
+          .b3aN { font: 400 12px Inter, sans-serif; fill: #5A5848; }
+        </style>
+
+        <text class="b3aH" x="30" y="28">SIX RUNGS, FROM ROWS TO ANSWERS</text>
+        <text class="b3aS" x="290" y="28">what the buyer receives at each rung</text>
+
+        <g filter="url(#b3aSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="30" y="230" width="132" height="60" rx="8" transform="rotate(-0.6 96 260)" fill="url(#b3aHc)"/>
+          <rect x="170" y="200" width="132" height="90" rx="8" transform="rotate(0.5 236 245)" fill="#FFFFFF"/>
+          <rect x="310" y="170" width="132" height="120" rx="8" transform="rotate(-0.5 376 230)" fill="#0E5C66" stroke="#0E5C66"/>
+          <rect x="450" y="140" width="132" height="150" rx="8" transform="rotate(0.5 516 215)" fill="#FFFFFF"/>
+          <rect x="590" y="110" width="132" height="180" rx="8" transform="rotate(-0.5 656 200)" fill="#F8F6E6" stroke="#494412"/>
+          <rect x="730" y="80" width="132" height="210" rx="8" transform="rotate(0.4 796 185)" fill="#F8F6E6" stroke="#494412"/>
+          <path d="M30 318 L850 318" marker-end="url(#b3aAr)"/>
+          <!-- doodle: a padlock above the raw records rung -->
+          <path d="M84 206 Q84 190 96 190 Q108 190 108 206" stroke="#494412"/>
+          <rect x="78" y="206" width="36" height="18" rx="3" stroke="#494412"/>
+        </g>
+
+        <rect x="40" y="238" width="112" height="40" rx="5" fill="#FFFFFF"/>
+        <text class="b3aL" x="46" y="254">raw records</text>
+        <text class="b3aS" x="46" y="271">rarely allowed</text>
+
+        <text class="b3aL" x="182" y="224">aggregated data</text>
+        <text class="b3aS" x="182" y="242">counts, averages</text>
+
+        <text class="b3aW" x="322" y="194">an index</text>
+        <text class="b3aW" x="322" y="212">Keelson's rung</text>
+
+        <text class="b3aL" x="462" y="164">insight, reports</text>
+        <text class="b3aS" x="462" y="182">reports, analysis</text>
+
+        <text class="b3aL" x="602" y="134">an API feed</text>
+        <text class="b3aS" x="602" y="152">live, by query</text>
+
+        <text class="b3aL" x="742" y="104">embedded</text>
+        <text class="b3aS" x="742" y="122">in buyer's tools</text>
+
+        <text class="b3aA" x="30" y="340">up the ladder: more of the buyer's decision carried, less of the raw record exposed</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the rung is the product decision; the price comes after it</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Six rungs, and what each one hands the buyer<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Raw records.</strong> The buyer gets rows and does the analysis. It is the rung Leader session 2 makes hardest: every record has to be lawful to pass on, and the buyer can do anything with it. Doug Laney's direct monetisation list includes it plainly, "selling raw data through brokers or data markets". For personal data, it is rarely allowed.</p>
+        <p><strong>Aggregated data.</strong> Counts and averages by group, with small cells suppressed. The buyer still builds the answer, but no single person is in the product.</p>
+        <p><strong>An index.</strong> One number per region, class and quarter that tracks something the buyer cares about. Keelson's Repair Cost Index sits here: motor repair cost and claim frequency by region and vehicle class, quarterly.</p>
+        <p><strong>Insight and reports.</strong> Analysis written for the buyer's question. Laney's list again: "offering insights, analyses and reports".</p>
+        <p><strong>An API feed.</strong> The same content, delivered by query into the buyer's systems on their schedule.</p>
+        <p><strong>Embedded.</strong> The answer appears inside the buyer's own product or workflow. The buyer may never see a row.</p>
+        <p>Climbing the ladder costs you more to build and serve, and earns you more of the buyer's decision. It also moves the product away from the record, which is where most of the legal risk lives. For a wider tour of data product types, see <a href="https://phoebefu6.github.io/learn-data-product-with-phoebe/">Data Products ↗</a>; here the ladder is only a selling decision.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Keelson's four tiers, and why their costs differ<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Keelson plans to sell the index in four forms: a quarterly report, a dashboard, an API feed and bespoke analysis. Each sits on a different rung and costs a different amount to build and to serve one more customer. Analyst session 3 costs them on a shared platform: with the planned mix, serving one more customer costs 7.9k a year, and the full cost per customer falls from 59.2k at five customers to 14.3k at forty, because the platform's fixed cost is shared across more buyers. That curve is why a data product's economics live in the customer count, not in the cost of one copy.</p>
+        <p>CDAIO module 5 treats delivery format and pricing model as one decision, and the pairing matters: a feed queried on demand suits a different price shape than a report that arrives once a quarter.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>A product built by pooling, not selling rows.</strong> Verisk describes ClaimSearch as a contributory "give to get" claims database: insurers contribute their claims and in return can search everyone's. By Verisk's own statement (blog, 31 July 2025) it holds over 1.8 billion US claims and covers about 95 percent of the US property and casualty market. Those are the vendor's numbers, not an audit. The lesson for packaging is the rung: members do not buy each other's raw files; they buy answers to a query, under a contract that binds every contributor.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers pricing by value</span>
+      <h2>Price on what the buyer gets, then look at who buys</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">A copy of a dataset costs almost nothing to deliver, so its cost says little about its price. Jian Pei's survey of data pricing (2022) puts it in economic terms: information goods have "zero marginal costs" and are non-rival, one buyer's copy does not use up another's. So the price is set from the buyer's side. A working rule: willingness to pay is the value a buyer gets from the product in a year times a capture share, the part of that value a buyer will hand over. Keelson's capture share is 25 percent, a constructed assumption you can move on the widget.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 352" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn staircase of 110 constructed prospects sorted from the highest willingness to pay to the lowest, with a dashed price line at 32.0 thousand. The steps above the line are filled in teal: 18 buyers pay 32.0 thousand or more; 92 value the index below the price. A side panel lists who the 18 are: smaller insurers 8 of 15, parts makers 6 of 10, repair networks 4 of 25, fleet operators 0 of 60. Step heights are schematic.">
+        <defs>
+          <filter id="b3bSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="47" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="b3bHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="b3bAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .b3bH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .b3bL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .b3bS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .b3bB { font: 800 11px Inter, sans-serif; fill: #083A40; }
+          .b3bA { font: 700 11px Inter, sans-serif; fill: #2E2A08; }
+          .b3bN { font: 400 12px Inter, sans-serif; fill: #5A5848; }
+        </style>
+
+        <text class="b3bH" x="30" y="28">WHO PAYS 32.0K, AND WHO THEY ARE</text>
+        <text class="b3bA" x="60" y="52">willingness to pay = value x 25%</text>
+
+        <g filter="url(#b3bSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M60 290 L60 72 L80 72 L80 92 L100 92 L100 110 L120 110 L120 126 L140 126 L140 142 L160 142 L160 158 L180 158 L180 178 L200 178 L200 186 L220 186 L220 194 L240 194 L240 202 L260 202 L260 210 L280 210 L280 216 L300 216 L300 222 L320 222 L320 228 L340 228 L340 234 L360 234 L360 240 L380 240 L380 245 L400 245 L400 250 L420 250 L420 255 L440 255 L440 259 L460 259 L460 263 L480 263 L480 267 L500 267 L500 271 L520 271 L520 275 L540 275 L540 279 L560 279 L560 282 L580 282 L580 285 L600 285 L600 290 Z" fill="#F8F6E6" stroke="#494412"/>
+          <path d="M60 170 L60 72 L80 72 L80 92 L100 92 L100 110 L120 110 L120 126 L140 126 L140 142 L160 142 L160 158 L180 158 L180 170 Z" fill="#0E5C66" stroke="#0E5C66"/>
+          <path d="M50 290 L50 64" marker-end="url(#b3bAr)"/>
+          <path d="M50 290 L612 290"/>
+          <path d="M50 170 L600 170" stroke="#2E2A08" stroke-dasharray="7 5"/>
+          <path d="M380 96 L632 96" marker-end="url(#b3bAr)"/>
+          <rect x="640" y="64" width="220" height="176" rx="10" transform="rotate(0.4 750 152)" fill="#FFFFFF"/>
+          <!-- doodle: a price tag at the end of the price line -->
+          <path d="M604 162 L624 162 L634 170 L624 178 L604 178 Z" stroke="#494412"/>
+          <circle cx="611" cy="170" r="2.5" stroke="#494412"/>
+        </g>
+
+        <text class="b3bB" x="196" y="100">18 buyers pay 32.0k or more</text>
+        <text class="b3bS" x="196" y="118">the steps above the line</text>
+        <text class="b3bA" x="500" y="160">price 32.0k</text>
+        <text class="b3bS" x="300" y="200">92 value it below the price</text>
+        <text class="b3bA" x="60" y="310">110 constructed prospects, highest to lowest</text>
+
+        <text class="b3bH" x="656" y="88">who the 18 are</text>
+        <text class="b3bB" x="656" y="114">smaller insurers 8 of 15</text>
+        <text class="b3bL" x="656" y="136">parts makers 6 of 10</text>
+        <text class="b3bL" x="656" y="158">repair networks 4 of 25</text>
+        <text class="b3bL" x="656" y="180">fleet operators 0 of 60</text>
+        <text class="b3bS" x="656" y="206">insurers compete with Keelson;</text>
+        <text class="b3bS" x="656" y="224">the fleets who called buy none</text>
+
+        <text class="b3bN" x="30" y="336">Step heights are schematic; the 32.0k price and the counts are what the widget prints.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the price that earns the most decides who your customers are, and here the largest group is competitors</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The best single price, and the buyers it picks<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>One price.</strong> Analyst session 4 searches every API price for the one that earns the most contribution, price minus the cost to serve. With 110 constructed prospects and a 25 percent capture share, the answer is 32.0k a year: 18 buyers, revenue 576.0k, contribution 414.0k. Check it: 18 x 32.0k = 576.0k, and 18 x (32.0k - 9.0k serve) = 414.0k.</p>
+        <p><strong>The catch.</strong> Look at who the 18 are: fleet operators 0 of 60, repair networks 4 of 25, parts makers 6 of 10, smaller insurers 8 of 15. The fleet operators who started this conversation buy nothing at that price, and the largest group of buyers is smaller insurers, Keelson's competitors. That is question 2 from Leader session 1, would selling undercut our own use, arriving by way of the price.</p>
+        <p><strong>Two tiers.</strong> Offer a Standard tier (the quarterly report, priced on half the value, cheap to serve) and a Pro tier (the API, priced on full value). The best pair is Standard 9.0k and Pro 25.0k: 18 Standard and 18 Pro, 36 buyers, revenue 612.0k, contribution 423.0k. Tiers double the buyers and add 9.0k of contribution. By segment, the Standard tier is what brings fleet operators in at all: 8 of them buy Standard, none buy Pro.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why versions work for information goods<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Pei's survey lists the pricing models used for data: versioning, bundling, subscription, auctions and query-based pricing. Versioning works because a second version of an information good costs almost nothing to make, so you can offer a lighter version to buyers who value less and keep the full one for those who value more. Each buyer sorts themselves by choosing. Two tiers are versioning in its simplest form.</p>
+        <p>One point is ours, not Pei's: a data product has a high fixed cost even when one copy is free. Analyst session 3 drew it as the cost curve. Pricing on value tells you what buyers will pay; the cost curve tells you how many of them you need.</p>
+        <p>Consumer price elasticity and price tests on retail goods belong to a planned Pricing Analytics course. Here the buyer is a business, and the price comes from the value it gets.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Cost-plus is a floor, not a method<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>At 16 customers, Keelson's full cost is 23.9k per customer; with a 30 percent markup that is 31.1k. It lands next to the 32.0k value price by coincidence, not by method. Change the customer count and the cost-plus price moves; change the buyers' value and the value price moves. Use cost to check that a price covers the product. Use value to set it.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The veto in the room.</strong> When Sefa showed the two-tier result, Tom Reyes, the COO, said no Pro tier for smaller insurers: the API, at full detail, is the version that helps a competitor price motor policies against Keelson. Ines Carvalho asked what the veto costs. Nobody knew yet, and that is the right order: name the buyer you will not serve, then price what you gave up. Working out that cost is step 2 of tonight's build-along. Constructed Keelson Mutual example.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers who sells it</span>
+      <h2>Direct, reseller or one licensee: who sells it?</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">Keelson can sell the index itself, sell through a reseller who already reaches buyers, or license it to one partner exclusively for a guaranteed minimum. Analyst session 5 runs each route for one steady-state year across 5,000 seeded draws. In the middle outcome (P50): direct +304.8k, reseller +429.0k, exclusive +323.8k. The exclusive licence pays the guarantee in 41.0 percent of draws: it trades the upside for a floor.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 416" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three hand-drawn routes from Keelson to buyers, with one steady-state year at P50. Sell direct: three arrows to three buyers, plus 304.8 thousand. Through a reseller: one hub fanning out to five buyers, with a commission cut, plus 429.0 thousand. One exclusive licensee: one arrow to one buyer, plus 323.8 thousand, with a dashed cap above saying nobody else may buy and a floor below, filled in teal, saying the guarantee of 300.0 thousand binds in 41.0 percent of draws.">
+        <defs>
+          <filter id="b3cSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="53" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="b3cHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="b3cAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .b3cH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .b3cL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .b3cS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .b3cB { font: 800 11px Inter, sans-serif; fill: #083A40; }
+          .b3cV { font: 800 18px Inter, sans-serif; fill: #2E2A08; }
+          .b3cA { font: 700 11px Inter, sans-serif; fill: #2E2A08; }
+          .b3cN { font: 400 12px Inter, sans-serif; fill: #5A5848; }
+        </style>
+
+        <text class="b3cH" x="30" y="28">THREE WAYS TO REACH A BUYER, ONE STEADY-STATE YEAR</text>
+        <text class="b3cS" x="30" y="46">5,000 seeded draws per route, middle outcome (P50)</text>
+
+        <g filter="url(#b3cSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="30" y="180" width="130" height="60" rx="10" transform="rotate(-0.8 95 210)" fill="url(#b3cHc)"/>
+          <path d="M164 196 L214 92" marker-end="url(#b3cAr)"/>
+          <path d="M164 210 L214 196" marker-end="url(#b3cAr)"/>
+          <path d="M164 224 L214 306" marker-end="url(#b3cAr)"/>
+
+          <rect x="220" y="64" width="190" height="52" rx="10" transform="rotate(0.5 315 90)" fill="#F8F6E6" stroke="#494412"/>
+          <path d="M414 80 L456 66" marker-end="url(#b3cAr)"/>
+          <path d="M414 90 L456 90" marker-end="url(#b3cAr)"/>
+          <path d="M414 100 L456 114" marker-end="url(#b3cAr)"/>
+          <circle cx="468" cy="64" r="8"/>
+          <circle cx="468" cy="90" r="8"/>
+          <circle cx="468" cy="116" r="8"/>
+
+          <rect x="220" y="170" width="190" height="52" rx="10" transform="rotate(-0.5 315 196)" fill="#F8F6E6" stroke="#494412"/>
+          <path d="M414 190 L456 160" marker-end="url(#b3cAr)"/>
+          <path d="M414 193 L456 178" marker-end="url(#b3cAr)"/>
+          <path d="M414 196 L456 196" marker-end="url(#b3cAr)"/>
+          <path d="M414 199 L456 214" marker-end="url(#b3cAr)"/>
+          <path d="M414 202 L456 232" marker-end="url(#b3cAr)"/>
+          <circle cx="466" cy="160" r="7"/>
+          <circle cx="466" cy="178" r="7"/>
+          <circle cx="466" cy="196" r="7"/>
+          <circle cx="466" cy="214" r="7"/>
+          <circle cx="466" cy="232" r="7"/>
+          <!-- doodle: scissors for the reseller's commission cut -->
+          <circle cx="562" cy="204" r="4" stroke="#494412"/>
+          <circle cx="576" cy="204" r="4" stroke="#494412"/>
+          <path d="M565 200 L582 184 M573 200 L556 184" stroke="#494412"/>
+
+          <path d="M220 264 L590 264" stroke="#5A5848" stroke-dasharray="6 5"/>
+          <rect x="220" y="282" width="190" height="52" rx="10" transform="rotate(0.5 315 308)" fill="#F8F6E6" stroke="#494412"/>
+          <path d="M414 308 L456 308" marker-end="url(#b3cAr)"/>
+          <circle cx="468" cy="308" r="8"/>
+          <rect x="220" y="348" width="370" height="10" rx="4" transform="rotate(-0.3 405 353)" fill="#0E5C66" stroke="#0E5C66"/>
+        </g>
+
+        <rect x="40" y="194" width="110" height="34" rx="5" fill="#FFFFFF"/>
+        <text class="b3cH" x="48" y="209">Keelson</text>
+        <text class="b3cS" x="48" y="223">the index</text>
+
+        <text class="b3cL" x="234" y="86">sell direct</text>
+        <text class="b3cS" x="234" y="104">Keelson sells and serves</text>
+        <text class="b3cV" x="600" y="94">+304.8k</text>
+        <text class="b3cS" x="600" y="112">P50, one year</text>
+
+        <text class="b3cL" x="234" y="192">through a reseller</text>
+        <text class="b3cS" x="234" y="210">more reach, 30% commission</text>
+        <text class="b3cV" x="600" y="198">+429.0k</text>
+        <text class="b3cS" x="600" y="216">P50, one year</text>
+
+        <text class="b3cA" x="480" y="256">cap: nobody else may buy</text>
+        <text class="b3cL" x="234" y="304">exclusive licensee</text>
+        <text class="b3cS" x="234" y="322">20% share or the guarantee</text>
+        <text class="b3cV" x="600" y="314">+323.8k</text>
+        <text class="b3cS" x="600" y="332">P50, one year</text>
+        <text class="b3cB" x="220" y="378">floor: guarantee 300.0k, binding in 41.0% of draws</text>
+
+        <text class="b3cN" x="30" y="400">Over five years with the sponsor's inputs: exclusive +953.4k, direct +1362.4k.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the exclusive licence is the only route with a floor, and the only one with a ceiling</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Three routes, one year each<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Sell direct.</strong> Keelson finds, signs and serves every customer. It keeps the whole price and pays every cost of winning and serving. P50 +304.8k, with a range from +240.2k (P10) to +366.9k (P90).</p>
+        <p><strong>Through a reseller.</strong> A partner who already sells to fleets and repair networks brings more customers and takes a 30 percent commission; Keelson still serves them. P50 +429.0k, the highest middle outcome, and the widest range: +270.4k to +629.8k. The reseller also stands between Keelson and the buyer, so the contract has to say what the buyer may do with the data.</p>
+        <p><strong>One exclusive licensee.</strong> One partner takes the index, sells it to its own customers, and pays Keelson the larger of a minimum guarantee and a share of its revenue. Nobody else may buy from Keelson. P50 +323.8k, and P10 +300.0k: the guarantee is a floor, and it binds in 41.0 percent of draws. The guarantee wins in a thin market and caps a strong one.</p>
+        <p>Analyst session 5 does the maths and the contract terms that carry it: field of use, term, audit rights, scope of exclusivity.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>What exclusivity costs when the market is strong<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>One year hides the long cost of an exclusive licence. On the P&amp;L desk in Analyst session 6, with the sponsor's optimistic inputs, selling direct ends year 5 at +1362.4k of cumulative cash; the exclusive licence ends at +953.4k. The same desk shows the other side: on the desk's ladder, 0.0% of the exclusive rung's draws fail to break even in five years, against 56.4% for the base case. That trade, a known floor against an unknown ceiling, is a board decision, and Leader session 4 puts it there.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>One partner is a concentration risk, and the law does not set your price<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Concentration.</strong> A single licensee means a single renewal. If the partner walks away, or renegotiates at renewal knowing you have no one else, the revenue line goes with it. The Real world story below is the public version.</p>
+        <p><strong>The EU Data Act is not a price rule for voluntary sales.</strong> Article 8 requires fair, reasonable and non-discriminatory terms, and Article 9 allows reasonable, non-discriminatory compensation that "may include a margin", but only where a data holder is obliged to make data available. A voluntary licence of an index is priced by negotiation. For operational detail on consent and data protection law, see <a href="https://phoebefu6.github.io/learn-data-governance-with-phoebe/">Data Governance ↗</a>.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>Two partners and a renewal date.</strong> Reddit's S-1 (February 2024) disclosed data licensing contracts entered in January 2024 with an aggregate contract value of $203.0 million over two to three years, naming no counterparty. The Google deal was reportedly worth about $60 million a year (Reuters, citing unnamed sources). Its 10-K for fiscal 2025 says licensing revenue comes from two partners, and its 10-Q filed 30 October 2026 says those agreements are "approaching the end of their respective current terms". Large data licences can be real money, and two buyers is a concentration risk the filings themselves name.</p>
+    </div>
+  </section>
+
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>Price the index, then your own product</h2>
+      <span class="tag demo">★ 22 min · everyone works it through</span>
+    </div>
+    <p class="lede">No code. The widget, "One price, or two tiers", holds Keelson's 110 constructed prospects and computes in your browser. It has two sliders: "Share of value a buyer will pay" (starts at 25.0%) and "Your API price per year" (starts at 32.0k). Work steps 1 to 4 together on Keelson, then step 5 in pairs on your own candidate dataset. Your numbers will differ from Keelson's.</p>
+
+    <div class="dmx-widget" data-mode="price"></div>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 304" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn one-page product decision sheet with four rows: the packaging rung, the buyer list with who you will and will not sell to, the price basis, and the route to market with its floor and cap. A paperclip holds the sheet. An arrow carries the sheet into the board paper, filled in teal, for Leader session 4.">
+        <defs>
+          <filter id="b3dSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="59" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="b3dHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="b3dAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .b3dH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .b3dS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .b3dB { font: 800 11px Inter, sans-serif; fill: #083A40; }
+          .b3dW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+        </style>
+
+        <text class="b3dH" x="30" y="28">ONE PAGE, FOUR DECISIONS</text>
+
+        <g filter="url(#b3dSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="30" y="44" width="520" height="230" rx="8" transform="rotate(-0.4 290 159)" fill="#F8F6E6" stroke="#494412"/>
+          <path d="M44 100 L536 100" stroke="#CFCCB8"/>
+          <path d="M44 156 L536 156" stroke="#CFCCB8"/>
+          <path d="M44 212 L536 212" stroke="#CFCCB8"/>
+          <path d="M554 160 L634 160" marker-end="url(#b3dAr)"/>
+          <rect x="640" y="120" width="210" height="80" rx="10" transform="rotate(0.6 745 160)" fill="#0E5C66" stroke="#0E5C66"/>
+          <!-- doodle: a paperclip on the sheet -->
+          <path d="M506 36 L506 64 Q506 72 512 72 Q518 72 518 64 L518 44 Q518 40 514 40 Q510 40 510 44 L510 60" stroke="#494412"/>
+        </g>
+
+        <text class="b3dH" x="50" y="72">1 · the rung</text>
+        <text class="b3dS" x="50" y="90">Keelson: an index, sold as a report and an API</text>
+        <text class="b3dH" x="50" y="128">2 · the buyer list</text>
+        <text class="b3dS" x="50" y="146">who buys at the price, and who we will not sell to</text>
+        <text class="b3dH" x="50" y="184">3 · the price basis</text>
+        <text class="b3dS" x="50" y="202">value x capture share; Keelson: Standard 9.0k + Pro 25.0k</text>
+        <text class="b3dH" x="50" y="240">4 · the route</text>
+        <text class="b3dS" x="50" y="258">direct, reseller or exclusive, with its floor and cap</text>
+
+        <text class="b3dW" x="658" y="154">the board paper</text>
+        <text class="b3dW" x="658" y="174">Leader session 4</text>
+
+        <text class="b3dB" x="30" y="294">One sheet per candidate dataset. Your numbers will differ.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - four lines a board can argue with, each backed by a number you can show</figcaption>
+    </figure>
+
+    <div class="steps">
+      <div class="step">
+        <p><strong>Step 1 · Who buys at 32.0k?</strong> Leave both sliders where they start. Read the top metrics and the segment table under the bar profile.</p>
+        <div class="prompt-box good"><span class="label">★ Step 1 · the widget at 32.0k, as it prints</span>18 buyers at 32.0k · contribution 414.0k · best single price 32.0k / 414.0k
+Segment             Prospects   Buy at 32.0k
+Fleet operators     60          0
+Repair networks     25          4
+Parts makers        10          6
+Smaller insurers    15          8</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 2 · Ask question 2 of that list.</strong> Leader session 1 asked: would selling undercut our own use? Apply it to the 18 buyers, then to Tom Reyes's veto on selling Pro to smaller insurers. Work out what the veto puts at stake before deciding whether it is worth it.</p>
+        <div class="prompt-box good"><span class="label">★ Step 2 · question 2, with names</span>buyers at 32.0k who compete with Keelson: smaller insurers, 8 of the 18
+Pro sales the veto removes (two-tier split): 8, each 25.0k price - 9.0k serve
+contribution at stake, at most: 8 x 16.0k = ________  (less if some take Standard instead)
+our call: veto / sell with a field-of-use limit / sell, because ______________________</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 3 · Read the two-tier line.</strong> Find the fourth metric and the note under the segment table. Name what the Standard tier adds that one price could not.</p>
+        <div class="prompt-box good"><span class="label">★ Step 3 · the best two tiers</span>best Standard + Pro prices (423.0k): 9.0k + 25.0k
+Best pair sells 18 Standard and 18 Pro for revenue 612.0k.
+what Standard adds: 18 more buyers, and the fleet operators (8 of them) who buy nothing at 32.0k
+contribution gained over one price: 423.0k - 414.0k = 9.0k</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 4 · Drag the price up.</strong> Move "Your API price per year" to 40.0k. Watch the buyer count and the contribution, and the highlighted bar slide right on the profile.</p>
+        <div class="prompt-box good"><span class="label">★ Step 4 · at 40.0k</span>10 buyers at 40.0k · contribution 310.0k
+check: 10 x (40.0k - 9.0k) = 310.0k, down 104.0k from 414.0k
+a higher price lost more buyers than it gained per buyer</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 5 · Your own product.</strong> In pairs, take the candidate dataset from Leader session 2 and fill in the decision sheet. Estimate value per buyer segment roughly; your numbers will differ, and a range is fine.</p>
+        <div class="prompt-box good"><span class="label">★ Step 5 · your product decision sheet</span>rung:          ____________________ (raw / aggregated / index / insight / API / embedded)
+buyer list:    will sell to ______________ · will not sell to ______________ because ______
+price basis:   value to buyer about ______ a year x capture share ____ = about ______
+tiers?         Standard ______ for ______ · Pro ______ for ______
+route:         direct / reseller / exclusive · floor ______ · cap ______</div>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>Keep the sheet.</strong> Leader session 4 puts the four lines in front of a board, next to the five-year numbers, and asks which one would change the decision.</p>
+    </div>
+  </section>
+
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before Leader session 4</h2>
+      <span class="tag exercise">30 min</span>
+    </div>
+    <ol>
+      <li><strong>Ask one buyer.</strong> Find one person in a likely buyer organisation and ask what decision your data would help them make, and roughly what that decision is worth to them in a year.</li>
+      <li><strong>Name your competitors in the list.</strong> For your candidate dataset, list every buyer segment and mark the ones that compete with you. Decide whether you would sell to them, and in which version.</li>
+      <li><strong>Find a reseller.</strong> Name one organisation that already sells to your buyers. Write what commission would make your direct route the better one.</li>
+      <li><strong>Read one licence.</strong> Find a data or content licence your organisation has signed, as buyer or seller, and copy out its term, field of use and exclusivity clause.</li>
+    </ol>
+  </section>
+
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and Leader session 3 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · Why price a data product on the value the buyer gets rather than on what one copy costs to make?</p>
+      <button class="qopt" type="button">A · Because the cost of a dataset can never be measured</button>
+      <button class="qopt" type="button">B · Because a copy costs almost nothing to deliver, so cost says little about what a buyer will pay; value sets the ceiling</button>
+      <button class="qopt" type="button">C · Because data protection law requires value-based pricing</button>
+      <button class="qopt" type="button">D · Because value pricing always wins more buyers than any other method</button>
+      <p class="qwhy">Information goods have zero marginal cost (Pei). Cost tells you whether a price covers the product; value tells you what buyers will pay.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="3">
+      <p class="qtext">2 · Keelson's best single price, 32.0k, wins 18 buyers and the most contribution. What is wrong with it?</p>
+      <button class="qopt" type="button">A · Nothing: the highest contribution is always the right price</button>
+      <button class="qopt" type="button">B · It is below the cost to serve</button>
+      <button class="qopt" type="button">C · It wins too many buyers for Keelson to serve</button>
+      <button class="qopt" type="button">D · The largest group of those buyers is Keelson's competitors, and the fleet operators who asked buy none</button>
+      <p class="qwhy">Smaller insurers are 8 of the 18; fleet operators are 0 of 60. A price picks your customers, so check who it picks against question 2 from Leader session 1.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · What does an exclusive licence with a minimum guarantee trade away?</p>
+      <button class="qopt" type="button">A · The upside in a strong market, in exchange for a floor in a weak one</button>
+      <button class="qopt" type="button">B · Nothing: the guarantee is pure protection</button>
+      <button class="qopt" type="button">C · The need to check whether the data may be sold</button>
+      <button class="qopt" type="button">D · All of the revenue share, in exchange for the guarantee</button>
+      <p class="qwhy">The guarantee binds in 41.0 percent of draws, and with the sponsor's inputs the exclusive route ends five years at +953.4k against +1362.4k direct.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Selling insights as well as data</span><span class="note">Wixom, Beath and Owens, Data Is Everybody's Business (MIT Press, 2023), read at source</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Direct monetisation forms: raw data through brokers or markets; insights, analyses and reports</span><span class="note">Doug Laney, Infonomics, as presented in his 2020 talks</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Verisk ClaimSearch as a contributory claims product</span><span class="note">Verisk blog, 31 July 2025; the vendor's own statement, not audited</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Reddit's data licensing contracts, two partners, terms approaching their end</span><span class="note">Reddit S-1 (Feb 2024), 10-K FY2025, 10-Q filed 30 Oct 2026; the Google figure is reported (Reuters, 22 Feb 2024, unnamed sources)</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Zero marginal cost, non-rival goods; versioning, bundling, subscription, auctions, query-based pricing</span><span class="note">Jian Pei, A Survey on Data Pricing, IEEE TKDE 34(10), 2022</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Delivery formats and pricing models for data products</span><span class="note">CDAIO module 5, data monetisation execution</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Data Act Articles 8 and 9 apply only where sharing is obliged</span><span class="note">EU Data Act, Regulation (EU) 2023/2854</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Keelson's prices, buyers by segment, tiers and deal routes</span><span class="note">Constructed case, computed by the course engine in your browser</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Every fact on this page, and its verification tier, is recorded in the course's source map.</p>
+  </section>
+
+  <section class="cheat" id="cheatsheet">
+    <h3>Leader session 3 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Choose the rung first</b><span>Raw, aggregated, index, insight, API, embedded. Higher rungs expose less of the record.</span></div>
+      <div class="cheat-item"><b>Price on value</b><span>Willingness to pay = value to the buyer x capture share. A copy costs almost nothing.</span></div>
+      <div class="cheat-item"><b>A price picks your customers</b><span>Keelson's best single price sold most to competitors. Read the buyer list, not just the total.</span></div>
+      <div class="cheat-item"><b>Tiers sort buyers</b><span>Standard 9.0k + Pro 25.0k: twice the buyers, and the fleets come in.</span></div>
+      <div class="cheat-item"><b>Exclusive = floor and cap</b><span>The guarantee protects a thin market and caps a strong one.</span></div>
+      <div class="cheat-item"><b>One partner is one renewal</b><span>Concentration is a risk the board should see by name.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>Leader session 4 is the board call. The P&amp;L desk runs the index for five years: the base case breaks even on cash in 4.8 years, yet its NPV at Keelson's 9 percent hurdle is -77.9k. Five rungs show which assumption decides the answer, and you write the go or no-go paper.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Leader session 3 of 4 · learn-data-monetisation-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="b2-is-it-ours-to-sell.html">← Prev: Is it ours to sell</a> &nbsp;·&nbsp; <a href="b4-the-board-call.html">Next: The board call →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/dm-live.js?v=1"></script>
+<script src="../assets/dm-bench.js?v=1"></script>
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

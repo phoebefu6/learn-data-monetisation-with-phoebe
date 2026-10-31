@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Leader session 2 of 4. Is it ours to sell: lawful basis and purpose compatibility, consent and objection, the licence chain from supplier to buyer, health data, pseudonymised against anonymous, and the share of records that survives every check. Keelson Mutual's repair cost index, constructed.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="Is it ours to sell - learn data monetisation with phoebe">
+<meta property="og:description" content="Leader session 2 of 4. Notice, objection, licence, special category and the cell threshold: how much of a dataset you may actually sell.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-data-monetisation-with-phoebe/courses/b2-is-it-ours-to-sell.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-data-monetisation-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Is it ours to sell - learn data monetisation with phoebe">
+<meta name="twitter:description" content="Leader session 2 of 4. The checks that decide how much of a dataset is sellable.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-data-monetisation-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Leader session 2 · Is it ours to sell - learn data monetisation with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-data-monetisation-with-phoebe</a> / Leader session 2 of 4</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Data Monetisation with Phoebe · Leader session 2 of 4</div>
+    <h1>Is it <span class="accent">ours to sell</span></h1>
+    <p class="sub">Holding data is not the same as being allowed to sell it. Every record arrived with a promise attached: a privacy notice to the customer, a contract with a supplier, a law about health data. Tonight: the purpose test a new use has to pass, the objections and contracts that travel with the data, the line between pseudonymised and anonymous, and how much of Keelson's motor claims history is left once every check has run. Keelson Mutual is constructed.</p>
+    <div class="chip-row">
+      <span class="chip level">🟢 Leader</span>
+      <span class="chip audience">Data and AI leaders deciding whether data leaves the building for money</span>
+      <span class="chip audience">No code</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-18 · Purpose, licences, anonymous or not</span>
+      <span class="a3" style="flex:5">18-40 · Build-along: the sellable share</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we start</h2>
+    </div>
+    <p class="lede">Leader session 1 left Keelson with one candidate on the selling road: the motor claims history, the base of the Keelson Repair Cost Index. Sefa Adjei, head of partnerships, has buyers waiting. Maya Okafor, the chief data officer, has a narrower question first: of the 180,000 motor claims records from the last three years, how many may lawfully end up in a product someone else pays for? Tonight answers that one record at a time, through five checks, and ends with a share a board can hear. Keelson's customers are constructed, so each check is read under both the EU GDPR and Singapore's PDPA, because a leader will meet one or both. The operational detail of consent and notices belongs to <a href="https://phoebefu6.github.io/learn-pdpa-dnc-with-phoebe/">PDPA &amp; DNC ↗</a> and <a href="https://phoebefu6.github.io/learn-data-governance-with-phoebe/">Data Governance ↗</a>; here, only what makes data sellable.</p>
+
+    <div class="legend">
+      <span class="pill">🎫 Clear all three quiz questions to stamp your passport</span>
+      <span class="pill">Live = presented in the 45 minutes</span>
+      <span class="pill">Self-study = the full depth, after class</span>
+      <span class="pill">★ Build-along = everyone works it through</span>
+    </div>
+
+    <div class="callout win">
+      <p><strong>★ What you walk out with tonight.</strong> A one-page "can we sell it" checklist for your own candidate dataset: notice, objection, licence, special category and threshold, each with an estimated share removed, and one sentence for the board on what share is sellable and what would change it.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers lawful basis and purpose</span>
+      <h2>Collected for one purpose, sold for another</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">A motor claim is collected to settle a claim. An index sold to fleet operators is a different purpose. Under the GDPR, every use of personal data needs one of six lawful bases in Article 6(1), and a new purpose that rests on neither fresh consent nor a law has to pass the compatibility test in Article 6(4). Singapore's PDPA asks the same question in its own words: consent, deemed consent, or an exception that actually covers what you plan to do.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One motor claims record moves from the purpose it was collected for, settling the customer's claim, toward a proposed new purpose, a repair cost index sold outside Keelson. Between them stands a gate, filled in teal, carrying the five questions of GDPR Article 6(4): the link between the purposes, the context and what customers expected, the nature of the data including health data, the consequences for the people, and the safeguards in place. A note says the gate applies when the new purpose rests on neither consent nor a law.">
+        <defs>
+          <filter id="b2aSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="41" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="b2aHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="b2aAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .b2aH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .b2aL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .b2aS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .b2aW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+          .b2aA { font: 700 11px Inter, sans-serif; fill: #2E2A08; }
+          .b2aN { font: 400 12px Inter, sans-serif; fill: #5A5848; }
+        </style>
+
+        <text class="b2aH" x="30" y="28">ONE CLAIMS RECORD, TWO PURPOSES</text>
+        <text class="b2aS" x="300" y="28">GDPR Art 6(4) · the compatibility test</text>
+
+        <g filter="url(#b2aSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="30" y="70" width="220" height="150" rx="12" transform="rotate(-0.6 140 145)" fill="#F8F6E6" stroke="#494412"/>
+          <path d="M254 145 L326 145" marker-end="url(#b2aAr)"/>
+          <rect x="332" y="50" width="236" height="210" rx="12" transform="rotate(0.4 450 155)" fill="#0E5C66" stroke="#0E5C66"/>
+          <path d="M572 145 L626 145" marker-end="url(#b2aAr)" stroke-dasharray="6 5"/>
+          <rect x="632" y="70" width="218" height="150" rx="12" transform="rotate(0.6 741 145)" fill="#FFFFFF"/>
+          <!-- doodle: a small car on the claim record -->
+          <path d="M60 186 L72 172 L110 172 L122 186 L130 186 L130 198 L52 198 L52 186 Z" stroke="#494412"/>
+          <circle cx="70" cy="200" r="6" stroke="#494412"/>
+          <circle cx="112" cy="200" r="6" stroke="#494412"/>
+        </g>
+
+        <text class="b2aH" x="46" y="96">COLLECTED FOR</text>
+        <text class="b2aL" x="46" y="118">settle my claim</text>
+        <text class="b2aS" x="46" y="138">repair cost, vehicle, region</text>
+        <text class="b2aS" x="46" y="156">injury notes, if any</text>
+
+        <text class="b2aW" x="348" y="76">THE GATE: IS IT COMPATIBLE?</text>
+        <text class="b2aW" x="348" y="106">1 · link to the first purpose?</text>
+        <text class="b2aW" x="348" y="134">2 · what did people expect?</text>
+        <text class="b2aW" x="348" y="162">3 · nature: any health data?</text>
+        <text class="b2aW" x="348" y="190">4 · consequences for people?</text>
+        <text class="b2aW" x="348" y="218">5 · safeguards in place?</text>
+
+        <text class="b2aH" x="648" y="96">PROPOSED</text>
+        <text class="b2aL" x="648" y="118">an index sold outside</text>
+        <text class="b2aS" x="648" y="138">fleets, garages, parts makers</text>
+        <text class="b2aS" x="648" y="156">a new purpose, a new party</text>
+
+        <text class="b2aA" x="30" y="284">consent or a law for the new use? then the gate is not the route</text>
+
+        <text class="b2aN" x="30" y="312">A no at the gate stops the sale before price is discussed. Fresh consent is the other way through.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the gate asks five questions about the new purpose, and health data makes question 3 hard to pass</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>What the GDPR asks of a new purpose<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Six lawful bases.</strong> Article 6(1) lists them: consent, contract, legal obligation, vital interests, public task and legitimate interests. Settling a claim rests on the contract. Selling an index built from the claim does not, so the sale needs a basis of its own.</p>
+        <p><strong>The compatibility test.</strong> Where the new purpose rests on neither the person's consent nor a law, Article 6(4) has the controller weigh the link between the old and new purpose, the context of collection, the nature of the data, including special categories, the possible consequences for the people, and the safeguards in place. Aggregation is a safeguard that helps; it does not answer the other four questions for you.</p>
+        <p><strong>Consent, if you ask for it.</strong> Article 7(3) requires that consent be as easy to withdraw as to give. A product built on consent has to keep working when some customers withdraw, which means the share you can sell moves every quarter.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The same question under Singapore's PDPA<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Consent and deemed consent.</strong> Section 13 makes consent the default. Section 15A allows deemed consent by notification, but only after an assessment that the new use is not likely to have an adverse effect on the individual, and with a reasonable period to opt out.</p>
+        <p><strong>Legitimate interests.</strong> The legitimate interests exception also needs an assessment of adverse effect before you rely on it.</p>
+        <p><strong>Business improvement.</strong> The business improvement exception covers using data inside the organisation, and sharing it only within a group of related companies. A sale to an unrelated third party is not covered on the text. That is an inference from the wording, not a ruling, so treat it as a reason to ask counsel, not as a green light. The PDPC's Advisory Guidelines on Key Concepts (revised 29 April 2026) set out these exceptions in full; <a href="https://phoebefu6.github.io/learn-pdpa-dnc-with-phoebe/">PDPA &amp; DNC ↗</a> teaches them operationally.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>"Analytics to improve our services."</strong> Keelson's 2019 motor policy notice told customers their data would be used for "analytics to improve our services" and said nothing about third parties. Maya's team read it twice. Analytics inside Keelson: arguably covered. An index sold to a fleet operator: a different party and a different purpose, with no word in the notice pointing at it. The records sold under notices like that one are what the widget's first stage removes. Constructed Keelson Mutual example.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers objection, special category and the licence chain</span>
+      <h2>Promises that travel with the data</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">Three more checks sit between a lawful purpose and a sellable record. Customers may have objected. Some records carry health data. And some data arrived from a supplier under a contract that says what Keelson may do with it. Inbound terms bind outbound use: you cannot sell more than you were given.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The licence chain. A supplier garage sends repair invoice lines to Keelson under a supply contract. Keelson would send them on to a buyer such as a fleet operator or parts maker. On the second arrow stands a barrier, filled in teal: the onward-use clause, which limits use to settling Keelson's own claims. The arrow to the buyer is dashed beyond the barrier because the sale cannot happen under the current contract.">
+        <defs>
+          <filter id="b2bSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="47" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="b2bHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="b2bAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .b2bH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .b2bL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .b2bS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .b2bB { font: 800 11px Inter, sans-serif; fill: #083A40; }
+          .b2bA { font: 700 11px Inter, sans-serif; fill: #2E2A08; }
+          .b2bN { font: 400 12px Inter, sans-serif; fill: #5A5848; }
+        </style>
+
+        <text class="b2bH" x="30" y="28">THE LICENCE CHAIN: INBOUND TERMS BIND OUTBOUND USE</text>
+
+        <g filter="url(#b2bSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="30" y="80" width="200" height="90" rx="12" transform="rotate(-1 130 125)" fill="url(#b2bHc)"/>
+          <path d="M234 125 L334 125" marker-end="url(#b2bAr)"/>
+          <rect x="340" y="80" width="200" height="90" rx="12" transform="rotate(0.8 440 125)" fill="#F8F6E6" stroke="#494412"/>
+          <path d="M544 125 L580 125"/>
+          <rect x="584" y="70" width="22" height="110" rx="4" transform="rotate(-2 595 125)" fill="#0E5C66" stroke="#0E5C66"/>
+          <path d="M610 125 L644 125" marker-end="url(#b2bAr)" stroke-dasharray="5 6" stroke="#5A5848"/>
+          <rect x="650" y="80" width="200" height="90" rx="12" transform="rotate(1 750 125)" fill="#FFFFFF" stroke-dasharray="7 5"/>
+          <!-- doodle: a spanner under the garage -->
+          <path d="M60 230 L120 214 M120 214 Q132 206 140 214 Q134 218 136 224 Q142 226 146 220 Q152 230 140 234 Q130 236 124 228" stroke="#494412"/>
+        </g>
+
+        <rect x="44" y="98" width="172" height="54" rx="6" fill="#FFFFFF"/>
+        <text class="b2bH" x="54" y="118">SUPPLIER GARAGE</text>
+        <text class="b2bS" x="54" y="138">repair invoice lines</text>
+
+        <text class="b2bA" x="252" y="100">supply</text>
+        <text class="b2bA" x="252" y="114">contract</text>
+
+        <text class="b2bH" x="356" y="112">KEELSON</text>
+        <text class="b2bS" x="356" y="132">settles its own claims</text>
+        <text class="b2bS" x="356" y="150">with the invoice lines</text>
+
+        <text class="b2bH" x="666" y="112">BUYER</text>
+        <text class="b2bS" x="666" y="132">fleet operator,</text>
+        <text class="b2bS" x="666" y="150">parts maker</text>
+
+        <text class="b2bB" x="440" y="206">the onward-use clause: Keelson's own claims only</text>
+        <text class="b2bS" x="440" y="226">change it by renegotiating the contract, not by aggregating</text>
+
+        <text class="b2bN" x="30" y="280">What Keelson may sell is capped by what the garage agreed to, whatever Keelson's own notice says.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the barrier sits in a contract signed years ago, and only a new contract moves it</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Objection, health data and the supplier contract<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>The right to object.</strong> Under Article 21 of the GDPR, a person may object to processing that rests on public task or legitimate interests, bases (e) and (f). If Keelson relies on legitimate interests for analytics, the customers who objected come out of the product, and stay out.</p>
+        <p><strong>Health data.</strong> Article 9(1) prohibits processing data concerning health unless one of the exceptions in Article 9(2) applies, such as explicit consent. Keelson's injury claims carry exactly that: notes about whiplash, hospital stays, recovery time. Selling an index is not one of the exceptions, so the injury claims are held back from the product entirely.</p>
+        <p><strong>The licence chain.</strong> Repair garages supplied invoice lines to Keelson under a supply contract that limits their use to settling Keelson's own claims. Whatever Keelson's privacy notice says to customers, the garage's contract caps what Keelson may pass on. Records whose repair detail came under that contract cannot go into the index until the contract changes.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Reading an inbound contract before an outbound sale<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Four clauses decide most cases. <strong>Field of use:</strong> what the data may be used for, and whether "analytics" or "derived works" is named. <strong>Onward transfer:</strong> whether any third party may receive the data or anything derived from it. <strong>Derived data:</strong> who owns an aggregate built from the supplied records. <strong>Term and survival:</strong> whether the restriction outlives the contract. A data sharing register, owned by <a href="https://phoebefu6.github.io/learn-data-governance-with-phoebe/">Data Governance ↗</a>, is where those answers should already live. If nobody can find the contract, treat the data as restricted until someone does.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>Terms settled before the data moved.</strong> Verisk describes ClaimSearch as a contributory, "give to get" claims database: insurers contribute their claims and in return may search the pool. Verisk states it holds over 1.8 billion US claims and covers about 95 percent of the US P&amp;C market (Verisk blog, 31 July 2025; the vendor's own statement). The lesson for Keelson is the order of work: the contribution terms, who may use what and for what, were agreed before any claim moved. Keelson's garage contracts were written for settling claims, and nobody wrote an onward-use term because nobody planned to sell.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers anonymous, pseudonymous and the sellable share</span>
+      <h2>Anonymous is a high bar, and pseudonymous does not reach it</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">The last check is about form. Data that can still be linked to a person is personal data, and every check above keeps applying to it. Only anonymous information sits outside the law, and getting there is harder than removing names. Keelson's index is published as aggregated cells, with small cells suppressed, which is one control on the road toward anonymous, not the arrival.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A spectrum of four stops from more to less identifying: identified records, pseudonymised records, aggregated cells with a size threshold, and anonymous information. A bracket over the first two says the law still applies: pseudonymised data is personal data under GDPR Article 4(5). The aggregated cells stop is filled in teal as where the Keelson index sits, with a caution mark because a threshold is one control and not anonymisation on its own. The last stop, anonymous, is outside the GDPR under Recital 26.">
+        <defs>
+          <filter id="b2cSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="53" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="b2cHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="b2cAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .b2cH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .b2cL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .b2cS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .b2cB { font: 800 11px Inter, sans-serif; fill: #083A40; }
+          .b2cW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+          .b2cA { font: 700 11px Inter, sans-serif; fill: #2E2A08; }
+          .b2cN { font: 400 12px Inter, sans-serif; fill: #5A5848; }
+        </style>
+
+        <text class="b2cH" x="30" y="28">FROM IDENTIFIED TO ANONYMOUS</text>
+        <text class="b2cS" x="270" y="28">GDPR Art 4(5) and Recital 26 · PDPC Selected Topics, Chapter 3</text>
+
+        <g filter="url(#b2cSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M34 118 L34 108 L416 108 L416 118" stroke="#494412"/>
+          <rect x="30" y="140" width="180" height="70" rx="10" transform="rotate(-0.6 120 175)" fill="url(#b2cHc)"/>
+          <rect x="240" y="140" width="180" height="70" rx="10" transform="rotate(0.6 330 175)" fill="#F8F6E6" stroke="#494412"/>
+          <rect x="450" y="140" width="180" height="70" rx="10" transform="rotate(-0.6 540 175)" fill="#0E5C66" stroke="#0E5C66"/>
+          <rect x="660" y="140" width="190" height="70" rx="10" transform="rotate(0.6 755 175)" fill="#FFFFFF"/>
+          <path d="M600 132 L614 108 L628 132 Z" stroke="#991B1B"/>
+          <path d="M34 262 L846 262" marker-end="url(#b2cAr)" stroke="#5A5848"/>
+        </g>
+
+        <text class="b2cA" x="120" y="98">the law still applies: Art 4(5)</text>
+        <text class="b2cS" x="440" y="98">caution: a threshold is one control</text>
+
+        <rect x="42" y="156" width="150" height="38" rx="5" fill="#FFFFFF"/>
+        <text class="b2cH" x="50" y="172">IDENTIFIED</text>
+        <text class="b2cS" x="50" y="188">names, policy numbers</text>
+
+        <text class="b2cH" x="256" y="168">PSEUDONYMISED</text>
+        <text class="b2cS" x="256" y="186">keys swapped, re-linkable</text>
+        <text class="b2cS" x="256" y="202">still personal data</text>
+
+        <text class="b2cW" x="466" y="168">AGGREGATED CELLS</text>
+        <text class="b2cW" x="466" y="186">cells under k hidden</text>
+        <text class="b2cW" x="466" y="202">the index sits here</text>
+
+        <text class="b2cH" x="676" y="168">ANONYMOUS</text>
+        <text class="b2cS" x="676" y="186">nobody identifiable</text>
+        <text class="b2cS" x="676" y="202">Recital 26: outside GDPR</text>
+
+        <text class="b2cS" x="30" y="236">more identifying</text>
+        <text class="b2cS" x="750" y="236">less identifying</text>
+
+        <text class="b2cN" x="30" y="300">Moving right lowers what the law asks only when nobody can reasonably be identified, by anyone.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the index sits one stop short of anonymous, and the threshold alone does not close the gap</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Pseudonymised, anonymous and the threshold<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Pseudonymised is still personal.</strong> Article 4(5) of the GDPR defines pseudonymisation as processing so the data cannot be attributed to a person without additional information kept separately. Because that information exists somewhere, the data is still personal data, and every check in Parts 1 and 2 applies to it.</p>
+        <p><strong>Anonymous is outside the law.</strong> Recital 26 puts anonymous information, data that no longer relates to an identifiable person, outside the Regulation. The PDPC's Advisory Guidelines on Selected Topics, Chapter 3 Anonymisation (revised 23 May 2024), take the same line for Singapore: anonymised data is not personal data.</p>
+        <p><strong>A threshold is one control.</strong> Keelson suppresses any cell with fewer than k records, k 10 in the base case. That removes the cells where a single claim could be spotted, and it is one control among several; it does not by itself make data anonymous. Proving anonymity is the work of Privacy Engineering (planned), which owns the maths.</p>
+        <p><strong>Keelson's result.</strong> After all five checks, 72.4 percent of the 180,000 records end in published cells, and 1,067 of 1,152 cells are published. The build-along takes that number apart.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The stakes, and the EU rules around data sharing<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>The stakes.</strong> Article 83(5) of the GDPR allows fines of up to 20 million euros or 4 percent of total worldwide annual turnover, whichever is higher, for infringements that include the basic principles and the conditions for consent. A data product priced in hundreds of thousands sits beside a penalty ceiling set by group turnover.</p>
+        <p><strong>The EU Data Act.</strong> Regulation (EU) 2023/2854 applies from 12 September 2025, with some parts staggered into 2026 and 2027. Its Article 8 fair, reasonable and non-discriminatory terms, and Article 9 compensation that "may include a margin", apply only where a data holder is obliged to make data available. They are not a price rule for a voluntary sale like Keelson's index.</p>
+        <p><strong>Data intermediaries.</strong> The Data Governance Act (2022/868) regulates data intermediation services from 24 September 2023, relevant if Keelson sold through, or became, a neutral intermediary. The Commission's Digital Omnibus (November 2025) proposes repealing the DGA into the Data Act: a proposal, not adopted as at October 2026.</p>
+        <p><strong>A vocabulary.</strong> The ODI's Data Spectrum describes data running "from closed to shared to open". Keelson's index would be shared: licensed to named buyers on terms, not published for anyone.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>"Just take the names off."</strong> One of the fleet operators asked Sefa for record-level claims "with the names taken off", so its own analysts could cut the data their way. Maya's answer was short: with policy numbers swapped for codes, every record is still personal data, every check applies to each one, and the injury notes come with them. The offer that went back was the aggregated index, with small cells suppressed. Constructed Keelson Mutual example.</p>
+    </div>
+  </section>
+
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>How much of the motor claims history can Keelson sell?</h2>
+      <span class="tag demo">★ 22 min · everyone works it through</span>
+    </div>
+    <p class="lede">No code. The widget runs Keelson's constructed funnel in your browser: 180,000 motor claims records pass four rights checks, then land in a grid of 12 regions, 8 vehicle classes and 12 quarters, where cells under k records are suppressed. Move the sliders to see what each check costs. Steps 1 to 3 work Keelson together; steps 4 and 5 are your own dataset, in pairs.</p>
+
+    <div class="dmx-widget" data-mode="funnel"></div>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A one-page can we sell it checklist. Five checks in order, each with the records it removes from Keelson's 180,000: privacy notice did not cover reuse, 14,400; customer objected, 4,968; third-party licence forbids onward use, 19,276, the largest; injury claims held back, 9,895; cell threshold at k 10, with 1,067 of 1,152 cells published. All five feed a teal box: a sellable share of 72.4 percent, 130,304 records. Tightened to notice 20 percent and k 25, the share falls to 60.4 percent with 791 cells.">
+        <defs>
+          <filter id="b2dSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="59" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="b2dHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#494412" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="b2dAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1F1E14" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .b2dH { font: 800 12px Inter, sans-serif; fill: #1F1E14; }
+          .b2dL { font: 600 12px Inter, sans-serif; fill: #1F1E14; }
+          .b2dS { font: 400 11px Inter, sans-serif; fill: #5A5848; }
+          .b2dA { font: 700 11px Inter, sans-serif; fill: #2E2A08; }
+          .b2dW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+          .b2dX { font: 800 20px Inter, sans-serif; fill: #FFFFFF; }
+          .b2dN { font: 400 12px Inter, sans-serif; fill: #5A5848; }
+        </style>
+
+        <text class="b2dH" x="30" y="28">CAN WE SELL IT? FIVE CHECKS, ONE SHARE</text>
+        <text class="b2dS" x="320" y="28">Keelson base case, 180,000 records, constructed</text>
+
+        <g filter="url(#b2dSk)" fill="none" stroke="#1F1E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="30" y="50" width="380" height="34" rx="7" transform="rotate(-0.3 220 67)" fill="#FFFFFF"/>
+          <rect x="30" y="92" width="380" height="34" rx="7" transform="rotate(0.3 220 109)" fill="#FFFFFF"/>
+          <rect x="30" y="134" width="380" height="34" rx="7" transform="rotate(-0.3 220 151)" fill="#F8F6E6" stroke="#494412"/>
+          <rect x="30" y="176" width="380" height="34" rx="7" transform="rotate(0.3 220 193)" fill="#FFFFFF"/>
+          <rect x="30" y="218" width="380" height="34" rx="7" transform="rotate(-0.3 220 235)" fill="#FFFFFF"/>
+          <path d="M414 67 L556 140" marker-end="url(#b2dAr)"/>
+          <path d="M414 109 L556 146" marker-end="url(#b2dAr)"/>
+          <path d="M414 151 L556 152" marker-end="url(#b2dAr)"/>
+          <path d="M414 193 L556 158" marker-end="url(#b2dAr)"/>
+          <path d="M414 235 L556 164" marker-end="url(#b2dAr)"/>
+          <rect x="562" y="104" width="280" height="96" rx="12" transform="rotate(-0.6 702 152)" fill="#0E5C66" stroke="#0E5C66"/>
+          <!-- doodle: a pencil -->
+          <path d="M770 286 L836 262 L842 270 L776 294 Z M770 286 L764 298 L776 294" stroke="#494412"/>
+        </g>
+
+        <text class="b2dL" x="44" y="72">1 · notice covers the new use?</text>
+        <text class="b2dA" x="398" y="72" text-anchor="end">-14,400</text>
+        <text class="b2dL" x="44" y="114">2 · objections honoured</text>
+        <text class="b2dA" x="398" y="114" text-anchor="end">-4,968</text>
+        <text class="b2dL" x="44" y="156">3 · licence allows onward use</text>
+        <text class="b2dA" x="398" y="156" text-anchor="end">-19,276 · largest</text>
+        <text class="b2dL" x="44" y="198">4 · special category held back</text>
+        <text class="b2dA" x="398" y="198" text-anchor="end">-9,895</text>
+        <text class="b2dL" x="44" y="240">5 · threshold, k 10</text>
+        <text class="b2dA" x="398" y="240" text-anchor="end">1,067 of 1,152 cells</text>
+
+        <text class="b2dW" x="580" y="132">SELLABLE SHARE</text>
+        <text class="b2dX" x="580" y="160">72.4%</text>
+        <text class="b2dW" x="580" y="184">130,304 of 180,000 records</text>
+
+        <text class="b2dS" x="562" y="226">tightened (notice 20%, k 25): 60.4%</text>
+        <text class="b2dS" x="562" y="244">791 cells published (68.7%)</text>
+
+        <text class="b2dN" x="30" y="300">Five checks in order. Only what survives all five can go into a product.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the largest cut is a contract, and a contract can be renegotiated</figcaption>
+    </figure>
+
+    <div class="steps">
+      <div class="step">
+        <p><strong>Step 1 · Read the base funnel.</strong> Leave every slider where it starts. Read the bars from top to bottom, then the three numbers under them.</p>
+        <div class="prompt-box good"><span class="label">★ Step 1 · the base funnel, as the widget prints it</span>180,000 -&gt; 165,600 (notice, -14,400) -&gt; 160,632 (objected, -4,968)
+-&gt; 141,356 (licence, -19,276) -&gt; 131,461 (injury claims, -9,895)
+-&gt; 130,304 in published cells
+72.4% of records end up in a published cell
+1,067 of 1,152 cells published (92.6%)</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 2 · Name the biggest cut and its owner.</strong> Which stage removes the most records, and who in Keelson could change it? Check the first stage by hand: 8 percent of 180,000 is 14,400, leaving 165,600.</p>
+        <div class="prompt-box good"><span class="label">★ Step 2 · the stage that matters most</span>largest cut: third-party licence forbids onward use, -19,276
+(12% of the 160,632 still in the funnel)
+who could change it: Sefa, with a renegotiated supplier contract
+that names onward use in aggregated form</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 3 · Tighten it.</strong> Suppose counsel reads the old notices more strictly and the data protection officer wants bigger cells. Set "Notice did not cover reuse" to 20% and "Smallest cell you will publish (k)" to 25. This is the consent rung of the desk in Leader session 4.</p>
+        <div class="prompt-box good"><span class="label">★ Step 3 · tightened, as the widget prints it</span>180,000 -&gt; 144,000 -&gt; 139,680 -&gt; 122,918 -&gt; 114,314 -&gt; 108,747
+60.4% of records end up in a published cell
+791 of 1,152 cells published (68.7%)
+from 72.4% to 60.4%: the cells that vanish are small regions and rare vehicles</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 4 · Your own four checks.</strong> In pairs, take the candidate dataset from your Leader session 1 road map. Estimate the share each check removes, then the share left. Your numbers will differ; an honest range beats a confident guess.</p>
+        <div class="prompt-box good"><span class="label">★ Step 4 · your funnel</span>dataset: ________________________    records: ________
+notice covers the new use?        removes about ____%   evidence: ____________
+customers who objected            removes about ____%   evidence: ____________
+licence allows onward use?        removes about ____%   contract: ____________
+special category held back        removes about ____%   which fields: ________
+share left before the threshold:  ____%</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 5 · One sentence for the board.</strong> Write what share is sellable and the one thing that would change it most.</p>
+        <div class="prompt-box good"><span class="label">★ Step 5 · the board sentence</span>"About ____% of ____________ can lawfully go into a product today.
+The biggest cut is ____________, and ____________ would change it,
+at a cost of ____________."</div>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>Keep the share.</strong> Leader session 3 prices the index, and every price there assumes the base case's 92.6 percent of cells published. If your tightened share is the realistic one, say so before anyone quotes a buyer.</p>
+    </div>
+  </section>
+
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before Leader session 3</h2>
+      <span class="tag exercise">30 min</span>
+    </div>
+    <ol>
+      <li><strong>Read the notice against the use.</strong> Take the notice you found after Leader session 1 and write, in one line, whether it names a third party or a sale. Quote the words that decide it.</li>
+      <li><strong>Find one inbound contract.</strong> For your candidate dataset, find one supplier or partner contract that touched the data and copy its field-of-use and onward-transfer clauses.</li>
+      <li><strong>List the special-category fields.</strong> Ask your data steward which fields in the dataset could reveal health or another special category, and whether they can be dropped without breaking the product.</li>
+      <li><strong>Ask the anonymous question.</strong> Ask your data protection officer one question: "If we publish aggregated cells with a size threshold, what else would you need before calling it anonymous?" Write down the answer.</li>
+    </ol>
+  </section>
+
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and Leader session 2 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · Keelson wants to use claims data, collected to settle claims, for an index sold outside, without fresh consent and without a law requiring it. What does GDPR Article 6(4) ask?</p>
+      <button class="qopt" type="button">A · Whether the buyer will pay a fair price</button>
+      <button class="qopt" type="button">B · Whether the new purpose is compatible with the first, weighing the link, the context, the nature of the data, the consequences and the safeguards</button>
+      <button class="qopt" type="button">C · Whether the data has been held for more than three years</button>
+      <button class="qopt" type="button">D · Nothing: aggregated data needs no test</button>
+      <p class="qwhy">Article 6(4) is the compatibility test for a new purpose that rests on neither consent nor a law. Aggregation counts as a safeguard inside the test; it does not skip it.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="3">
+      <p class="qtext">2 · A buyer asks for claims records with policy numbers replaced by codes. Why is that still personal data?</p>
+      <button class="qopt" type="button">A · Because claims data is always personal data, whatever you do to it</button>
+      <button class="qopt" type="button">B · Because codes are only allowed under the PDPA, not the GDPR</button>
+      <button class="qopt" type="button">C · It is not: removing the policy number makes it anonymous</button>
+      <button class="qopt" type="button">D · Because it is pseudonymised: the records can be linked back with information that still exists, and Article 4(5) treats that as personal data</button>
+      <p class="qwhy">Pseudonymised data stays inside the law. Only anonymous information, where nobody can reasonably be identified, falls outside it under Recital 26.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">3 · Why does Singapore's business improvement exception not cover selling the index to an unrelated fleet operator?</p>
+      <button class="qopt" type="button">A · Because the exception only applies to health data</button>
+      <button class="qopt" type="button">B · Because a court has ruled that data sales are excluded</button>
+      <button class="qopt" type="button">C · On the text, it covers use inside the organisation and sharing within a group of related companies; an unrelated buyer is neither, which is an inference from the wording</button>
+      <button class="qopt" type="button">D · Because the exception expired in 2024</button>
+      <p class="qwhy">The wording limits sharing to related companies. No ruling is cited here; it is a reading of the text, and the right next step is counsel, not a sale.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Lawful bases, purpose compatibility, withdrawal of consent, objection, health data, pseudonymisation and anonymous information, fines</span><span class="note">GDPR, Regulation (EU) 2016/679: Art 6(1), 6(4), 7(3), 21, 9(1) and 9(2), 4(5), Recital 26, 83(5), read at source</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Consent, deemed consent by notification, legitimate interests and business improvement exceptions</span><span class="note">Singapore PDPA s13 and s15A; PDPC Advisory Guidelines on Key Concepts (revised 29 April 2026). The reading on unrelated buyers is an inference from the text</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Anonymised data is not personal data</span><span class="note">PDPC Advisory Guidelines on Selected Topics, Chapter 3 Anonymisation (revised 23 May 2024)</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">EU Data Act Arts 8-9, Data Governance Act intermediaries, the Digital Omnibus proposal; the ODI Data Spectrum</span><span class="note">Context only: Regulation (EU) 2023/2854 and 2022/868; Digital Omnibus is a proposal as at October 2026; ODI Data Spectrum</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Verisk ClaimSearch as a contributory claims pool</span><span class="note">Verisk blog, 31 July 2025: the vendor's own statement</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Keelson's sellable-share funnel and the tightened case</span><span class="note">Constructed inputs, computed in the browser by the course engine; Python and JavaScript agree on every printed value</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Every fact on this page, and its verification tier, is recorded in the course's source map.</p>
+  </section>
+
+  <section class="cheat" id="cheatsheet">
+    <h3>Leader session 2 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>New purpose, new test</b><span>No consent and no law? Art 6(4) weighs link, context, nature, consequences, safeguards.</span></div>
+      <div class="cheat-item"><b>Business improvement is not a sale</b><span>Use inside, related companies only. Unrelated buyer: not covered on the text.</span></div>
+      <div class="cheat-item"><b>Contracts travel with data</b><span>Inbound terms cap outbound use. Keelson's biggest cut is a licence: 19,276 records.</span></div>
+      <div class="cheat-item"><b>Health data stays home</b><span>Art 9 prohibits it without a 9(2) exception. Selling an index is not one.</span></div>
+      <div class="cheat-item"><b>Pseudonymised is personal</b><span>Art 4(5). Only anonymous data leaves the law, and k alone does not get it there.</span></div>
+      <div class="cheat-item"><b>Report a share, not a yes</b><span>Keelson: 72.4% sellable, 60.4% tightened. Say what would move it.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>Keelson now knows what it may sell: an aggregated index built from 72.4 percent of its motor claims records. Leader session 3, products, prices and partners, decides what form it takes, what to charge and who sells it, starting with which buyers would pay 32.0k a year and which would not.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Leader session 2 of 4 · learn-data-monetisation-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="b1-three-roads-to-data-revenue.html">← Prev: Three roads to data revenue</a> &nbsp;·&nbsp; <a href="b3-products-prices-and-partners.html">Next: Products, prices and partners →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/dm-live.js?v=1"></script>
+<script src="../assets/dm-bench.js?v=1"></script>
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>
